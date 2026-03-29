@@ -183,10 +183,17 @@ const Hero = () => {
             {/* Tech logos strip */}
             <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3 mb-6 sm:mb-8 lg:mb-10 opacity-50">
               <span className="text-[10px] sm:text-xs text-muted-foreground mr-1 sm:mr-2">Powered by</span>
-              {["amazonwebservices", "docker", "kubernetes", "terraform", "jenkins", "python"].map((slug) => (
+              {[
+                { slug: "amazonwebservices", variant: "original-wordmark" },
+                { slug: "docker", variant: "original" },
+                { slug: "kubernetes", variant: "original" },
+                { slug: "terraform", variant: "original" },
+                { slug: "jenkins", variant: "original" },
+                { slug: "python", variant: "original" },
+              ].map(({ slug, variant }) => (
                 <img
                   key={slug}
-                  src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-original.svg`}
+                  src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-${variant}.svg`}
                   alt={slug}
                   className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 object-contain grayscale hover:grayscale-0 transition-all"
                   loading="lazy"
