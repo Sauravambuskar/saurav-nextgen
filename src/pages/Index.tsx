@@ -6,6 +6,7 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import DevOpsProjects from "@/components/DevOpsProjects";
 import Education from "@/components/Education";
+import Testimonials from "@/components/ui/testimonial-v2";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
