@@ -43,6 +43,7 @@ const Index = () => {
         <Testimonials />
         <Contact />
         <Footer />
+        <Chatbot />
       </Suspense>
     </div>
   );
