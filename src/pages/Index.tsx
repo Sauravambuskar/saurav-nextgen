@@ -13,6 +13,7 @@ const Education = lazy(() => import("@/components/Education"));
 const Testimonials = lazy(() => import("@/components/ui/testimonial-v2"));
 const Contact = lazy(() => import("@/components/Contact"));
 const Footer = lazy(() => import("@/components/Footer"));
+const Chatbot = lazy(() => import("@/components/Chatbot"));
 
 const SectionFallback = () => (
   <div className="section-padding flex items-center justify-center">
