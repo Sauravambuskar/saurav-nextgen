@@ -143,8 +143,6 @@ const Testimonials = () => {
       </div>
     </section>
   );
-});
-
-Testimonials.displayName = "Testimonials";
+};
 
 export default Testimonials;
