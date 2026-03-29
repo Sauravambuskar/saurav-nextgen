@@ -103,65 +103,96 @@ const Hero = () => {
       <div className="glow-orb w-[400px] h-[400px] bg-secondary -bottom-20 -right-20 animate-pulse-glow opacity-15" style={{ animationDelay: "2s" }} />
 
       <div className="max-w-7xl mx-auto px-6 pt-28 pb-16 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Profile Photo - shows FIRST on mobile */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative flex justify-center order-first lg:order-last"
+          >
+            <div className="relative">
+              <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-primary/30 to-secondary/10 blur-2xl animate-pulse-glow" />
+              <div className="w-56 h-56 sm:w-72 sm:h-72 lg:w-[380px] lg:h-[380px] rounded-full overflow-hidden border-2 border-primary/30 relative z-10 shadow-2xl shadow-primary/10">
+                <img src={profileImg} alt="Saurav Ambuskar" className="w-full h-full object-cover object-top" />
+              </div>
+
+              {/* Floating badges - hidden on small mobile, visible from sm up */}
+              {floatingBadges.map((badge) => (
+                <motion.div
+                  key={badge.label}
+                  animate={badge.animate}
+                  transition={{ duration: badge.duration, repeat: Infinity }}
+                  className={`${badge.className} glass-card px-3 py-2 sm:px-4 sm:py-2.5 text-xs sm:text-sm font-semibold hidden sm:flex items-center gap-2`}
+                >
+                  <img src={badge.icon} alt={badge.label} className="w-4 h-4 sm:w-5 sm:h-5 object-contain" />
+                  {badge.label}
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Text Content - shows SECOND on mobile */}
           <motion.div
             initial={{ opacity: 0, x: -60 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
+            className="order-last lg:order-first text-center lg:text-left"
           >
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 glass-card px-4 py-2 text-sm text-muted-foreground mb-8"
+              className="inline-flex items-center gap-2 glass-card px-4 py-2 text-sm text-muted-foreground mb-6 lg:mb-8"
             >
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               Available for opportunities
             </motion.div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-[1.1] mb-6 tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-4 lg:mb-6 tracking-tight">
               Building{" "}
               <span className="gradient-text">Scalable Cloud</span>
               <br />
               <span className="text-foreground/90">&amp; DevOps Systems</span>
             </h1>
 
-            <p className="text-lg text-muted-foreground max-w-xl mb-10 leading-relaxed">
+            <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 lg:mb-10 leading-relaxed">
               DevOps Engineer with 3+ years of experience in AWS, Kubernetes, CI/CD,
               and Infrastructure Automation. Delivered 17+ production projects across industries.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4 mb-12">
-              <a href="#projects" className="btn-primary inline-flex items-center gap-2 text-base">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-8 lg:mb-12">
+              <a href="#projects" className="btn-primary inline-flex items-center gap-2 text-sm sm:text-base px-6 py-3">
                 View Projects
               </a>
-              <a href="#contact" className="btn-secondary inline-flex items-center gap-2 text-base">
+              <a href="#contact" className="btn-secondary inline-flex items-center gap-2 text-sm sm:text-base px-6 py-3">
                 Contact Me
               </a>
               <div className="flex items-center gap-2">
-                <a href="https://github.com/Sauravambuskar" target="_blank" rel="noopener noreferrer" className="w-12 h-12 glass-card rounded-full flex items-center justify-center hover:border-primary/30 hover:bg-primary/5 transition-all">
-                  <Github size={20} />
+                <a href="https://github.com/Sauravambuskar" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 glass-card rounded-full flex items-center justify-center hover:border-primary/30 hover:bg-primary/5 transition-all">
+                  <Github size={18} />
                 </a>
-                <a href="https://www.linkedin.com/in/sauravambuskar/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 glass-card rounded-full flex items-center justify-center hover:border-primary/30 hover:bg-primary/5 transition-all">
-                  <Linkedin size={20} />
+                <a href="https://www.linkedin.com/in/sauravambuskar/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 glass-card rounded-full flex items-center justify-center hover:border-primary/30 hover:bg-primary/5 transition-all">
+                  <Linkedin size={18} />
                 </a>
               </div>
             </div>
 
             {/* Tech logos strip */}
-            <div className="flex items-center gap-3 mb-10 opacity-50">
+            <div className="flex items-center justify-center lg:justify-start gap-3 mb-8 lg:mb-10 opacity-50">
               <span className="text-xs text-muted-foreground mr-2">Powered by</span>
               {["amazonwebservices", "docker", "kubernetes", "terraform", "jenkins", "python"].map((slug) => (
                 <img
                   key={slug}
                   src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-original.svg`}
                   alt={slug}
-                  className="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all"
+                  className="w-5 h-5 sm:w-6 sm:h-6 object-contain grayscale hover:grayscale-0 transition-all"
+                  loading="lazy"
                 />
               ))}
             </div>
 
-            <div className="flex gap-10">
+            <div className="flex justify-center lg:justify-start gap-8 sm:gap-10">
               {[
                 { value: "3+", label: "Years Exp" },
                 { value: "17+", label: "Projects" },
@@ -174,34 +205,8 @@ const Hero = () => {
                   transition={{ delay: 0.6 + i * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-4xl font-extrabold gradient-text">{s.value}</div>
-                  <div className="text-sm text-muted-foreground mt-1">{s.label}</div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative flex justify-center"
-          >
-            <div className="relative">
-              <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-primary/30 to-secondary/10 blur-2xl animate-pulse-glow" />
-              <div className="w-72 h-72 lg:w-[380px] lg:h-[380px] rounded-full overflow-hidden border-2 border-primary/30 relative z-10 shadow-2xl shadow-primary/10">
-                <img src={profileImg} alt="Saurav Ambuskar" className="w-full h-full object-cover object-top" />
-              </div>
-
-              {floatingBadges.map((badge) => (
-                <motion.div
-                  key={badge.label}
-                  animate={badge.animate}
-                  transition={{ duration: badge.duration, repeat: Infinity }}
-                  className={`${badge.className} glass-card px-4 py-2.5 text-sm font-semibold flex items-center gap-2`}
-                >
-                  <img src={badge.icon} alt={badge.label} className="w-5 h-5 object-contain" />
-                  {badge.label}
+                  <div className="text-3xl sm:text-4xl font-extrabold gradient-text">{s.value}</div>
+                  <div className="text-xs sm:text-sm text-muted-foreground mt-1">{s.label}</div>
                 </motion.div>
               ))}
             </div>
