@@ -53,6 +53,10 @@ const Chatbot = () => {
     const show = () => {
       setNudgeText(GREETING_MESSAGES[idx % GREETING_MESSAGES.length]);
       setShowNudge(true);
+      if (!hasPlayedSound.current) {
+        playBubbleSound();
+        hasPlayedSound.current = true;
+      }
       idx++;
       setTimeout(() => setShowNudge(false), 4000);
     };
