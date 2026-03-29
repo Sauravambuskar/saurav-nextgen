@@ -87,7 +87,7 @@ const floatingBadges = [
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0 opacity-50">
+      <div className="absolute inset-0 z-0 opacity-50 hidden md:block">
         <PulseBeams
           beams={beams}
           width={858}
@@ -99,11 +99,11 @@ const Hero = () => {
         />
       </div>
 
-      <div className="glow-orb w-[600px] h-[600px] bg-primary -top-60 -left-40 animate-pulse-glow opacity-20" />
-      <div className="glow-orb w-[400px] h-[400px] bg-secondary -bottom-20 -right-20 animate-pulse-glow opacity-15" style={{ animationDelay: "2s" }} />
+      <div className="glow-orb w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-primary -top-40 -left-20 md:-top-60 md:-left-40 animate-pulse-glow opacity-20" />
+      <div className="glow-orb w-[200px] h-[200px] md:w-[400px] md:h-[400px] bg-secondary -bottom-10 -right-10 md:-bottom-20 md:-right-20 animate-pulse-glow opacity-15" style={{ animationDelay: "2s" }} />
 
-      <div className="max-w-7xl mx-auto px-6 pt-28 pb-16 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-20 sm:pt-24 lg:pt-28 pb-10 sm:pb-16 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Profile Photo - shows FIRST on mobile */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -112,20 +112,20 @@ const Hero = () => {
             className="relative flex justify-center order-first lg:order-last"
           >
             <div className="relative">
-              <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-primary/30 to-secondary/10 blur-2xl animate-pulse-glow" />
-              <div className="w-56 h-56 sm:w-72 sm:h-72 lg:w-[380px] lg:h-[380px] rounded-full overflow-hidden border-2 border-primary/30 relative z-10 shadow-2xl shadow-primary/10">
+              <div className="absolute -inset-3 sm:-inset-4 rounded-full bg-gradient-to-br from-primary/30 to-secondary/10 blur-2xl animate-pulse-glow" />
+              <div className="w-44 h-44 sm:w-64 sm:h-64 lg:w-[380px] lg:h-[380px] rounded-full overflow-hidden border-2 border-primary/30 relative z-10 shadow-2xl shadow-primary/10">
                 <img src={profileImg} alt="Saurav Ambuskar" className="w-full h-full object-cover object-top" />
               </div>
 
-              {/* Floating badges - hidden on small mobile, visible from sm up */}
+              {/* Floating badges - hidden on mobile, visible from md up */}
               {floatingBadges.map((badge) => (
                 <motion.div
                   key={badge.label}
                   animate={badge.animate}
                   transition={{ duration: badge.duration, repeat: Infinity }}
-                  className={`${badge.className} glass-card px-3 py-2 sm:px-4 sm:py-2.5 text-xs sm:text-sm font-semibold hidden sm:flex items-center gap-2`}
+                  className={`${badge.className} glass-card px-3 py-2 md:px-4 md:py-2.5 text-xs md:text-sm font-semibold hidden md:flex items-center gap-2`}
                 >
-                  <img src={badge.icon} alt={badge.label} className="w-4 h-4 sm:w-5 sm:h-5 object-contain" />
+                  <img src={badge.icon} alt={badge.label} className="w-4 h-4 md:w-5 md:h-5 object-contain" />
                   {badge.label}
                 </motion.div>
               ))}
@@ -143,56 +143,58 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 glass-card px-4 py-2 text-sm text-muted-foreground mb-6 lg:mb-8"
+              className="inline-flex items-center gap-2 glass-card px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm text-muted-foreground mb-4 sm:mb-6 lg:mb-8"
             >
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               Available for opportunities
             </motion.div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-4 lg:mb-6 tracking-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-7xl font-extrabold leading-[1.1] mb-3 sm:mb-4 lg:mb-6 tracking-tight">
               Building{" "}
               <span className="gradient-text">Scalable Cloud</span>
               <br />
               <span className="text-foreground/90">&amp; DevOps Systems</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8 lg:mb-10 leading-relaxed">
+            <p className="text-sm sm:text-base lg:text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-6 sm:mb-8 lg:mb-10 leading-relaxed px-2 sm:px-0">
               DevOps Engineer with 3+ years of experience in AWS, Kubernetes, CI/CD,
               and Infrastructure Automation. Delivered 17+ production projects across industries.
             </p>
 
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-8 lg:mb-12">
-              <a href="#projects" className="btn-primary inline-flex items-center gap-2 text-sm sm:text-base px-6 py-3">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-3 mb-6 sm:mb-8 lg:mb-12">
+              <a href="#projects" className="btn-primary inline-flex items-center gap-2 text-xs sm:text-sm lg:text-base px-4 sm:px-6 py-2.5 sm:py-3">
                 View Projects
               </a>
-              <a href="#contact" className="btn-secondary inline-flex items-center gap-2 text-sm sm:text-base px-6 py-3">
+              <a href="#contact" className="btn-secondary inline-flex items-center gap-2 text-xs sm:text-sm lg:text-base px-4 sm:px-6 py-2.5 sm:py-3">
                 Contact Me
               </a>
               <div className="flex items-center gap-2">
-                <a href="https://github.com/Sauravambuskar" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 glass-card rounded-full flex items-center justify-center hover:border-primary/30 hover:bg-primary/5 transition-all">
-                  <Github size={18} />
+                <a href="https://github.com/Sauravambuskar" target="_blank" rel="noopener noreferrer" className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 glass-card rounded-full flex items-center justify-center hover:border-primary/30 hover:bg-primary/5 transition-all">
+                  <Github size={16} className="sm:hidden" />
+                  <Github size={18} className="hidden sm:block" />
                 </a>
-                <a href="https://www.linkedin.com/in/sauravambuskar/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 sm:w-12 sm:h-12 glass-card rounded-full flex items-center justify-center hover:border-primary/30 hover:bg-primary/5 transition-all">
-                  <Linkedin size={18} />
+                <a href="https://www.linkedin.com/in/sauravambuskar/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 glass-card rounded-full flex items-center justify-center hover:border-primary/30 hover:bg-primary/5 transition-all">
+                  <Linkedin size={16} className="sm:hidden" />
+                  <Linkedin size={18} className="hidden sm:block" />
                 </a>
               </div>
             </div>
 
             {/* Tech logos strip */}
-            <div className="flex items-center justify-center lg:justify-start gap-3 mb-8 lg:mb-10 opacity-50">
-              <span className="text-xs text-muted-foreground mr-2">Powered by</span>
+            <div className="flex items-center justify-center lg:justify-start gap-2 sm:gap-3 mb-6 sm:mb-8 lg:mb-10 opacity-50">
+              <span className="text-[10px] sm:text-xs text-muted-foreground mr-1 sm:mr-2">Powered by</span>
               {["amazonwebservices", "docker", "kubernetes", "terraform", "jenkins", "python"].map((slug) => (
                 <img
                   key={slug}
                   src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-original.svg`}
                   alt={slug}
-                  className="w-5 h-5 sm:w-6 sm:h-6 object-contain grayscale hover:grayscale-0 transition-all"
+                  className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 object-contain grayscale hover:grayscale-0 transition-all"
                   loading="lazy"
                 />
               ))}
             </div>
 
-            <div className="flex justify-center lg:justify-start gap-8 sm:gap-10">
+            <div className="flex justify-center lg:justify-start gap-6 sm:gap-8 lg:gap-10">
               {[
                 { value: "3+", label: "Years Exp" },
                 { value: "17+", label: "Projects" },
@@ -205,8 +207,8 @@ const Hero = () => {
                   transition={{ delay: 0.6 + i * 0.1 }}
                   className="text-center"
                 >
-                  <div className="text-3xl sm:text-4xl font-extrabold gradient-text">{s.value}</div>
-                  <div className="text-xs sm:text-sm text-muted-foreground mt-1">{s.label}</div>
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold gradient-text">{s.value}</div>
+                  <div className="text-[10px] sm:text-xs lg:text-sm text-muted-foreground mt-1">{s.label}</div>
                 </motion.div>
               ))}
             </div>
@@ -216,10 +218,11 @@ const Hero = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="flex justify-center mt-12"
+          className="flex justify-center mt-8 sm:mt-12"
         >
           <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
-            <ArrowDown size={24} />
+            <ArrowDown size={20} className="sm:hidden" />
+            <ArrowDown size={24} className="hidden sm:block" />
           </a>
         </motion.div>
       </div>

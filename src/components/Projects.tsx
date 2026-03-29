@@ -56,7 +56,7 @@ const ProjectCard = ({ project, index }: { project: ProjectItem; index: number }
       className="glass-card-hover overflow-hidden group"
     >
       {/* Preview thumbnail */}
-      <div className="relative h-48 overflow-hidden border-b border-border">
+      <div className="relative h-36 sm:h-48 overflow-hidden border-b border-border">
         <img
           src={project.thumb}
           alt={`${project.title} preview`}
@@ -70,16 +70,17 @@ const ProjectCard = ({ project, index }: { project: ProjectItem; index: number }
           rel="noopener noreferrer"
           className="absolute inset-0 flex items-center justify-center bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         >
-          <span className="btn-primary text-sm px-5 py-2 inline-flex items-center gap-2">
+          <span className="btn-primary text-xs sm:text-sm px-4 sm:px-5 py-1.5 sm:py-2 inline-flex items-center gap-2">
             <ExternalLink size={14} /> View Live
           </span>
         </a>
       </div>
 
-      <div className="p-6">
-        <div className="flex items-start justify-between mb-3">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20">
-            <Icon size={12} />
+      <div className="p-4 sm:p-6">
+        <div className="flex items-start justify-between mb-2 sm:mb-3">
+          <span className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs rounded-full bg-primary/10 text-primary border border-primary/20">
+            <Icon size={10} className="sm:hidden" />
+            <Icon size={12} className="hidden sm:block" />
             {project.tag}
           </span>
           <a
@@ -88,11 +89,12 @@ const ProjectCard = ({ project, index }: { project: ProjectItem; index: number }
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"
           >
-            <ExternalLink size={18} />
+            <ExternalLink size={16} className="sm:hidden" />
+            <ExternalLink size={18} className="hidden sm:block" />
           </a>
         </div>
-        <h3 className="text-lg font-bold mb-2">{project.title}</h3>
-        <p className="text-sm text-muted-foreground">{project.desc}</p>
+        <h3 className="text-sm sm:text-lg font-bold mb-1 sm:mb-2">{project.title}</h3>
+        <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2">{project.desc}</p>
       </div>
     </motion.div>
   );
@@ -105,31 +107,31 @@ const Projects = () => {
 
   return (
     <section id="projects" className="section-padding relative bg-background-secondary" ref={ref}>
-      <div className="glow-orb w-[500px] h-[500px] bg-secondary bottom-0 left-0 opacity-10" />
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
+      <div className="glow-orb w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-secondary bottom-0 left-0 opacity-10" />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <div className="inline-flex items-center gap-2 glass-card px-4 py-2 text-sm text-muted-foreground mb-4">
+          <div className="inline-flex items-center gap-2 glass-card px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">
             Portfolio
           </div>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-muted-foreground">17+ production projects across multiple industries</p>
+          <p className="text-sm sm:text-base text-muted-foreground">17+ production projects across multiple industries</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           {featured.map((p, i) => (
             <ProjectCard key={p.title} project={p} index={i} />
           ))}
         </div>
 
         {!showAll ? (
-          <div className="text-center mt-12">
-            <button onClick={() => setShowAll(true)} className="btn-primary">
+          <div className="text-center mt-8 sm:mt-12">
+            <button onClick={() => setShowAll(true)} className="btn-primary text-sm sm:text-base px-5 sm:px-8 py-2.5 sm:py-3">
               View All Projects
             </button>
           </div>
@@ -137,12 +139,12 @@ const Projects = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="mt-12"
+            className="mt-8 sm:mt-12"
           >
-            <h3 className="text-2xl font-bold text-center mb-8">
+            <h3 className="text-xl sm:text-2xl font-bold text-center mb-6 sm:mb-8">
               More <span className="gradient-text">Projects</span>
             </h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
               {allProjects.map((p, i) => (
                 <ProjectCard key={p.title} project={p} index={i} />
               ))}
