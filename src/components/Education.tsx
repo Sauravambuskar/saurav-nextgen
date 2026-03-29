@@ -82,9 +82,8 @@ const Education = () => {
                     {cert.icon ? (
                       <img src={cert.icon} alt={cert.name} className="w-4 h-4 sm:w-5 sm:h-5 object-contain" />
                     ) : (
-                      <CheckCircle size={14} className="text-primary sm:hidden" />
+                      <CheckCircle size={16} className="text-primary" />
                     )}
-                    {!cert.icon && <CheckCircle size={16} className="text-primary hidden sm:block" />}
                   </div>
                   <span className="text-sm sm:text-base font-medium">{cert.name}</span>
                 </motion.div>
