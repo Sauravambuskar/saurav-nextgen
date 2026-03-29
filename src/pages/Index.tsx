@@ -9,21 +9,26 @@ import Education from "@/components/Education";
 import Testimonials from "@/components/ui/testimonial-v2";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { useGSAPSmooth } from "@/hooks/use-gsap";
 
-const Index = () => (
-  <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-    <Navbar />
-    <Hero />
-    <About />
-    <Skills />
-    <TechStats />
-    <Projects />
-    <DevOpsProjects />
-    <Education />
-    <Testimonials />
-    <Contact />
-    <Footer />
-  </div>
-);
+const Index = () => {
+  useGSAPSmooth();
+
+  return (
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <Navbar />
+      <Hero />
+      <About />
+      <Skills />
+      <TechStats />
+      <Projects />
+      <DevOpsProjects />
+      <Education />
+      <Testimonials />
+      <Contact />
+      <Footer />
+    </div>
+  );
+};
 
 export default Index;
