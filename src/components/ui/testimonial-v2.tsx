@@ -88,11 +88,11 @@ const TestimonialsColumn = ({
         {[...new Array(2)].map((_, index) => (
           <React.Fragment key={index}>
             {items.map(({ text, image, name, role }, i) => (
-              <div key={`${index}-${i}`} className="glass-card-hover p-6">
+              <div key={`${index}-${i}`} className="glass-card-hover p-4 sm:p-6">
                 <div>
-                  <p className="text-sm leading-relaxed text-muted-foreground">{text}</p>
+                  <p className="text-xs sm:text-sm leading-relaxed text-muted-foreground">{text}</p>
                 </div>
-                <div className="flex items-center gap-3 mt-4">
+                <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
                   <img
                     src={image}
                     alt={name}
@@ -115,27 +115,27 @@ const TestimonialsColumn = ({
 const Testimonials = React.forwardRef<HTMLElement>((_, forwardedRef) => {
   return (
     <section id="testimonials" className="section-padding relative overflow-hidden">
-      <div className="glow-orb w-[400px] h-[400px] bg-primary -top-40 right-0 animate-pulse-glow" />
+      <div className="glow-orb w-[200px] h-[200px] md:w-[400px] md:h-[400px] bg-primary -top-20 md:-top-40 right-0 animate-pulse-glow" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-16"
         >
-          <div className="inline-flex items-center gap-2 glass-card px-4 py-2 text-sm text-muted-foreground mb-4">
+          <div className="inline-flex items-center gap-2 glass-card px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">
             Testimonials
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
             What <span className="gradient-text">Clients</span> Say
           </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto px-2 sm:px-0">
             Trusted by businesses across India to deliver reliable, scalable infrastructure and DevOps solutions.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[600px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-h-[450px] sm:max-h-[600px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
           <TestimonialsColumn testimonials={firstColumn} duration={18} />
           <TestimonialsColumn testimonials={secondColumn} duration={22} className="hidden md:block" />
           <TestimonialsColumn testimonials={thirdColumn} duration={16} className="hidden lg:block" />

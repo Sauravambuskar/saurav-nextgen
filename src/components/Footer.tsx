@@ -1,9 +1,9 @@
 import { Github, Linkedin, Heart } from "lucide-react";
 
 const Footer = () => (
-  <footer className="py-10 border-t border-border relative">
-    <div className="max-w-7xl mx-auto px-6">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+  <footer className="py-8 sm:py-10 border-t border-border relative">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <div className="flex flex-col items-center gap-4 sm:gap-6 md:flex-row md:justify-between">
         <div className="flex flex-col items-center md:items-start gap-1">
           <a href="#" className="text-xl font-extrabold gradient-text">SA.</a>
           <p className="text-sm text-muted-foreground">
