@@ -4,7 +4,7 @@ import { GraduationCap, Award, CheckCircle, BookOpen } from "lucide-react";
 
 const certifications = [
   { name: "PMP (PMI Certified)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" },
-  { name: "Six Sigma Certified", icon: "" },
+  { name: "Six Sigma Certified", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
   { name: "AWS DevOps Foundations", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
   { name: "AWS EC2 Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
 ];
