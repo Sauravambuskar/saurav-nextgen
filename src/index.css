@@ -16,16 +16,16 @@
     --popover: 240 14% 9%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 217 91% 60%;
+    --primary: 25 95% 53%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 263 70% 66%;
+    --secondary: 33 100% 50%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 240 5% 26%;
     --muted-foreground: 240 5% 65%;
 
-    --accent: 263 70% 66%;
+    --accent: 33 100% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -33,14 +33,14 @@
 
     --border: 0 0% 100% / 0.08;
     --input: 0 0% 100% / 0.08;
-    --ring: 217 91% 60%;
+    --ring: 25 95% 53%;
 
     --radius: 1rem;
 
     --glass-bg: 0 0% 100% / 0.03;
     --glass-border: 0 0% 100% / 0.08;
-    --gradient-blue: 217 91% 60%;
-    --gradient-purple: 263 70% 66%;
+    --gradient-start: 25 95% 53%;
+    --gradient-end: 33 100% 50%;
   }
 }
 
@@ -76,14 +76,14 @@
   }
 
   .gradient-text {
-    background: linear-gradient(135deg, hsl(var(--gradient-blue)), hsl(var(--gradient-purple)));
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, hsl(var(--gradient-blue)), hsl(var(--gradient-purple)));
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
     color: white;
     border-radius: 9999px;
     padding: 0.75rem 2rem;
