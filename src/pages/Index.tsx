@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import { EtheralShadow } from "@/components/ui/etheral-shadow";
 import { useGSAPSmooth } from "@/hooks/use-gsap";
 
 const About = lazy(() => import("@/components/About"));
