@@ -115,8 +115,6 @@ const TechStats = () => {
       </div>
     </section>
   );
-});
-
-TechStats.displayName = "TechStats";
+};
 
 export default TechStats;
