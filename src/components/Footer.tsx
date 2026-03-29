@@ -1,4 +1,5 @@
-import { Github, Linkedin, Heart } from "lucide-react";
+import { HiMiniHeart } from "react-icons/hi2";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
 
 const Footer = () => (
   <footer className="py-8 sm:py-10 border-t border-border relative">
@@ -12,7 +13,7 @@ const Footer = () => (
         </div>
         
         <p className="text-sm text-muted-foreground flex items-center gap-1">
-          Made with <Heart size={14} className="text-primary fill-primary" /> by Saurav Ambuskar
+          Made with <HiMiniHeart className="text-primary" size={14} /> by Saurav Ambuskar
         </p>
 
         <div className="flex items-center gap-4">
@@ -22,7 +23,7 @@ const Footer = () => (
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all"
           >
-            <Github size={18} />
+            <FaGithub size={18} />
           </a>
           <a
             href="https://www.linkedin.com/in/sauravambuskar/"
@@ -30,7 +31,7 @@ const Footer = () => (
             rel="noopener noreferrer"
             className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all"
           >
-            <Linkedin size={18} />
+            <FaLinkedinIn size={18} />
           </a>
         </div>
       </div>

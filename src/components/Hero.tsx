@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, ArrowDown, Cloud, Server, Terminal } from "lucide-react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { HiMiniChevronDown } from "react-icons/hi2";
 import profileImg from "@/assets/profile.jpg";
 import { PulseBeams } from "@/components/ui/pulse-beams";
 
@@ -170,12 +171,10 @@ const Hero = () => {
               </a>
               <div className="flex items-center gap-2">
                 <a href="https://github.com/Sauravambuskar" target="_blank" rel="noopener noreferrer" className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 glass-card rounded-full flex items-center justify-center hover:border-primary/30 hover:bg-primary/5 transition-all">
-                  <Github size={16} className="sm:hidden" />
-                  <Github size={18} className="hidden sm:block" />
+                  <FaGithub size={18} />
                 </a>
                 <a href="https://www.linkedin.com/in/sauravambuskar/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 glass-card rounded-full flex items-center justify-center hover:border-primary/30 hover:bg-primary/5 transition-all">
-                  <Linkedin size={16} className="sm:hidden" />
-                  <Linkedin size={18} className="hidden sm:block" />
+                  <FaLinkedinIn size={18} />
                 </a>
               </div>
             </div>
@@ -228,8 +227,7 @@ const Hero = () => {
           className="flex justify-center mt-8 sm:mt-12"
         >
           <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
-            <ArrowDown size={20} className="sm:hidden" />
-            <ArrowDown size={24} className="hidden sm:block" />
+            <HiMiniChevronDown size={24} />
           </a>
         </motion.div>
       </div>

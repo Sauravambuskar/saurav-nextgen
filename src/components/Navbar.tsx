@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Linkedin, Menu, X, Sun, Moon } from "lucide-react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { HiMiniBars3, HiMiniXMark, HiMiniSun, HiMiniMoon } from "react-icons/hi2";
 import { useTheme } from "@/hooks/use-theme";
 
 const navLinks = [
@@ -52,7 +53,6 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-2">
-          {/* Theme Toggle */}
           <button
             onClick={toggleTheme}
             className="w-9 h-9 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all relative overflow-hidden"
@@ -67,7 +67,7 @@ const Navbar = () => {
                   exit={{ rotate: 90, scale: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Sun size={18} />
+                  <HiMiniSun size={18} />
                 </motion.div>
               ) : (
                 <motion.div
@@ -77,7 +77,7 @@ const Navbar = () => {
                   exit={{ rotate: -90, scale: 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <Moon size={18} />
+                  <HiMiniMoon size={18} />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -89,7 +89,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="w-9 h-9 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all"
           >
-            <Github size={18} />
+            <FaGithub size={18} />
           </a>
           <a
             href="https://www.linkedin.com/in/sauravambuskar/"
@@ -97,7 +97,7 @@ const Navbar = () => {
             rel="noopener noreferrer"
             className="w-9 h-9 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all"
           >
-            <Linkedin size={18} />
+            <FaLinkedinIn size={18} />
           </a>
           <a href="#contact" className="btn-primary text-sm px-5 py-2">
             Hire Me
@@ -110,13 +110,13 @@ const Navbar = () => {
             className="p-2 text-foreground"
             aria-label="Toggle theme"
           >
-            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+            {theme === "dark" ? <HiMiniSun size={20} /> : <HiMiniMoon size={20} />}
           </button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="text-foreground p-2"
           >
-            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileOpen ? <HiMiniXMark size={24} /> : <HiMiniBars3 size={24} />}
           </button>
         </div>
       </div>
@@ -139,10 +139,10 @@ const Navbar = () => {
           ))}
           <div className="flex gap-4 pt-4 border-t border-border mt-2">
             <a href="https://github.com/Sauravambuskar" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
-              <Github size={20} />
+              <FaGithub size={20} />
             </a>
             <a href="https://www.linkedin.com/in/sauravambuskar/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
-              <Linkedin size={20} />
+              <FaLinkedinIn size={20} />
             </a>
           </div>
         </motion.div>
