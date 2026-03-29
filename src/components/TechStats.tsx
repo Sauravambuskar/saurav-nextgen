@@ -1,16 +1,15 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import { Server, GitBranch, Clock, Shield, Rocket, Activity, Database, Zap, Globe, Users, Code, CheckCircle } from "lucide-react";
 
 const stats = [
-  { icon: Rocket, value: 200, suffix: "+", label: "Successful Deployments", description: "Zero-downtime releases across production environments" },
-  { icon: Clock, value: 99.9, suffix: "%", label: "Uptime Achieved", description: "SLA compliance across all managed infrastructure" },
-  { icon: Server, value: 50, suffix: "+", label: "Servers Managed", description: "AWS EC2, EKS clusters, and Linux servers" },
-  { icon: GitBranch, value: 30, suffix: "+", label: "CI/CD Pipelines", description: "Jenkins, GitHub Actions, GitLab CI automations" },
-  { icon: Database, value: 60, suffix: "%", label: "Cost Reduction", description: "Infrastructure optimization & right-sizing" },
-  { icon: Globe, value: 17, suffix: "+", label: "Live Projects", description: "Production websites across 5+ industries" },
-  { icon: Users, value: 10, suffix: "K+", label: "Users Served", description: "End users across all deployed platforms" },
-  { icon: CheckCircle, value: 100, suffix: "%", label: "Client Satisfaction", description: "Repeat clients and positive referrals" },
+  { emoji: "🚀", value: 200, suffix: "+", label: "Successful Deployments", description: "Zero-downtime releases across production environments" },
+  { emoji: "⏱️", value: 99.9, suffix: "%", label: "Uptime Achieved", description: "SLA compliance across all managed infrastructure" },
+  { emoji: "🖥️", value: 50, suffix: "+", label: "Servers Managed", description: "AWS EC2, EKS clusters, and Linux servers" },
+  { emoji: "🔄", value: 30, suffix: "+", label: "CI/CD Pipelines", description: "Jenkins, GitHub Actions, GitLab CI automations" },
+  { emoji: "💰", value: 60, suffix: "%", label: "Cost Reduction", description: "Infrastructure optimization & right-sizing" },
+  { emoji: "🌐", value: 17, suffix: "+", label: "Live Projects", description: "Production websites across 5+ industries" },
+  { emoji: "👥", value: 10, suffix: "K+", label: "Users Served", description: "End users across all deployed platforms" },
+  { emoji: "⭐", value: 100, suffix: "%", label: "Client Satisfaction", description: "Repeat clients and positive referrals" },
 ];
 
 const AnimatedCounter = ({ target, suffix, inView }: { target: number; suffix: string; inView: boolean }) => {
@@ -76,8 +75,7 @@ const TechStats = () => {
 
               <div className="relative z-10">
                 <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-2 sm:mb-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                  <stat.icon size={18} className="text-primary sm:hidden" />
-                  <stat.icon size={24} className="text-primary hidden sm:block" />
+                  <span className="text-lg sm:text-2xl">{stat.emoji}</span>
                 </div>
                 <div className="text-xl sm:text-3xl md:text-4xl font-extrabold gradient-text mb-0.5 sm:mb-1">
                   <AnimatedCounter target={stat.value} suffix={stat.suffix} inView={inView} />
