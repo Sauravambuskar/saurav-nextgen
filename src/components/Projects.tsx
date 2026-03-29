@@ -20,30 +20,27 @@ const industryIcons: Record<string, React.ElementType> = {
 };
 
 const featured = [
-  { title: "OSTREE", tag: "E-commerce", url: "https://ostree.in/", desc: "Scalable fashion platform with high availability and performance optimization." },
-  { title: "SJA MICRO FINANCE", tag: "FinTech", url: "https://sjamicrofoundation.com/", desc: "Secure microfinance platform with reliable infrastructure." },
-  { title: "STUDDY LMS", tag: "EdTech SaaS", url: "https://studdyy.vercel.app/", desc: "Learning platform used by 5000+ students." },
-  { title: "ADVANCE FMS", tag: "Enterprise", url: "https://advancefms.in/", desc: "Facility management digital platform." },
-  { title: "TRUVARA EXIM", tag: "Import/Export", url: "https://truvaraaexim.com/", desc: "Global trade platform improving visibility." },
-  { title: "LIMAYE EYE CARE", tag: "Healthcare", url: "https://limayeeyehospital.com/", desc: "Patient-focused healthcare platform." },
+  { title: "OSTREE", tag: "E-commerce", url: "https://ostree.in/", desc: "Scalable fashion platform with high availability and performance optimization.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-324-1024x576.png" },
+  { title: "SJA MICRO FINANCE", tag: "FinTech", url: "https://sjamicrofoundation.com/", desc: "Secure microfinance platform with reliable infrastructure.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-327-1024x576.png" },
+  { title: "STUDDY LMS", tag: "EdTech SaaS", url: "https://studdyy.vercel.app/", desc: "Learning platform used by 5000+ students.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-332-1024x576.png" },
+  { title: "ADVANCE FMS", tag: "Enterprise", url: "https://advancefms.in/", desc: "Facility management digital platform.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-326-1024x576.png" },
+  { title: "TRUVARA EXIM", tag: "Import/Export", url: "https://truvaraaexim.com/", desc: "Global trade platform improving visibility.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-330-1024x576.png" },
+  { title: "LIMAYE EYE CARE", tag: "Healthcare", url: "https://limayeeyehospital.com/", desc: "Patient-focused healthcare platform.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-338-1024x576.png" },
 ];
 
 const allProjects = [
-  { title: "ADVANCED GROUP", tag: "Business", url: "https://theadvancedgroup.in/", desc: "Corporate group digital presence." },
-  { title: "JYOTI CLEANING", tag: "Services", url: "https://jyotishine.vercel.app/", desc: "Professional cleaning services platform." },
-  { title: "TRIVENI GAURAKSHAN", tag: "NGO", url: "https://trivenigaurakshan.org/", desc: "Non-profit organization platform." },
-  { title: "DR B P DESHPANDE", tag: "Healthcare", url: "https://drbipindeshpande.com/", desc: "Doctor's professional website." },
-  { title: "ROYAL RESIDENCY", tag: "Hospitality", url: "https://hotelroyalenclave.com/", desc: "Hotel booking and information platform." },
-  { title: "SP RESIDENCY", tag: "Hospitality", url: "https://spresidencyhostel.com/", desc: "Hostel management platform." },
-  { title: "LIMSON ENGINEERING", tag: "Engineering", url: "https://limson.co.in/", desc: "Engineering solutions company website." },
-  { title: "GLOBAL PACKAGING", tag: "Manufacturing", url: "https://globalpkg.net/", desc: "Industrial packaging solutions platform." },
-  { title: "SJA LAND DEVELOPERS", tag: "Real Estate", url: "https://sjalanddevelopers.com/", desc: "Land development company website." },
-  { title: "SJA LANDS", tag: "Real Estate", url: "https://www.sjalands.in/", desc: "Real estate listings platform." },
-  { title: "AKASH ENTERPRISES", tag: "Signage", url: "https://akashsignage.vercel.app/", desc: "Signage manufacturing company." },
+  { title: "ADVANCED GROUP", tag: "Business", url: "https://theadvancedgroup.in/", desc: "Corporate group digital presence.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-2026-01-06-135414-1024x576.png" },
+  { title: "JYOTI CLEANING", tag: "Services", url: "https://jyotishine.vercel.app/", desc: "Professional cleaning services platform.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-331-1024x576.png" },
+  { title: "TRIVENI GAURAKSHAN", tag: "NGO", url: "https://trivenigaurakshan.org/", desc: "Non-profit organization platform.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-333.png" },
+  { title: "DR B P DESHPANDE", tag: "Healthcare", url: "https://drbipindeshpande.com/", desc: "Doctor's professional website.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-334-1024x576.png" },
+  { title: "ROYAL RESIDENCY", tag: "Hospitality", url: "https://hotelroyalenclave.com/", desc: "Hotel booking and information platform.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-335.png" },
+  { title: "SP RESIDENCY", tag: "Hospitality", url: "https://spresidencyhostel.com/", desc: "Hostel management platform.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-336-1024x576.png" },
+  { title: "LIMSON ENGINEERING", tag: "Engineering", url: "https://limson.co.in/", desc: "Engineering solutions company website.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-337.png" },
+  { title: "GLOBAL PACKAGING", tag: "Manufacturing", url: "https://globalpkg.net/", desc: "Industrial packaging solutions platform.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-339.png" },
+  { title: "SJA LAND DEVELOPERS", tag: "Real Estate", url: "https://sjalanddevelopers.com/", desc: "Land development company website.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-327-1024x576.png" },
+  { title: "SJA LANDS", tag: "Real Estate", url: "https://www.sjalands.in/", desc: "Real estate listings platform.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-327-1024x576.png" },
+  { title: "AKASH ENTERPRISES", tag: "Signage", url: "https://akashsignage.vercel.app/", desc: "Signage manufacturing company.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-331-1024x576.png" },
 ];
-
-const getScreenshotUrl = (url: string) =>
-  `https://image.thum.io/get/width/600/crop/400/noanimate/${url}`;
 
 const ProjectCard = ({ project, index }: { project: typeof featured[0]; index: number }) => {
   const Icon = industryIcons[project.tag] || Building2;
