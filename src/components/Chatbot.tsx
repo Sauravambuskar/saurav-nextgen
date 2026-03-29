@@ -23,9 +23,13 @@ const playBubbleSound = () => {
   } catch {}
 };
 
+const playDoubleSound = () => {
+  playBubbleSound();
+  setTimeout(() => playBubbleSound(), 600);
+};
+
 const Chatbot = () => {
   const [open, setOpen] = useState(false);
-  const hasPlayedSound = useRef(false);
   const [messages, setMessages] = useState<Msg[]>([
     { role: "assistant", content: "Hey! 👋 I'm Saurav's AI assistant. Ask me anything about his skills, projects, or services!" },
   ]);
@@ -34,7 +38,6 @@ const Chatbot = () => {
   const [nudgeText, setNudgeText] = useState("");
   const [showNudge, setShowNudge] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const nudgeInterval = useRef<ReturnType<typeof setInterval>>();
 
   // Auto-scroll
   useEffect(() => {
@@ -43,28 +46,47 @@ const Chatbot = () => {
     }
   }, [messages]);
 
-  // Nudge bubble to attract visitors
+  // Sound + nudge pattern: 2 sounds at 3s, then every 10s with 2 sounds
   useEffect(() => {
     if (open) {
       setShowNudge(false);
       return;
     }
+
+    const timers: ReturnType<typeof setTimeout>[] = [];
     let idx = 0;
-    const show = () => {
+
+    const showNudgeWithSound = () => {
       setNudgeText(GREETING_MESSAGES[idx % GREETING_MESSAGES.length]);
       setShowNudge(true);
-      if (!hasPlayedSound.current) {
-        playBubbleSound();
-        hasPlayedSound.current = true;
-      }
+      playDoubleSound();
       idx++;
-      setTimeout(() => setShowNudge(false), 4000);
+      const hideTimer = setTimeout(() => setShowNudge(false), 4000);
+      timers.push(hideTimer);
     };
-    const timer = setTimeout(show, 3000);
-    nudgeInterval.current = setInterval(show, 12000);
+
+    // First nudge at 3s
+    const first = setTimeout(() => {
+      showNudgeWithSound();
+      // Second nudge at 3s after first (6s total)
+      const second = setTimeout(() => {
+        showNudgeWithSound();
+        // Then every 10s, show 2 nudges with 3s gap
+        const recurring = setInterval(() => {
+          showNudgeWithSound();
+          const secondInCycle = setTimeout(() => {
+            showNudgeWithSound();
+          }, 3000);
+          timers.push(secondInCycle);
+        }, 10000);
+        timers.push(recurring as unknown as ReturnType<typeof setTimeout>);
+      }, 3000);
+      timers.push(second);
+    }, 3000);
+    timers.push(first);
+
     return () => {
-      clearTimeout(timer);
-      clearInterval(nudgeInterval.current);
+      timers.forEach((t) => clearTimeout(t));
     };
   }, [open]);
 
@@ -172,7 +194,7 @@ const Chatbot = () => {
         )}
       </motion.button>
 
-      {/* Chat window */}
+      {/* Chat window - fullscreen on mobile, floating on desktop */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -180,10 +202,12 @@ const Chatbot = () => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="fixed bottom-20 sm:bottom-24 right-3 sm:right-6 z-[999] w-[calc(100vw-24px)] sm:w-[380px] h-[480px] sm:h-[520px] bg-card border border-border rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+            className="fixed z-[999] bg-card border border-border shadow-2xl flex flex-col overflow-hidden
+              inset-0 rounded-none
+              sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[380px] sm:h-[520px] sm:rounded-2xl"
           >
             {/* Header */}
-            <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-card">
+            <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-card safe-area-top">
               <div className="relative">
                 <img src={profileImg} alt="Saurav" className="w-9 h-9 rounded-full object-cover object-top border border-primary/30" />
                 <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-card" />
@@ -235,7 +259,7 @@ const Chatbot = () => {
                 e.preventDefault();
                 sendMessage();
               }}
-              className="flex items-center gap-2 px-3 py-3 border-t border-border bg-card"
+              className="flex items-center gap-2 px-3 py-3 border-t border-border bg-card safe-area-bottom"
             >
               <input
                 type="text"
