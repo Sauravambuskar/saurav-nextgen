@@ -3,7 +3,9 @@ import { useRef } from "react";
 import { Briefcase } from "lucide-react";
 
 const getIconUrl = (slug: string) =>
-  `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-original.svg`;
+  slug === "amazonwebservices"
+    ? `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg`
+    : `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-original.svg`;
 
 const experiences = [
   {

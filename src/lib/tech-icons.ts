@@ -49,7 +49,9 @@ const techIcons: Record<string, string> = {
 export const getDevIconUrl = (tech: string, theme: "dark" | "light" = "dark"): string => {
   const slug = techIcons[tech];
   if (!slug) return "";
-  // Use the plain or original variant
+  if (slug === "amazonwebservices") {
+    return `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg`;
+  }
   return `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-original.svg`;
 };
 

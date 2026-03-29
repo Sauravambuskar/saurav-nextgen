@@ -2,7 +2,9 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const getIconUrl = (slug: string) =>
-  `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-original.svg`;
+  slug === "amazonwebservices"
+    ? `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg`
+    : `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-original.svg`;
 
 const categories = [
   {

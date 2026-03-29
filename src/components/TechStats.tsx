@@ -101,10 +101,21 @@ const TechStats = () => {
             <p className="text-[10px] sm:text-xs text-muted-foreground">The tech stack behind these results</p>
           </div>
           <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center">
-            {["amazonwebservices", "docker", "kubernetes", "terraform", "jenkins", "prometheus", "grafana", "nginx", "python", "linux"].map((slug) => (
+            {[
+              { slug: "amazonwebservices", variant: "original-wordmark" },
+              { slug: "docker", variant: "original" },
+              { slug: "kubernetes", variant: "original" },
+              { slug: "terraform", variant: "original" },
+              { slug: "jenkins", variant: "original" },
+              { slug: "prometheus", variant: "original" },
+              { slug: "grafana", variant: "original" },
+              { slug: "nginx", variant: "original" },
+              { slug: "python", variant: "original" },
+              { slug: "linux", variant: "original" },
+            ].map(({ slug, variant }) => (
               <img
                 key={slug}
-                src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-original.svg`}
+                src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-${variant}.svg`}
                 alt={slug}
                 className="w-5 h-5 sm:w-7 sm:h-7 object-contain opacity-50 hover:opacity-100 hover:scale-125 transition-all cursor-pointer"
                 loading="lazy"

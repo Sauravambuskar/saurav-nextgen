@@ -4,7 +4,7 @@ import { GraduationCap, Award, CheckCircle, BookOpen } from "lucide-react";
 
 const certifications = [
   { name: "PMP (PMI Certified)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" },
-  { name: "Six Sigma Certified", icon: "" },
+  { name: "Six Sigma Certified", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
   { name: "AWS DevOps Foundations", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
   { name: "AWS EC2 Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
 ];
@@ -82,9 +82,8 @@ const Education = () => {
                     {cert.icon ? (
                       <img src={cert.icon} alt={cert.name} className="w-4 h-4 sm:w-5 sm:h-5 object-contain" />
                     ) : (
-                      <CheckCircle size={14} className="text-primary sm:hidden" />
+                      <CheckCircle size={16} className="text-primary" />
                     )}
-                    {!cert.icon && <CheckCircle size={16} className="text-primary hidden sm:block" />}
                   </div>
                   <span className="text-sm sm:text-base font-medium">{cert.name}</span>
                 </motion.div>
