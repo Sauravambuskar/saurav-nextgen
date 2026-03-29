@@ -5,7 +5,9 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  /* Dark mode (default) */
+  :root,
+  .dark {
     --background: 240 12% 5%;
     --background-secondary: 240 14% 9%;
     --foreground: 0 0% 100%;
@@ -42,18 +44,58 @@
     --gradient-start: 25 95% 53%;
     --gradient-end: 33 100% 50%;
   }
+
+  /* Light mode */
+  .light {
+    --background: 0 0% 98%;
+    --background-secondary: 0 0% 95%;
+    --foreground: 240 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 10%;
+
+    --primary: 25 95% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 33 100% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 5% 85%;
+    --muted-foreground: 240 5% 40%;
+
+    --accent: 33 100% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 5% 85%;
+    --input: 240 5% 85%;
+    --ring: 25 95% 48%;
+
+    --glass-bg: 0 0% 100% / 0.6;
+    --glass-border: 240 5% 80%;
+    --gradient-start: 25 95% 48%;
+    --gradient-end: 33 100% 45%;
+  }
 }
 
 @layer base {
   * {
     @apply border-border;
+    transition-property: background-color, border-color, color;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
   }
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto; /* GSAP handles smooth scroll */
   }
 }
 
@@ -67,7 +109,8 @@
   }
 
   .glass-card-hover {
-    @apply glass-card transition-all duration-500;
+    @apply glass-card;
+    transition: transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, background-color 0.4s ease;
   }
   .glass-card-hover:hover {
     transform: translateY(-4px);
@@ -98,7 +141,7 @@
 
   .btn-secondary {
     background: transparent;
-    color: white;
+    color: hsl(var(--foreground));
     border: 1px solid hsl(var(--glass-border));
     border-radius: 9999px;
     padding: 0.75rem 2rem;
@@ -116,6 +159,10 @@
     filter: blur(80px);
     opacity: 0.3;
     pointer-events: none;
+  }
+
+  .light .glow-orb {
+    opacity: 0.08;
   }
 
   .section-padding {

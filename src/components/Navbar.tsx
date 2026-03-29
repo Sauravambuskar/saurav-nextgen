@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Github, Linkedin, Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Github, Linkedin, Menu, X, Sun, Moon } from "lucide-react";
+import { useTheme } from "@/hooks/use-theme";
 
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
-  { label: "Experience", href: "#experience" },
+  { label: "Stats", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
@@ -14,6 +15,7 @@ const navLinks = [
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -49,7 +51,38 @@ const Navbar = () => {
           ))}
         </div>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-2">
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className="w-9 h-9 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all relative overflow-hidden"
+            aria-label="Toggle theme"
+          >
+            <AnimatePresence mode="wait">
+              {theme === "dark" ? (
+                <motion.div
+                  key="sun"
+                  initial={{ rotate: -90, scale: 0 }}
+                  animate={{ rotate: 0, scale: 1 }}
+                  exit={{ rotate: 90, scale: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Sun size={18} />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="moon"
+                  initial={{ rotate: 90, scale: 0 }}
+                  animate={{ rotate: 0, scale: 1 }}
+                  exit={{ rotate: -90, scale: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Moon size={18} />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </button>
+
           <a
             href="https://github.com/Sauravambuskar"
             target="_blank"
@@ -71,12 +104,21 @@ const Navbar = () => {
           </a>
         </div>
 
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-foreground p-2"
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <button
+            onClick={toggleTheme}
+            className="p-2 text-foreground"
+            aria-label="Toggle theme"
+          >
+            {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="text-foreground p-2"
+          >
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {mobileOpen && (
