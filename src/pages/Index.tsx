@@ -26,9 +26,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden relative">
       <EtheralShadow
-        color="hsl(var(--primary) / 0.04)"
-        animation={{ scale: 8, speed: 12 }}
-        noise={{ opacity: 0.02, scale: 2 }}
+        color="hsl(var(--primary) / 0.12)"
+        animation={{ scale: 25, speed: 30 }}
+        noise={{ opacity: 0.06, scale: 4 }}
       />
       <Navbar />
       <Hero />
