@@ -1,27 +1,25 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
-import { Server, GitBranch, Clock, Shield, Rocket, Activity, Database, Zap } from "lucide-react";
+import { Server, GitBranch, Clock, Shield, Rocket, Activity, Database, Zap, Globe, Users, Code, CheckCircle } from "lucide-react";
 
 const stats = [
-  { icon: Rocket, value: 200, suffix: "+", label: "Deployments Delivered", color: "text-primary" },
-  { icon: Clock, value: 99.9, suffix: "%", label: "Uptime Achieved", color: "text-green-400" },
-  { icon: Server, value: 50, suffix: "+", label: "Servers Managed", color: "text-primary" },
-  { icon: GitBranch, value: 30, suffix: "+", label: "CI/CD Pipelines Built", color: "text-secondary" },
-  { icon: Shield, value: 0, suffix: "Zero", label: "Security Breaches", color: "text-green-400", isZero: true },
-  { icon: Database, value: 60, suffix: "%", label: "Cost Reduction", color: "text-primary" },
-  { icon: Activity, value: 24, suffix: "/7", label: "Monitoring Coverage", color: "text-secondary" },
-  { icon: Zap, value: 5, suffix: "min", label: "Avg Deploy Time", color: "text-primary" },
+  { icon: Rocket, value: 200, suffix: "+", label: "Successful Deployments", description: "Zero-downtime releases across production environments" },
+  { icon: Clock, value: 99.9, suffix: "%", label: "Uptime Achieved", description: "SLA compliance across all managed infrastructure" },
+  { icon: Server, value: 50, suffix: "+", label: "Servers Managed", description: "AWS EC2, EKS clusters, and Linux servers" },
+  { icon: GitBranch, value: 30, suffix: "+", label: "CI/CD Pipelines", description: "Jenkins, GitHub Actions, GitLab CI automations" },
+  { icon: Database, value: 60, suffix: "%", label: "Cost Reduction", description: "Infrastructure optimization & right-sizing" },
+  { icon: Globe, value: 17, suffix: "+", label: "Live Projects", description: "Production websites across 5+ industries" },
+  { icon: Users, value: 10, suffix: "K+", label: "Users Served", description: "End users across all deployed platforms" },
+  { icon: CheckCircle, value: 100, suffix: "%", label: "Client Satisfaction", description: "Repeat clients and positive referrals" },
 ];
 
-const AnimatedCounter = ({ target, suffix, isZero, inView }: { target: number; suffix: string; isZero?: boolean; inView: boolean }) => {
+const AnimatedCounter = ({ target, suffix, inView }: { target: number; suffix: string; inView: boolean }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     if (!inView) return;
-    if (isZero) { setCount(0); return; }
-
     const duration = 2000;
-    const steps = 60;
+    const steps = 50;
     const increment = target / steps;
     let current = 0;
     const timer = setInterval(() => {
@@ -30,16 +28,11 @@ const AnimatedCounter = ({ target, suffix, isZero, inView }: { target: number; s
         setCount(target);
         clearInterval(timer);
       } else {
-        setCount(Math.floor(current * 10) / 10);
+        setCount(Number.isInteger(target) ? Math.floor(current) : Math.floor(current * 10) / 10);
       }
     }, duration / steps);
-
     return () => clearInterval(timer);
-  }, [inView, target, isZero]);
-
-  if (isZero) {
-    return <span>{inView ? "Zero" : "0"}</span>;
-  }
+  }, [inView, target]);
 
   const display = Number.isInteger(target) ? Math.floor(count) : count.toFixed(1);
   return <span>{display}{suffix}</span>;
@@ -60,17 +53,17 @@ const TechStats = () => {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 glass-card px-4 py-2 text-sm text-muted-foreground mb-4">
-            Impact & Results
+            📊 Real Results
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-            DevOps <span className="gradient-text">By The Numbers</span>
+            Impact & <span className="gradient-text">Results</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            Real metrics from 3+ years of building and managing production infrastructure.
+            Measurable outcomes from 3+ years of building, deploying, and managing production infrastructure across industries.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -79,44 +72,41 @@ const TechStats = () => {
               transition={{ delay: i * 0.08, duration: 0.5 }}
               className="glass-card-hover p-6 text-center group relative overflow-hidden"
             >
-              {/* Subtle gradient bg on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="relative z-10">
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
-                  <stat.icon size={22} className={stat.color} />
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300">
+                  <stat.icon size={24} className="text-primary" />
                 </div>
-                <div className={`text-3xl md:text-4xl font-extrabold mb-2 ${stat.color}`}>
-                  <AnimatedCounter
-                    target={stat.value}
-                    suffix={stat.suffix}
-                    isZero={stat.isZero}
-                    inView={inView}
-                  />
+                <div className="text-3xl md:text-4xl font-extrabold gradient-text mb-1">
+                  <AnimatedCounter target={stat.value} suffix={stat.suffix} inView={inView} />
                 </div>
-                <p className="text-sm text-muted-foreground font-medium">{stat.label}</p>
+                <p className="text-sm font-semibold text-foreground mb-1">{stat.label}</p>
+                <p className="text-xs text-muted-foreground leading-relaxed">{stat.description}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Tech logos banner */}
+        {/* Tools banner */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.8 }}
-          className="mt-16 glass-card p-6 flex flex-col md:flex-row items-center justify-between gap-6"
+          className="mt-12 glass-card p-6 flex flex-col md:flex-row items-center justify-between gap-6"
         >
-          <p className="text-sm text-muted-foreground">
-            Tools powering these results:
-          </p>
+          <div>
+            <p className="text-sm font-semibold text-foreground">Powered by industry-leading tools</p>
+            <p className="text-xs text-muted-foreground">The tech stack behind these results</p>
+          </div>
           <div className="flex items-center gap-4 flex-wrap justify-center">
-            {["amazonwebservices", "docker", "kubernetes", "terraform", "jenkins", "prometheus", "grafana", "nginx"].map((slug) => (
+            {["amazonwebservices", "docker", "kubernetes", "terraform", "jenkins", "prometheus", "grafana", "nginx", "python", "linux"].map((slug) => (
               <img
                 key={slug}
                 src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-original.svg`}
                 alt={slug}
                 className="w-7 h-7 object-contain opacity-50 hover:opacity-100 hover:scale-125 transition-all cursor-pointer"
+                loading="lazy"
               />
             ))}
           </div>
