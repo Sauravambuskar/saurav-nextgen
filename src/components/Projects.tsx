@@ -25,37 +25,53 @@ const allProjects = [
   { title: "AKASH ENTERPRISES", tag: "Signage", url: "https://akashsignage.vercel.app/", desc: "Signage manufacturing company." },
 ];
 
+const getScreenshotUrl = (url: string) =>
+  `https://image.thum.io/get/width/600/crop/400/noanimate/${url}`;
+
 const ProjectCard = ({ project, index }: { project: typeof featured[0]; index: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ delay: index * 0.08 }}
-    className="glass-card-hover p-6 group"
+    className="glass-card-hover overflow-hidden group"
   >
-    <div className="flex items-start justify-between mb-3">
-      <span className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20">
-        {project.tag}
-      </span>
+    {/* Preview thumbnail */}
+    <div className="relative h-48 overflow-hidden border-b border-border">
+      <img
+        src={getScreenshotUrl(project.url)}
+        alt={`${project.title} preview`}
+        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+        loading="lazy"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-60" />
       <a
         href={project.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-muted-foreground hover:text-primary transition-colors opacity-0 group-hover:opacity-100"
+        className="absolute inset-0 flex items-center justify-center bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
       >
-        <ExternalLink size={18} />
+        <span className="btn-primary text-sm px-5 py-2">View Live</span>
       </a>
     </div>
-    <h3 className="text-lg font-bold mb-2">{project.title}</h3>
-    <p className="text-sm text-muted-foreground mb-4">{project.desc}</p>
-    <a
-      href={project.url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-sm text-primary hover:text-primary/80 font-medium inline-flex items-center gap-1 transition-colors"
-    >
-      View Live <ExternalLink size={14} />
-    </a>
+
+    <div className="p-6">
+      <div className="flex items-start justify-between mb-3">
+        <span className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20">
+          {project.tag}
+        </span>
+        <a
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-muted-foreground hover:text-primary transition-colors"
+        >
+          <ExternalLink size={18} />
+        </a>
+      </div>
+      <h3 className="text-lg font-bold mb-2">{project.title}</h3>
+      <p className="text-sm text-muted-foreground">{project.desc}</p>
+    </div>
   </motion.div>
 );
 
