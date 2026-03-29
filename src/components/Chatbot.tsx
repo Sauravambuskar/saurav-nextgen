@@ -13,8 +13,19 @@ const GREETING_MESSAGES = [
   "💬 Got questions about my services?",
 ];
 
+const BUBBLE_SOUND_URL = "https://assets.mixkit.co/active_storage/sfx/2354/2354-preview.mp3";
+
+const playBubbleSound = () => {
+  try {
+    const audio = new Audio(BUBBLE_SOUND_URL);
+    audio.volume = 0.3;
+    audio.play().catch(() => {});
+  } catch {}
+};
+
 const Chatbot = () => {
   const [open, setOpen] = useState(false);
+  const hasPlayedSound = useRef(false);
   const [messages, setMessages] = useState<Msg[]>([
     { role: "assistant", content: "Hey! 👋 I'm Saurav's AI assistant. Ask me anything about his skills, projects, or services!" },
   ]);
@@ -42,6 +53,10 @@ const Chatbot = () => {
     const show = () => {
       setNudgeText(GREETING_MESSAGES[idx % GREETING_MESSAGES.length]);
       setShowNudge(true);
+      if (!hasPlayedSound.current) {
+        playBubbleSound();
+        hasPlayedSound.current = true;
+      }
       idx++;
       setTimeout(() => setShowNudge(false), 4000);
     };
