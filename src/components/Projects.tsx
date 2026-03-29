@@ -1,6 +1,23 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ShoppingCart, Landmark, GraduationCap, Building2, Ship, Stethoscope, Factory, Home, Heart, User, Hotel, Wrench, Package, MapPin } from "lucide-react";
+
+const industryIcons: Record<string, React.ElementType> = {
+  "E-commerce": ShoppingCart,
+  "FinTech": Landmark,
+  "EdTech SaaS": GraduationCap,
+  "Enterprise": Building2,
+  "Import/Export": Ship,
+  "Healthcare": Stethoscope,
+  "Business": Building2,
+  "Services": Wrench,
+  "NGO": Heart,
+  "Hospitality": Hotel,
+  "Engineering": Factory,
+  "Manufacturing": Package,
+  "Real Estate": MapPin,
+  "Signage": Factory,
+};
 
 const featured = [
   { title: "OSTREE", tag: "E-commerce", url: "https://ostree.in/", desc: "Scalable fashion platform with high availability and performance optimization." },
@@ -28,52 +45,59 @@ const allProjects = [
 const getScreenshotUrl = (url: string) =>
   `https://image.thum.io/get/width/600/crop/400/noanimate/${url}`;
 
-const ProjectCard = ({ project, index }: { project: typeof featured[0]; index: number }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ delay: index * 0.08 }}
-    className="glass-card-hover overflow-hidden group"
-  >
-    {/* Preview thumbnail */}
-    <div className="relative h-48 overflow-hidden border-b border-border">
-      <img
-        src={getScreenshotUrl(project.url)}
-        alt={`${project.title} preview`}
-        className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
-        loading="lazy"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-60" />
-      <a
-        href={project.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="absolute inset-0 flex items-center justify-center bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-      >
-        <span className="btn-primary text-sm px-5 py-2">View Live</span>
-      </a>
-    </div>
+const ProjectCard = ({ project, index }: { project: typeof featured[0]; index: number }) => {
+  const Icon = industryIcons[project.tag] || Building2;
 
-    <div className="p-6">
-      <div className="flex items-start justify-between mb-3">
-        <span className="px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20">
-          {project.tag}
-        </span>
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.08 }}
+      className="glass-card-hover overflow-hidden group"
+    >
+      {/* Preview thumbnail */}
+      <div className="relative h-48 overflow-hidden border-b border-border">
+        <img
+          src={getScreenshotUrl(project.url)}
+          alt={`${project.title} preview`}
+          className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+          loading="lazy"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent opacity-60" />
         <a
           href={project.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-muted-foreground hover:text-primary transition-colors"
+          className="absolute inset-0 flex items-center justify-center bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         >
-          <ExternalLink size={18} />
+          <span className="btn-primary text-sm px-5 py-2 inline-flex items-center gap-2">
+            <ExternalLink size={14} /> View Live
+          </span>
         </a>
       </div>
-      <h3 className="text-lg font-bold mb-2">{project.title}</h3>
-      <p className="text-sm text-muted-foreground">{project.desc}</p>
-    </div>
-  </motion.div>
-);
+
+      <div className="p-6">
+        <div className="flex items-start justify-between mb-3">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs rounded-full bg-primary/10 text-primary border border-primary/20">
+            <Icon size={12} />
+            {project.tag}
+          </span>
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-muted-foreground hover:text-primary transition-colors"
+          >
+            <ExternalLink size={18} />
+          </a>
+        </div>
+        <h3 className="text-lg font-bold mb-2">{project.title}</h3>
+        <p className="text-sm text-muted-foreground">{project.desc}</p>
+      </div>
+    </motion.div>
+  );
+};
 
 const Projects = () => {
   const ref = useRef(null);
@@ -89,6 +113,9 @@ const Projects = () => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-16"
         >
+          <div className="inline-flex items-center gap-2 glass-card px-4 py-2 text-sm text-muted-foreground mb-4">
+            Portfolio
+          </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             Featured <span className="gradient-text">Projects</span>
           </h2>

@@ -1,18 +1,33 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Container, Shield } from "lucide-react";
+
+const getIconUrl = (slug: string) =>
+  `https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-original.svg`;
 
 const devopsProjects = [
   {
     title: "Ecommerce CI/CD System",
-    icon: Container,
-    tech: ["Docker", "Kubernetes", "AWS EC2", "S3", "VPC", "Load Balancing", "CI/CD"],
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg",
+    tech: [
+      { name: "Docker", icon: "docker" },
+      { name: "Kubernetes", icon: "kubernetes" },
+      { name: "AWS EC2", icon: "amazonwebservices" },
+      { name: "S3", icon: "amazonwebservices" },
+      { name: "VPC", icon: "amazonwebservices" },
+      { name: "Jenkins", icon: "jenkins" },
+    ],
     desc: "End-to-end CI/CD pipeline for e-commerce platform with containerized microservices, auto-scaling, and zero-downtime deployments.",
   },
   {
     title: "Banking Application Deployment",
-    icon: Shield,
-    tech: ["AWS EC2", "RDS", "S3", "NGINX", "SSL", "CI/CD", "Monitoring"],
+    iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+    tech: [
+      { name: "AWS EC2", icon: "amazonwebservices" },
+      { name: "NGINX", icon: "nginx" },
+      { name: "Grafana", icon: "grafana" },
+      { name: "Terraform", icon: "terraform" },
+      { name: "Python", icon: "python" },
+    ],
     desc: "Secure banking application deployment with automated pipelines, SSL termination, database management, and comprehensive monitoring.",
   },
 ];
@@ -47,15 +62,21 @@ const DevOpsProjects = () => {
               transition={{ delay: i * 0.2 }}
               className="glass-card-hover p-8 group"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/20 transition-colors">
-                <proj.icon size={24} className="text-primary" />
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center p-2.5 group-hover:bg-primary/20 transition-colors">
+                  <img src={proj.iconUrl} alt={proj.title} className="w-9 h-9 object-contain" />
+                </div>
+                <h3 className="text-xl font-bold">{proj.title}</h3>
               </div>
-              <h3 className="text-xl font-bold mb-3">{proj.title}</h3>
               <p className="text-muted-foreground text-sm mb-6 leading-relaxed">{proj.desc}</p>
               <div className="flex flex-wrap gap-2">
                 {proj.tech.map((t) => (
-                  <span key={t} className="px-3 py-1 text-xs rounded-full bg-secondary/10 text-secondary border border-secondary/20">
-                    {t}
+                  <span
+                    key={t.name}
+                    className="inline-flex items-center gap-2 px-3 py-1.5 text-xs rounded-xl bg-secondary/10 text-foreground border border-secondary/15 hover:bg-secondary/20 transition-colors"
+                  >
+                    <img src={getIconUrl(t.icon)} alt={t.name} className="w-3.5 h-3.5 object-contain" />
+                    {t.name}
                   </span>
                 ))}
               </div>

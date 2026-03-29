@@ -51,16 +51,42 @@ const beams = [
   },
 ];
 
-const orangeGradientColors = {
-  start: "#F97316",
-  middle: "#EA580C",
-  end: "#FDBA74",
-};
+const orangeGradientColors = { start: "#F97316", middle: "#EA580C", end: "#FDBA74" };
+
+const floatingBadges = [
+  {
+    label: "AWS",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+    className: "absolute -top-2 -right-2 z-20",
+    animate: { y: [-10, 10, -10] },
+    duration: 4,
+  },
+  {
+    label: "Docker",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
+    className: "absolute -bottom-2 -left-2 z-20",
+    animate: { y: [10, -10, 10] },
+    duration: 5,
+  },
+  {
+    label: "K8s",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg",
+    className: "absolute top-1/2 -right-8 z-20",
+    animate: { y: [-8, 12, -8] },
+    duration: 4.5,
+  },
+  {
+    label: "Terraform",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg",
+    className: "absolute top-1/4 -left-6 z-20",
+    animate: { y: [8, -12, 8] },
+    duration: 5.5,
+  },
+];
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* PulseBeams background */}
       <div className="absolute inset-0 z-0 opacity-50">
         <PulseBeams
           beams={beams}
@@ -73,7 +99,6 @@ const Hero = () => {
         />
       </div>
 
-      {/* Glow orbs */}
       <div className="glow-orb w-[600px] h-[600px] bg-primary -top-60 -left-40 animate-pulse-glow opacity-20" />
       <div className="glow-orb w-[400px] h-[400px] bg-secondary -bottom-20 -right-20 animate-pulse-glow opacity-15" style={{ animationDelay: "2s" }} />
 
@@ -114,26 +139,28 @@ const Hero = () => {
                 Contact Me
               </a>
               <div className="flex items-center gap-2">
-                <a
-                  href="https://github.com/Sauravambuskar"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 glass-card rounded-full flex items-center justify-center hover:border-primary/30 hover:bg-primary/5 transition-all"
-                >
+                <a href="https://github.com/Sauravambuskar" target="_blank" rel="noopener noreferrer" className="w-12 h-12 glass-card rounded-full flex items-center justify-center hover:border-primary/30 hover:bg-primary/5 transition-all">
                   <Github size={20} />
                 </a>
-                <a
-                  href="https://www.linkedin.com/in/sauravambuskar/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 glass-card rounded-full flex items-center justify-center hover:border-primary/30 hover:bg-primary/5 transition-all"
-                >
+                <a href="https://www.linkedin.com/in/sauravambuskar/" target="_blank" rel="noopener noreferrer" className="w-12 h-12 glass-card rounded-full flex items-center justify-center hover:border-primary/30 hover:bg-primary/5 transition-all">
                   <Linkedin size={20} />
                 </a>
               </div>
             </div>
 
-            {/* Stats */}
+            {/* Tech logos strip */}
+            <div className="flex items-center gap-3 mb-10 opacity-50">
+              <span className="text-xs text-muted-foreground mr-2">Powered by</span>
+              {["amazonwebservices", "docker", "kubernetes", "terraform", "jenkins", "python"].map((slug) => (
+                <img
+                  key={slug}
+                  src={`https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/${slug}/${slug}-original.svg`}
+                  alt={slug}
+                  className="w-6 h-6 object-contain grayscale hover:grayscale-0 transition-all"
+                />
+              ))}
+            </div>
+
             <div className="flex gap-10">
               {[
                 { value: "3+", label: "Years Exp" },
@@ -161,39 +188,22 @@ const Hero = () => {
             className="relative flex justify-center"
           >
             <div className="relative">
-              {/* Outer ring glow */}
               <div className="absolute -inset-4 rounded-full bg-gradient-to-br from-primary/30 to-secondary/10 blur-2xl animate-pulse-glow" />
-              
               <div className="w-72 h-72 lg:w-[380px] lg:h-[380px] rounded-full overflow-hidden border-2 border-primary/30 relative z-10 shadow-2xl shadow-primary/10">
-                <img
-                  src={profileImg}
-                  alt="Saurav Ambuskar"
-                  className="w-full h-full object-cover object-top"
-                />
+                <img src={profileImg} alt="Saurav Ambuskar" className="w-full h-full object-cover object-top" />
               </div>
 
-              {/* Floating badges */}
-              <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="absolute -top-2 -right-2 glass-card px-4 py-2.5 text-sm font-semibold z-20 flex items-center gap-2"
-              >
-                <Cloud size={16} className="text-primary" /> AWS
-              </motion.div>
-              <motion.div
-                animate={{ y: [10, -10, 10] }}
-                transition={{ duration: 5, repeat: Infinity }}
-                className="absolute -bottom-2 -left-2 glass-card px-4 py-2.5 text-sm font-semibold z-20 flex items-center gap-2"
-              >
-                <Server size={16} className="text-primary" /> Docker
-              </motion.div>
-              <motion.div
-                animate={{ y: [-8, 12, -8] }}
-                transition={{ duration: 4.5, repeat: Infinity }}
-                className="absolute top-1/2 -right-8 glass-card px-4 py-2.5 text-sm font-semibold z-20 flex items-center gap-2"
-              >
-                <Terminal size={16} className="text-primary" /> K8s
-              </motion.div>
+              {floatingBadges.map((badge) => (
+                <motion.div
+                  key={badge.label}
+                  animate={badge.animate}
+                  transition={{ duration: badge.duration, repeat: Infinity }}
+                  className={`${badge.className} glass-card px-4 py-2.5 text-sm font-semibold flex items-center gap-2`}
+                >
+                  <img src={badge.icon} alt={badge.label} className="w-5 h-5 object-contain" />
+                  {badge.label}
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         </div>
