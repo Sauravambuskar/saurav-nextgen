@@ -58,7 +58,7 @@ const ProjectCard = ({ project, index }: { project: ProjectItem; index: number }
       {/* Preview thumbnail */}
       <div className="relative h-48 overflow-hidden border-b border-border">
         <img
-          src={getScreenshotUrl(project.url)}
+          src={project.thumb}
           alt={`${project.title} preview`}
           className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
           loading="lazy"
