@@ -259,7 +259,7 @@ const Chatbot = () => {
                 e.preventDefault();
                 sendMessage();
               }}
-              className="flex items-center gap-2 px-3 py-3 border-t border-border bg-card safe-area-bottom"
+              className="flex items-center gap-2 px-3 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] border-t border-border bg-card"
             >
               <input
                 type="text"
