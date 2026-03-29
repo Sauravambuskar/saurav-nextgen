@@ -86,9 +86,9 @@
 @layer base {
   * {
     @apply border-border;
-    transition-property: background-color, border-color, color;
-    transition-duration: 0.4s;
-    transition-timing-function: ease;
+  }
+  body, .glass-card, .glass-card-hover, nav, footer, section {
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.3s ease;
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;

@@ -11,12 +11,12 @@ export const useGSAPSmooth = () => {
     const handleAnchorClick = (e: Event) => {
       const target = e.currentTarget as HTMLAnchorElement;
       const href = target.getAttribute("href");
-      if (href?.startsWith("#")) {
+      if (href?.startsWith("#") && href.length > 1) {
         e.preventDefault();
         const el = document.querySelector(href);
         if (el) {
           gsap.to(window, {
-            duration: 1.2,
+            duration: 1,
             scrollTo: { y: el, offsetY: 80 },
             ease: "power3.inOut",
           });
@@ -24,47 +24,49 @@ export const useGSAPSmooth = () => {
       }
     };
 
-    const anchors = document.querySelectorAll('a[href^="#"]');
-    anchors.forEach((a) => a.addEventListener("click", handleAnchorClick));
+    // Use event delegation instead of attaching to every anchor
+    const handleClick = (e: MouseEvent) => {
+      const anchor = (e.target as HTMLElement).closest('a[href^="#"]');
+      if (anchor) {
+        handleAnchorClick.call(null, Object.assign(e, { currentTarget: anchor }));
+      }
+    };
+    document.addEventListener("click", handleClick);
 
-    // GSAP ScrollTrigger reveal animations for sections
-    const sections = document.querySelectorAll("section");
-    sections.forEach((section) => {
-      gsap.fromTo(
-        section,
-        { opacity: 0.3, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: section,
-            start: "top 85%",
-            end: "top 20%",
-            toggleActions: "play none none reverse",
+    // Batch ScrollTrigger creation with requestAnimationFrame
+    requestAnimationFrame(() => {
+      // Section reveals - lightweight
+      const sections = document.querySelectorAll("section");
+      sections.forEach((section) => {
+        ScrollTrigger.create({
+          trigger: section,
+          start: "top 90%",
+          onEnter: () => {
+            gsap.to(section, { opacity: 1, y: 0, duration: 0.8, ease: "power2.out" });
           },
-        }
-      );
-    });
+          once: true,
+        });
+        gsap.set(section, { opacity: 0.2, y: 30 });
+      });
 
-    // Parallax glow orbs
-    const orbs = document.querySelectorAll(".glow-orb");
-    orbs.forEach((orb) => {
-      gsap.to(orb, {
-        y: -80,
-        ease: "none",
-        scrollTrigger: {
-          trigger: orb.parentElement,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1.5,
-        },
+      // Parallax orbs - reduced count, lighter scrub
+      const orbs = document.querySelectorAll(".glow-orb");
+      orbs.forEach((orb) => {
+        gsap.to(orb, {
+          y: -60,
+          ease: "none",
+          scrollTrigger: {
+            trigger: orb.parentElement,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 2,
+          },
+        });
       });
     });
 
     return () => {
-      anchors.forEach((a) => a.removeEventListener("click", handleAnchorClick));
+      document.removeEventListener("click", handleClick);
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
