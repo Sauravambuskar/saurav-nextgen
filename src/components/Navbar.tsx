@@ -35,9 +35,9 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="text-2xl font-extrabold gradient-text tracking-tight">
-          SA<span className="text-foreground">.</span>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+        <a href="#" className="text-xl font-extrabold gradient-text tracking-tight">
+          Saurav<span className="text-foreground">.</span>
         </a>
 
         <div className="hidden md:flex items-center gap-1">
