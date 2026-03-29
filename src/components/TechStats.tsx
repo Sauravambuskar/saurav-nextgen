@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
 import { Server, GitBranch, Clock, Shield, Rocket, Activity, Database, Zap, Globe, Users, Code, CheckCircle } from "lucide-react";
 
 const stats = [
@@ -38,7 +38,7 @@ const AnimatedCounter = ({ target, suffix, inView }: { target: number; suffix: s
   return <span>{display}{suffix}</span>;
 };
 
-const TechStats = React.forwardRef<HTMLElement>((_, forwardedRef) => {
+const TechStats = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -115,8 +115,6 @@ const TechStats = React.forwardRef<HTMLElement>((_, forwardedRef) => {
       </div>
     </section>
   );
-});
-
-TechStats.displayName = "TechStats";
+};
 
 export default TechStats;
