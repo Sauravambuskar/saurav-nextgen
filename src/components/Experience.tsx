@@ -5,6 +5,7 @@ const experiences = [
   {
     company: "Quantum Clouds",
     role: "Associate DevOps Engineer",
+    period: "2022 – Present",
     points: [
       "Reduced deployment effort by 60%",
       "Automated infrastructure using Terraform",
@@ -16,6 +17,7 @@ const experiences = [
   {
     company: "WNS (Capgemini)",
     role: "Senior Operations Associate",
+    period: "2021 – 2022",
     points: [
       "L1/L2 incident management",
       "VMware environment support",
@@ -25,6 +27,7 @@ const experiences = [
   {
     company: "Corelearn",
     role: "System Support Engineer",
+    period: "2020 – 2021",
     points: [
       "Linux & Windows server management",
       "Troubleshooting and documentation",
@@ -38,14 +41,20 @@ const Experience = () => {
 
   return (
     <section id="experience" className="section-padding relative" ref={ref}>
-      <div className="max-w-4xl mx-auto px-6">
-        <motion.h2
+      <div className="glow-orb w-[300px] h-[300px] bg-secondary top-1/3 -right-20 animate-pulse-glow" />
+      <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-16"
+          className="text-center mb-16"
         >
-          Work <span className="gradient-text">Experience</span>
-        </motion.h2>
+          <div className="inline-flex items-center gap-2 glass-card px-4 py-2 text-sm text-muted-foreground mb-4">
+            Career Journey
+          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
+            Work <span className="gradient-text">Experience</span>
+          </h2>
+        </motion.div>
 
         <div className="relative">
           {/* Timeline line */}
@@ -62,12 +71,16 @@ const Experience = () => {
               } pl-12 md:pl-0`}
             >
               {/* Dot */}
-              <div className="absolute left-2.5 md:left-auto top-2 w-3 h-3 rounded-full bg-primary shadow-[0_0_12px_hsl(217_91%_60%/0.5)]"
+              <div
+                className="absolute left-2.5 md:left-auto top-2 w-3 h-3 rounded-full bg-primary shadow-[0_0_12px_hsl(25_95%_53%/0.5)]"
                 style={i % 2 === 0 ? { right: "-6.5px" } : { left: "-6.5px" }}
               />
 
               <div className="glass-card-hover p-6">
-                <h3 className="text-xl font-bold">{exp.company}</h3>
+                <div className="flex items-start justify-between mb-1">
+                  <h3 className="text-xl font-bold">{exp.company}</h3>
+                  <span className="text-xs text-muted-foreground whitespace-nowrap ml-2">{exp.period}</span>
+                </div>
                 <p className="text-primary text-sm font-medium mb-3">{exp.role}</p>
                 <ul className="space-y-2">
                   {exp.points.map((p) => (
