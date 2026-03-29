@@ -207,7 +207,7 @@ const Chatbot = () => {
               sm:inset-auto sm:bottom-24 sm:right-6 sm:w-[380px] sm:h-[520px] sm:rounded-2xl"
           >
             {/* Header */}
-            <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-card safe-area-top">
+            <div className="sticky top-0 z-10 flex items-center gap-3 px-4 py-3 border-b border-border bg-card safe-area-top">
               <div className="relative">
                 <img src={profileImg} alt="Saurav" className="w-9 h-9 rounded-full object-cover object-top border border-primary/30" />
                 <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-card" />
