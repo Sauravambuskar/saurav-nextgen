@@ -24,7 +24,12 @@ const Index = () => {
   useGSAPSmooth();
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden relative">
+      <EtheralShadow
+        color="hsl(var(--primary) / 0.04)"
+        animation={{ scale: 8, speed: 12 }}
+        noise={{ opacity: 0.02, scale: 2 }}
+      />
       <Navbar />
       <Hero />
       <Suspense fallback={<SectionFallback />}>
