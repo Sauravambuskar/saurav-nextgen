@@ -112,7 +112,7 @@ const TestimonialsColumn = ({
   );
 };
 
-const Testimonials = () => {
+const Testimonials = React.forwardRef<HTMLElement>((_, forwardedRef) => {
   return (
     <section id="testimonials" className="section-padding relative overflow-hidden">
       <div className="glow-orb w-[400px] h-[400px] bg-primary -top-40 right-0 animate-pulse-glow" />
@@ -143,6 +143,8 @@ const Testimonials = () => {
       </div>
     </section>
   );
-};
+});
+
+Testimonials.displayName = "Testimonials";
 
 export default Testimonials;

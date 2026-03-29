@@ -1,5 +1,5 @@
+import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
 import { GraduationCap, Award, CheckCircle, BookOpen } from "lucide-react";
 
 const certifications = [
@@ -9,7 +9,7 @@ const certifications = [
   { name: "AWS EC2 Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
 ];
 
-const Education = () => {
+const Education = React.forwardRef<HTMLElement>((_, forwardedRef) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -95,6 +95,8 @@ const Education = () => {
       </div>
     </section>
   );
-};
+});
+
+Education.displayName = "Education";
 
 export default Education;
