@@ -1,6 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Briefcase } from "lucide-react";
+import { HiMiniBriefcase } from "react-icons/hi2";
 
 const getIconUrl = (slug: string) =>
   slug === "amazonwebservices"
@@ -58,7 +58,7 @@ const Experience = () => {
           className="text-center mb-16"
         >
           <div className="inline-flex items-center gap-2 glass-card px-4 py-2 text-sm text-muted-foreground mb-4">
-            Career Journey
+            <HiMiniBriefcase className="text-primary" size={14} /> Career Journey
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">
             Work <span className="gradient-text">Experience</span>

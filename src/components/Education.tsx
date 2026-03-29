@@ -1,10 +1,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { GraduationCap, Award, CheckCircle, BookOpen } from "lucide-react";
+import { HiMiniAcademicCap, HiMiniTrophy, HiMiniBookOpen, HiMiniCheckBadge } from "react-icons/hi2";
 
 const certifications = [
   { name: "PMP (PMI Certified)", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jira/jira-original.svg" },
-  { name: "Six Sigma Certified", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" },
+  { name: "Six Sigma Certified", icon: "" },
   { name: "AWS DevOps Foundations", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
   { name: "AWS EC2 Cloud", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
 ];
@@ -23,7 +23,7 @@ const Education = () => {
           className="text-center mb-10 sm:mb-16"
         >
           <div className="inline-flex items-center gap-2 glass-card px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">
-            Qualifications
+            <HiMiniAcademicCap className="text-primary" size={14} /> Qualifications
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
             Education & <span className="gradient-text">Certifications</span>
@@ -37,15 +37,14 @@ const Education = () => {
           >
             <div className="flex items-center gap-2 sm:gap-3 mb-5 sm:mb-8">
               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center">
-                <GraduationCap className="text-primary" size={18} />
+                <HiMiniAcademicCap className="text-primary" size={20} />
               </div>
               <h3 className="text-xl sm:text-2xl font-bold">Education</h3>
             </div>
             <div className="glass-card-hover p-5 sm:p-8">
               <div className="flex items-start gap-3 sm:gap-4">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <BookOpen size={18} className="text-primary sm:hidden" />
-                  <BookOpen size={22} className="text-primary hidden sm:block" />
+                  <HiMiniBookOpen className="text-primary" size={22} />
                 </div>
                 <div>
                   <h4 className="text-base sm:text-xl font-bold mb-1 sm:mb-2">Master of Computer Applications</h4>
@@ -65,7 +64,7 @@ const Education = () => {
           >
             <div className="flex items-center gap-2 sm:gap-3 mb-5 sm:mb-8">
               <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-secondary/10 flex items-center justify-center">
-                <Award className="text-secondary" size={18} />
+                <HiMiniTrophy className="text-secondary" size={20} />
               </div>
               <h3 className="text-xl sm:text-2xl font-bold">Certifications</h3>
             </div>
@@ -82,7 +81,7 @@ const Education = () => {
                     {cert.icon ? (
                       <img src={cert.icon} alt={cert.name} className="w-4 h-4 sm:w-5 sm:h-5 object-contain" />
                     ) : (
-                      <CheckCircle size={16} className="text-primary" />
+                      <HiMiniCheckBadge className="text-primary" size={18} />
                     )}
                   </div>
                   <span className="text-sm sm:text-base font-medium">{cert.name}</span>

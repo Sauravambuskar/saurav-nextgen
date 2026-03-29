@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { HiMiniPuzzlePiece, HiMiniSparkles } from "react-icons/hi2";
 
 const getIconUrl = (slug: string) =>
   slug === "amazonwebservices"
@@ -8,7 +9,7 @@ const getIconUrl = (slug: string) =>
 
 const categories = [
   {
-    title: "☁️ DevOps + Cloud + Automation",
+    title: "DevOps + Cloud + Automation",
     iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
     items: [
       { name: "AWS", icon: "amazonwebservices" },
@@ -27,7 +28,7 @@ const categories = [
     ],
   },
   {
-    title: "👨‍💻 Development + Web Tech",
+    title: "Development + Web Tech",
     iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     items: [
       { name: "Python", icon: "python" },
@@ -44,7 +45,7 @@ const categories = [
     ],
   },
   {
-    title: "🎨 Platforms + Creativity",
+    title: "Platforms + Creativity",
     iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
     items: [
       { name: "Figma", icon: "figma" },
@@ -82,7 +83,7 @@ const Skills = () => {
           className="text-center mb-10 sm:mb-16"
         >
           <div className="inline-flex items-center gap-2 glass-card px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">
-            🧩 Tech Playground 🎮
+            <HiMiniPuzzlePiece className="text-primary" size={14} /> Tech Playground
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
             Skills & <span className="gradient-text">Technologies</span>
@@ -131,7 +132,9 @@ const Skills = () => {
           transition={{ delay: 0.5 }}
           className="glass-card p-4 sm:p-6 text-center"
         >
-          <p className="text-xs sm:text-sm text-muted-foreground mb-2 sm:mb-3 font-medium">💡 Also experienced with:</p>
+          <p className="text-xs sm:text-sm text-muted-foreground mb-2 sm:mb-3 font-medium inline-flex items-center gap-1.5">
+            <HiMiniSparkles className="text-secondary" size={14} /> Also experienced with:
+          </p>
           <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2">
             {extraSkills.map((skill) => (
               <span

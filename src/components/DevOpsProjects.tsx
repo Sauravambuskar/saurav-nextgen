@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { HiMiniServerStack } from "react-icons/hi2";
 
 const getIconUrl = (slug: string) =>
   slug === "amazonwebservices"
@@ -48,7 +49,7 @@ const DevOpsProjects = () => {
           className="text-center mb-10 sm:mb-16"
         >
           <div className="inline-flex items-center gap-2 glass-card px-3 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">
-            Infrastructure
+            <HiMiniServerStack className="text-primary" size={14} /> Infrastructure
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">
             DevOps <span className="gradient-text">Architecture</span>
