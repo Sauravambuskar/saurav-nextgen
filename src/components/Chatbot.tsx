@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMiniXMark, HiMiniPaperAirplane } from "react-icons/hi2";
-import { supabase } from "@/integrations/supabase/client";
 import profileImg from "@/assets/profile.jpg";
 
 type Msg = { role: "user" | "assistant"; content: string };
