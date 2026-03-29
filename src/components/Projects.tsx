@@ -42,7 +42,9 @@ const allProjects = [
   { title: "AKASH ENTERPRISES", tag: "Signage", url: "https://akashsignage.vercel.app/", desc: "Signage manufacturing company.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-331-1024x576.png" },
 ];
 
-const ProjectCard = ({ project, index }: { project: typeof featured[0]; index: number }) => {
+type ProjectItem = { title: string; tag: string; url: string; desc: string; thumb: string };
+
+const ProjectCard = ({ project, index }: { project: ProjectItem; index: number }) => {
   const Icon = industryIcons[project.tag] || Building2;
 
   return (
