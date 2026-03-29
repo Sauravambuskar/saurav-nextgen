@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import { EtheralShadow } from "@/components/ui/etheral-shadow";
 import { useGSAPSmooth } from "@/hooks/use-gsap";
 
 const About = lazy(() => import("@/components/About"));
@@ -23,7 +24,12 @@ const Index = () => {
   useGSAPSmooth();
 
   return (
-    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden relative">
+      <EtheralShadow
+        color="hsl(var(--primary) / 0.04)"
+        animation={{ scale: 8, speed: 12 }}
+        noise={{ opacity: 0.02, scale: 2 }}
+      />
       <Navbar />
       <Hero />
       <Suspense fallback={<SectionFallback />}>
