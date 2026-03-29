@@ -178,12 +178,12 @@ const Chatbot = () => {
         )}
       </AnimatePresence>
 
-      {/* Floating button */}
+      {/* Floating button - hidden on mobile when chat is open */}
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
         onClick={() => setOpen(!open)}
-        className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[1000] w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 border-primary shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow"
+        className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[1000] w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden border-2 border-primary shadow-lg shadow-primary/30 hover:shadow-primary/50 transition-shadow ${open ? "hidden sm:flex" : "flex"}`}
       >
         {open ? (
           <div className="w-full h-full bg-primary flex items-center justify-center">
