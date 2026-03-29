@@ -95,8 +95,6 @@ const Education = () => {
       </div>
     </section>
   );
-});
-
-Education.displayName = "Education";
+};
 
 export default Education;
