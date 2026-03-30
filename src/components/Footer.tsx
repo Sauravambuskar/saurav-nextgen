@@ -1,12 +1,12 @@
 import { HiMiniHeart } from "react-icons/hi2";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn, FaBehance } from "react-icons/fa6";
 
 const Footer = () => (
   <footer className="py-8 sm:py-10 border-t border-border relative">
     <div className="max-w-7xl mx-auto px-4 sm:px-6">
       <div className="flex flex-col items-center gap-4 sm:gap-6 md:flex-row md:justify-between">
         <div className="flex flex-col items-center md:items-start gap-1">
-          <a href="#" className="text-xl font-extrabold gradient-text">SA.</a>
+          <a href="#" className="text-xl font-extrabold"><span className="gradient-text">Dev</span><span className="text-foreground">Ops</span><span className="text-muted-foreground">.</span></a>
           <p className="text-sm text-muted-foreground">
             DevOps Engineer · Cloud & Infrastructure
           </p>
@@ -32,6 +32,14 @@ const Footer = () => (
             className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all"
           >
             <FaLinkedinIn size={18} />
+          </a>
+          <a
+            href="https://www.behance.net/Saurava581"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-10 h-10 rounded-full glass-card flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/30 transition-all"
+          >
+            <FaBehance size={18} />
           </a>
         </div>
       </div>
