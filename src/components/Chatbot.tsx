@@ -1,7 +1,11 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMiniXMark, HiMiniPaperAirplane } from "react-icons/hi2";
+import { FaWhatsapp } from "react-icons/fa6";
 import profileImg from "@/assets/profile.jpg";
+
+const WHATSAPP_NUMBER = "918830306901";
+const WHATSAPP_MARKER = "[WHATSAPP_CONNECT]";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
