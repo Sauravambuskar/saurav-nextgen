@@ -17,6 +17,10 @@ const industryIcons: Record<string, React.ElementType> = {
   "Manufacturing": Package,
   "Real Estate": MapPin,
   "Signage": Factory,
+  "Technology": Building2,
+  "Wellness": Heart,
+  "Digital Agency": Factory,
+  "Adventure": MapPin,
 };
 
 const featured = [
@@ -40,6 +44,12 @@ const allProjects = [
   { title: "SJA LAND DEVELOPERS", tag: "Real Estate", url: "https://sjalanddevelopers.com/", desc: "Land development company website.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-327-1024x576.png" },
   { title: "SJA LANDS", tag: "Real Estate", url: "https://www.sjalands.in/", desc: "Real estate listings platform.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-327-1024x576.png" },
   { title: "AKASH ENTERPRISES", tag: "Signage", url: "https://akashsignage.vercel.app/", desc: "Signage manufacturing company.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-331-1024x576.png" },
+  { title: "QUANTOM CLOUDS", tag: "Technology", url: "https://quantomclouds.vercel.app/", desc: "Cloud, data & AI engineering solutions platform.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-331-1024x576.png" },
+  { title: "DHARMA VOICE", tag: "Wellness", url: "https://dharma-voice.vercel.app/", desc: "AI-powered spiritual guidance from Bhagavad Gita.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-331-1024x576.png" },
+  { title: "THE OCD VOICE", tag: "Healthcare", url: "https://theocdvoice.vercel.app/", desc: "OCD recovery coaching and wellness platform.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-331-1024x576.png" },
+  { title: "IGNITE INDIANS", tag: "Digital Agency", url: "https://igniteindians.com/", desc: "Digital marketing and business growth agency.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-331-1024x576.png" },
+  { title: "DR MILIND BAPAT", tag: "Healthcare", url: "https://drmilindbapat.in/", desc: "Urology & andrology specialist practice website.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-331-1024x576.png" },
+  { title: "MOUNTAIN BREEZE", tag: "Adventure", url: "https://mountainbreeze.farm/", desc: "Villa and adventure experience company platform.", thumb: "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-331-1024x576.png" },
 ];
 
 type ProjectItem = { title: string; tag: string; url: string; desc: string; thumb: string };
