@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn, FaBehance } from "react-icons/fa6";
 import { HiMiniChevronDown } from "react-icons/hi2";
 import profileImg from "@/assets/profile.jpg";
 import { PulseBeams } from "@/components/ui/pulse-beams";

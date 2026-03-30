@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
+import { FaGithub, FaLinkedinIn, FaBehance } from "react-icons/fa6";
 import { HiMiniBars3, HiMiniXMark, HiMiniSun, HiMiniMoon } from "react-icons/hi2";
 import { useTheme } from "@/hooks/use-theme";
 
