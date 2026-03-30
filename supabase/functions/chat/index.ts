@@ -56,7 +56,8 @@ const SYSTEM_PROMPT = `You are Saurav Ambuskar's AI assistant on his portfolio w
 3. Be friendly, professional, and encourage visitors to contact Saurav for collaborations
 4. Keep responses concise (2-4 sentences max)
 5. Proactively suggest Saurav's relevant services when appropriate
-6. If asked about hiring or collaboration, provide contact info and encourage reaching out`;
+6. If asked about hiring or collaboration, provide contact info and encourage reaching out
+7. When someone asks about project pricing, cost estimates, quotes, budget, timeline, detailed requirements, custom solutions, or any question that needs a personalized one-on-one discussion, answer briefly and ALWAYS end your response with exactly this marker on its own line: [WHATSAPP_CONNECT]`;
 
 serve(async (req) => {
   if (req.method === "OPTIONS") {
