@@ -176,6 +176,9 @@ const Hero = () => {
                 <a href="https://www.linkedin.com/in/sauravambuskar/" target="_blank" rel="noopener noreferrer" className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 glass-card rounded-full flex items-center justify-center hover:border-primary/30 hover:bg-primary/5 transition-all">
                   <FaLinkedinIn size={18} />
                 </a>
+                <a href="https://www.behance.net/Saurava581" target="_blank" rel="noopener noreferrer" className="w-9 h-9 sm:w-10 sm:h-10 lg:w-12 lg:h-12 glass-card rounded-full flex items-center justify-center hover:border-primary/30 hover:bg-primary/5 transition-all">
+                  <FaBehance size={18} />
+                </a>
               </div>
             </div>
 

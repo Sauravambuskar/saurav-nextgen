@@ -99,6 +99,14 @@ const Navbar = () => {
           >
             <FaLinkedinIn size={18} />
           </a>
+          <a
+            href="https://www.behance.net/Saurava581"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-9 h-9 rounded-full flex items-center justify-center text-muted-foreground hover:text-foreground hover:bg-primary/10 transition-all"
+          >
+            <FaBehance size={18} />
+          </a>
           <a href="#contact" className="btn-primary text-sm px-5 py-2">
             Hire Me
           </a>
@@ -143,6 +151,9 @@ const Navbar = () => {
             </a>
             <a href="https://www.linkedin.com/in/sauravambuskar/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
               <FaLinkedinIn size={20} />
+            </a>
+            <a href="https://www.behance.net/Saurava581" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
+              <FaBehance size={20} />
             </a>
           </div>
         </motion.div>
