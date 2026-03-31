@@ -35,7 +35,7 @@ const caseStudies: Gallery4Item[] = [
     title: "Advance FMS – Enterprise Facility Management",
     description:
       "Digital transformation of facility management operations with a comprehensive enterprise platform streamlining workflows and reporting.",
-    href: "https://advancefms.in/",
+    href: "/case-study/advance-fms",
     image:
       "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-326-1024x576.png",
   },
