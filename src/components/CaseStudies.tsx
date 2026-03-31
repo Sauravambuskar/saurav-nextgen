@@ -17,7 +17,7 @@ const caseStudies: Gallery4Item[] = [
     title: "STUDDY LMS – EdTech Platform for 5000+ Students",
     description:
       "Developed a comprehensive learning management system powering education for thousands of students with real-time features and scalable architecture.",
-    href: "https://studdyy.vercel.app/",
+    href: "/case-study/studdy-lms",
     image:
       "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-332-1024x576.png",
   },
