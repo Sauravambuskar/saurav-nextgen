@@ -8,7 +8,7 @@ const caseStudies: Gallery4Item[] = [
     title: "OSTREE – Scalable E-commerce Fashion Platform",
     description:
       "Built a high-availability fashion e-commerce platform with performance optimization, handling thousands of daily transactions seamlessly.",
-    href: "https://ostree.in/",
+    href: "/case-study/ostree",
     image:
       "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-324-1024x576.png",
   },
@@ -17,7 +17,7 @@ const caseStudies: Gallery4Item[] = [
     title: "STUDDY LMS – EdTech Platform for 5000+ Students",
     description:
       "Developed a comprehensive learning management system powering education for thousands of students with real-time features and scalable architecture.",
-    href: "https://studdyy.vercel.app/",
+    href: "/case-study/studdy-lms",
     image:
       "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-332-1024x576.png",
   },
@@ -26,7 +26,7 @@ const caseStudies: Gallery4Item[] = [
     title: "SJA Micro Finance – Secure FinTech Platform",
     description:
       "Engineered a secure microfinance platform with reliable infrastructure, enabling seamless financial operations for underserved communities.",
-    href: "https://sjamicrofoundation.com/",
+    href: "/case-study/sja-microfinance",
     image:
       "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-327-1024x576.png",
   },
@@ -35,7 +35,7 @@ const caseStudies: Gallery4Item[] = [
     title: "Advance FMS – Enterprise Facility Management",
     description:
       "Digital transformation of facility management operations with a comprehensive enterprise platform streamlining workflows and reporting.",
-    href: "https://advancefms.in/",
+    href: "/case-study/advance-fms",
     image:
       "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-326-1024x576.png",
   },
@@ -44,7 +44,7 @@ const caseStudies: Gallery4Item[] = [
     title: "Quantom Clouds – Cloud, Data & AI Solutions",
     description:
       "Built a modern platform showcasing cloud engineering, data solutions, and AI capabilities for enterprise clients.",
-    href: "https://quantomclouds.vercel.app/",
+    href: "/case-study/quantom-clouds",
     image: "/screenshots/quantomclouds.png",
   },
   {
@@ -52,7 +52,7 @@ const caseStudies: Gallery4Item[] = [
     title: "Limaye Eye Care – Healthcare Digital Platform",
     description:
       "Patient-focused healthcare platform with appointment management and comprehensive medical information architecture.",
-    href: "https://limayeeyehospital.com/",
+    href: "/case-study/limaye-eye-care",
     image:
       "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-338-1024x576.png",
   },

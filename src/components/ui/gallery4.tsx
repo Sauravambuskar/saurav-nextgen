@@ -2,6 +2,7 @@
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -109,10 +110,8 @@ const Gallery4 = ({
                 key={item.id}
                 className="pl-[20px] md:max-w-[452px]"
               >
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to={item.href}
                   className="group flex flex-col justify-between"
                 >
                   <div>
@@ -132,10 +131,10 @@ const Gallery4 = ({
                     </div>
                   </div>
                   <div className="flex items-center text-xs sm:text-sm font-medium text-primary group-hover:underline">
-                    View Project{" "}
+                    Read Case Study{" "}
                     <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
                   </div>
-                </a>
+                </Link>
               </CarouselItem>
             ))}
           </CarouselContent>
