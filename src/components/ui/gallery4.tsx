@@ -131,10 +131,10 @@ const Gallery4 = ({
                     </div>
                   </div>
                   <div className="flex items-center text-xs sm:text-sm font-medium text-primary group-hover:underline">
-                    View Project{" "}
+                    Read Case Study{" "}
                     <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
                   </div>
-                </a>
+                </Link>
               </CarouselItem>
             ))}
           </CarouselContent>
