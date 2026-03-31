@@ -1,209 +1,230 @@
-import { AnimatedTabs, type Tab } from "@/components/ui/animated-tabs";
-import {
-  Server,
-  Lightbulb,
-  Globe,
-  Smartphone,
-  Cloud,
-  Bot,
-  Rocket,
-  ArrowRight,
-  CheckCircle2,
-} from "lucide-react";
+import React from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import {
+  ArrowRight,
+  Bot,
+  CheckCircle2,
+  Cloud,
+  Globe,
+  Lightbulb,
+  Server,
+  Smartphone,
+  type LucideIcon,
+} from "lucide-react";
+import { AnimatedTabs, type Tab } from "@/components/ui/animated-tabs";
+import managedImage from "@/assets/service-managed.jpg";
+import consultingImage from "@/assets/service-consulting.jpg";
+import webImage from "@/assets/service-web.jpg";
+import mobileImage from "@/assets/service-mobile.jpg";
+import cloudImage from "@/assets/service-cloud.jpg";
+import aiImage from "@/assets/service-ai.jpg";
 
-const ServiceCard = ({
-  icon: Icon,
-  title,
-  description,
-  features,
-  image,
-}: {
-  icon: React.ElementType;
+type Service = {
+  id: string;
+  label: string;
   title: string;
   description: string;
   features: string[];
   image: string;
-}) => (
-  <div className="grid md:grid-cols-2 gap-8 items-center">
-    <div className="space-y-6">
-      <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center">
-        <Icon className="w-7 h-7 text-primary" />
-      </div>
-      <div>
-        <h3 className="text-2xl font-bold text-foreground mb-3">{title}</h3>
-        <p className="text-muted-foreground leading-relaxed">{description}</p>
-      </div>
-      <ul className="space-y-3">
-        {features.map((feature, i) => (
-          <li key={i} className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-            <span className="text-muted-foreground text-sm">{feature}</span>
-          </li>
-        ))}
-      </ul>
-      <a
-        href="#contact"
-        className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium text-sm transition-colors group"
-      >
-        Get Started
-        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-      </a>
-    </div>
-    <div className="relative rounded-2xl overflow-hidden border border-border aspect-[4/3]">
-      <img
-        src={image}
-        alt={title}
-        className="w-full h-full object-cover"
-        loading="lazy"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-    </div>
-  </div>
-);
+  icon: LucideIcon;
+};
 
-const serviceTabs: Tab[] = [
+const services: Service[] = [
   {
-    id: "managed",
+    id: "managed-services",
     label: "Managed Services",
-    content: (
-      <ServiceCard
-        icon={Server}
-        title="Managed Services"
-        description="End-to-end infrastructure management with 24/7 monitoring, automated scaling, and proactive incident response to keep your systems running flawlessly."
-        features={[
-          "24/7 infrastructure monitoring & alerting",
-          "Automated scaling and load balancing",
-          "Disaster recovery & backup management",
-          "Performance optimization & cost reduction",
-        ]}
-        image="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=80"
-      />
-    ),
+    title: "Managed Services",
+    description:
+      "Reliable end-to-end infrastructure management with proactive monitoring, automation, and ongoing optimization to keep your systems stable and fast.",
+    features: [
+      "24/7 monitoring, alerting, and incident response",
+      "Automated scaling and uptime optimization",
+      "Backup, disaster recovery, and maintenance planning",
+      "Cost control and performance tuning for production workloads",
+    ],
+    image: managedImage,
+    icon: Server,
   },
   {
-    id: "consulting",
+    id: "it-consulting",
     label: "IT Consulting",
-    content: (
-      <ServiceCard
-        icon={Lightbulb}
-        title="IT Consulting & Advisory"
-        description="Strategic technology consulting to align your IT infrastructure with business goals. From architecture reviews to digital transformation roadmaps."
-        features={[
-          "Technology stack assessment & recommendations",
-          "Cloud migration strategy & planning",
-          "Security audits & compliance advisory",
-          "Digital transformation roadmaps",
-        ]}
-        image="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80"
-      />
-    ),
+    title: "IT Consulting & Advisory",
+    description:
+      "Strategic guidance to align technology decisions with business goals, from architecture reviews and migration planning to long-term digital transformation.",
+    features: [
+      "Architecture review and roadmap planning",
+      "Cloud adoption and modernization consulting",
+      "Security, risk, and process improvement guidance",
+      "Scalable technical decisions for growing teams",
+    ],
+    image: consultingImage,
+    icon: Lightbulb,
   },
   {
-    id: "web",
+    id: "web-development",
     label: "Web Development",
-    content: (
-      <ServiceCard
-        icon={Globe}
-        title="Web Development"
-        description="High-performance web applications built with modern frameworks. From responsive landing pages to complex enterprise platforms with seamless user experiences."
-        features={[
-          "React, Next.js & modern frontend frameworks",
-          "Responsive design & cross-browser compatibility",
-          "API development & third-party integrations",
-          "Performance optimization & SEO best practices",
-        ]}
-        image="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80"
-      />
-    ),
+    title: "Web Development",
+    description:
+      "Modern, high-performance web experiences built for speed, usability, and growth—from polished landing pages to full business platforms.",
+    features: [
+      "Responsive websites and custom web apps",
+      "Clean frontend architecture with modern frameworks",
+      "API integrations and business workflow automation",
+      "SEO-aware, fast-loading user experiences",
+    ],
+    image: webImage,
+    icon: Globe,
   },
   {
-    id: "mobile",
+    id: "mobile-development",
     label: "Mobile Apps",
-    content: (
-      <ServiceCard
-        icon={Smartphone}
-        title="Mobile APP Development"
-        description="Native and cross-platform mobile applications that deliver exceptional user experiences. From concept to deployment on App Store and Google Play."
-        features={[
-          "React Native & Flutter cross-platform apps",
-          "Native iOS & Android development",
-          "Push notifications & real-time features",
-          "App Store optimization & deployment",
-        ]}
-        image="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80"
-      />
-    ),
+    title: "Mobile APP Development",
+    description:
+      "Mobile products designed for real users with smooth performance, thoughtful UX, and practical integrations for startups and established businesses.",
+    features: [
+      "Cross-platform app development for faster delivery",
+      "Modern UI systems and intuitive user journeys",
+      "Real-time features, notifications, and API connectivity",
+      "Launch-ready builds for testing and growth",
+    ],
+    image: mobileImage,
+    icon: Smartphone,
   },
   {
-    id: "cloud",
+    id: "cloud-services",
     label: "Cloud Services",
-    content: (
-      <ServiceCard
-        icon={Cloud}
-        title="Cloud Services"
-        description="Comprehensive cloud solutions spanning AWS, Azure, and GCP. Infrastructure as Code, containerization, and CI/CD pipelines for modern cloud-native architectures."
-        features={[
-          "Multi-cloud architecture (AWS, Azure, GCP)",
-          "Kubernetes & Docker containerization",
-          "CI/CD pipeline setup & automation",
-          "Infrastructure as Code (Terraform, Pulumi)",
-        ]}
-        image="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80"
-      />
-    ),
+    title: "Cloud Services",
+    description:
+      "Cloud-native systems designed for scale, resilience, and maintainability using automation, containerization, and deployment best practices.",
+    features: [
+      "Cloud architecture across AWS, Azure, or GCP",
+      "Containers, orchestration, and deployment pipelines",
+      "Infrastructure as Code for repeatable environments",
+      "Security-first setup for production-grade systems",
+    ],
+    image: cloudImage,
+    icon: Cloud,
   },
   {
-    id: "ai",
+    id: "ai-prototyping",
     label: "AI Prototyping",
-    content: (
-      <ServiceCard
-        icon={Bot}
-        title="AI Application Prototyping & MVP"
-        description="Rapid prototyping of AI-powered applications. From chatbots and recommendation engines to computer vision solutions — validated MVPs built to test and iterate fast."
-        features={[
-          "LLM integration & custom AI chatbots",
-          "Computer vision & image processing MVPs",
-          "Recommendation engines & predictive models",
-          "Rapid MVP development with 2-4 week sprints",
-        ]}
-        image="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80"
-      />
-    ),
+    title: "AI Application Prototyping & MVP",
+    description:
+      "Fast AI product prototyping to validate ideas quickly, whether you need copilots, chat interfaces, internal tools, or intelligent MVP experiences.",
+    features: [
+      "Rapid MVPs for AI-enabled workflows",
+      "LLM chat, summarization, and assistant experiences",
+      "Prototype validation before major investment",
+      "Tight iteration cycles focused on business outcomes",
+    ],
+    image: aiImage,
+    icon: Bot,
   },
 ];
+
+const ServiceCard = React.forwardRef<HTMLDivElement, { service: Service }>(
+  ({ service }, ref) => {
+    const Icon = service.icon;
+
+    return (
+      <div ref={ref} className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center xl:gap-12">
+        <div className="order-2 space-y-6 lg:order-1">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+            <Icon className="h-4 w-4" />
+            <span>{service.label}</span>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+              {service.title}
+            </h3>
+            <p className="max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
+              {service.description}
+            </p>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-2">
+            {service.features.map((feature) => (
+              <div
+                key={feature}
+                className="flex items-start gap-3 rounded-2xl border border-border bg-background/70 p-4"
+              >
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                <p className="text-sm leading-6 text-muted-foreground">{feature}</p>
+              </div>
+            ))}
+          </div>
+
+          <a
+            href="#contact"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-colors hover:bg-primary/90"
+          >
+            Let’s Build It
+            <ArrowRight className="h-4 w-4" />
+          </a>
+        </div>
+
+        <div className="order-1 lg:order-2">
+          <div className="relative overflow-hidden rounded-[1.75rem] border border-border bg-muted/30">
+            <img
+              src={service.image}
+              alt={service.title}
+              className="aspect-[16/10] w-full object-cover"
+              loading="lazy"
+            />
+            <div className="absolute inset-x-0 bottom-0 p-4">
+              <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/85 px-3 py-2 text-xs font-medium text-foreground backdrop-blur-sm">
+                <Icon className="h-4 w-4 text-primary" />
+                <span>{service.label}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+);
+
+ServiceCard.displayName = "ServiceCard";
+
+const serviceTabs: Tab[] = services.map((service) => ({
+  id: service.id,
+  label: service.label,
+  icon: service.icon,
+  content: <ServiceCard service={service} />,
+}));
 
 const Services = () => {
   return (
     <section id="services" className="section-padding relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5 }}
+          className="mb-12 text-center sm:mb-16"
         >
-          <span className="text-primary text-sm font-semibold tracking-wider uppercase">
-            What I Offer
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground mt-3 mb-4">
+          <span className="text-sm font-semibold uppercase tracking-[0.28em] text-primary">
             Services
+          </span>
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            Solutions Built for Growth
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive technology solutions tailored to accelerate your
-            business growth — from infrastructure to intelligent applications.
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">
+            From infrastructure and consulting to cloud delivery and AI MVPs,
+            this section now uses a fully responsive animated tab experience that
+            feels smooth across desktop, tablet, and mobile.
           </p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
         >
-          <AnimatedTabs tabs={serviceTabs} defaultTab="managed" />
+          <AnimatedTabs tabs={serviceTabs} defaultTab="managed-services" />
         </motion.div>
       </div>
     </section>
