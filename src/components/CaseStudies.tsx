@@ -8,7 +8,7 @@ const caseStudies: Gallery4Item[] = [
     title: "OSTREE – Scalable E-commerce Fashion Platform",
     description:
       "Built a high-availability fashion e-commerce platform with performance optimization, handling thousands of daily transactions seamlessly.",
-    href: "https://ostree.in/",
+    href: "/case-study/ostree",
     image:
       "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-324-1024x576.png",
   },
