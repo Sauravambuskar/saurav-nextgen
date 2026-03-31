@@ -52,7 +52,7 @@ const caseStudies: Gallery4Item[] = [
     title: "Limaye Eye Care – Healthcare Digital Platform",
     description:
       "Patient-focused healthcare platform with appointment management and comprehensive medical information architecture.",
-    href: "https://limayeeyehospital.com/",
+    href: "/case-study/limaye-eye-care",
     image:
       "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-338-1024x576.png",
   },
