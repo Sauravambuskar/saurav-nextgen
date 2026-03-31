@@ -26,7 +26,7 @@ const caseStudies: Gallery4Item[] = [
     title: "SJA Micro Finance – Secure FinTech Platform",
     description:
       "Engineered a secure microfinance platform with reliable infrastructure, enabling seamless financial operations for underserved communities.",
-    href: "https://sjamicrofoundation.com/",
+    href: "/case-study/sja-microfinance",
     image:
       "https://igniteindians.com/wp-content/uploads/2026/01/Screenshot-327-1024x576.png",
   },
