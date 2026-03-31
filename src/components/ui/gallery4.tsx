@@ -110,10 +110,8 @@ const Gallery4 = ({
                 key={item.id}
                 className="pl-[20px] md:max-w-[452px]"
               >
-                <a
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to={item.href}
                   className="group flex flex-col justify-between"
                 >
                   <div>
