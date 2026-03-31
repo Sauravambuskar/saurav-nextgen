@@ -8,6 +8,7 @@ const About = lazy(() => import("@/components/About"));
 const Skills = lazy(() => import("@/components/Skills"));
 const TechStats = lazy(() => import("@/components/TechStats"));
 const Projects = lazy(() => import("@/components/Projects"));
+const CaseStudies = lazy(() => import("@/components/CaseStudies"));
 const DevOpsProjects = lazy(() => import("@/components/DevOpsProjects"));
 const Education = lazy(() => import("@/components/Education"));
 const Testimonials = lazy(() => import("@/components/ui/testimonial-v2"));
