@@ -1,6 +1,12 @@
 import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { HiMiniCpuChip } from "react-icons/hi2";
+import serviceWebDesign from "@/assets/service-web-design.jpg";
+import serviceMvp from "@/assets/service-mvp.jpg";
+import serviceLanding from "@/assets/service-landing.jpg";
+import serviceServer from "@/assets/service-server.jpg";
+import serviceCloud from "@/assets/service-cloud.jpg";
+import serviceAi from "@/assets/service-ai.jpg";
 
 const services = [
   {
