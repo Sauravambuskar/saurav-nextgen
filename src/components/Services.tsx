@@ -1,43 +1,43 @@
 import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { HiMiniCpuChip } from "react-icons/hi2";
+import serviceWebDesign from "@/assets/service-web-design.jpg";
+import serviceMvp from "@/assets/service-mvp.jpg";
+import serviceLanding from "@/assets/service-landing.jpg";
+import serviceServer from "@/assets/service-server.jpg";
+import serviceCloud from "@/assets/service-cloud.jpg";
+import serviceAi from "@/assets/service-ai.jpg";
 
 const services = [
   {
     id: 1,
     title: "Website Design & Development",
-    imageUrl:
-      "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1964&auto=format&fit=crop",
+    imageUrl: serviceWebDesign,
   },
   {
     id: 2,
     title: "Software MVP & Prototyping",
-    imageUrl:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: serviceMvp,
   },
   {
     id: 3,
     title: "Landing Page Design",
-    imageUrl:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+    imageUrl: serviceLanding,
   },
   {
     id: 4,
     title: "Server Deployment & Management",
-    imageUrl:
-      "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop",
+    imageUrl: serviceServer,
   },
   {
     id: 5,
     title: "Cloud & DevOps Solutions",
-    imageUrl:
-      "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: serviceCloud,
   },
   {
     id: 6,
     title: "AI & Automation Services",
-    imageUrl:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop",
+    imageUrl: serviceAi,
   },
 ];
 
