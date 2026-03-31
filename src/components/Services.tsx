@@ -171,6 +171,8 @@ const ServiceCard = React.forwardRef<HTMLDivElement, { service: Service }>(
               alt={service.title}
               className="aspect-[16/10] w-full object-cover"
               loading="lazy"
+              width={1024}
+              height={768}
             />
             <div className="absolute inset-x-0 bottom-0 p-4">
               <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/85 px-3 py-2 text-xs font-medium text-foreground backdrop-blur-sm">
