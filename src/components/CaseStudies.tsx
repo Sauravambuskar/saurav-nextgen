@@ -44,7 +44,7 @@ const caseStudies: Gallery4Item[] = [
     title: "Quantom Clouds – Cloud, Data & AI Solutions",
     description:
       "Built a modern platform showcasing cloud engineering, data solutions, and AI capabilities for enterprise clients.",
-    href: "https://quantomclouds.vercel.app/",
+    href: "/case-study/quantom-clouds",
     image: "/screenshots/quantomclouds.png",
   },
   {
