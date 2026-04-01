@@ -131,7 +131,7 @@ const Projects = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground">23+ production projects across multiple industries</p>
+          <p className="text-sm sm:text-base text-muted-foreground">24+ production projects across multiple industries</p>
         </motion.div>
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
