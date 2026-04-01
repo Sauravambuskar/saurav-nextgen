@@ -50,6 +50,7 @@ const allProjects = [
   { title: "IGNITE INDIANS", tag: "Digital Agency", url: "https://igniteindians.com/", desc: "Digital marketing and business growth agency.", thumb: "/screenshots/igniteindians.png" },
   { title: "DR MILIND BAPAT", tag: "Healthcare", url: "https://drmilindbapat.in/", desc: "Urology & andrology specialist practice website.", thumb: "/screenshots/drmilindbapat.png" },
   { title: "MOUNTAIN BREEZE", tag: "Adventure", url: "https://mountainbreeze.farm/", desc: "Villa and adventure experience company platform.", thumb: "/screenshots/mountainbreeze.png" },
+  { title: "ADVANCE SMT", tag: "EdTech SaaS", url: "https://advancesmt.com/", desc: "LMS platform for skill development and training management.", thumb: "/screenshots/advancesmt.png" },
 ];
 
 type ProjectItem = { title: string; tag: string; url: string; desc: string; thumb: string };
