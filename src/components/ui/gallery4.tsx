@@ -53,18 +53,7 @@ const Gallery4 = ({
     };
   }, [carouselApi]);
 
-  // Auto-scroll continuously
-  useEffect(() => {
-    if (!carouselApi) return;
-    const interval = setInterval(() => {
-      if (carouselApi.canScrollNext()) {
-        carouselApi.scrollNext();
-      } else {
-        carouselApi.scrollTo(0);
-      }
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [carouselApi]);
+  const autoScrollPlugin = AutoScroll({ speed: 0.5, stopOnInteraction: false, stopOnMouseEnter: true });
 
   return (
     <section className="py-16 sm:py-24">
