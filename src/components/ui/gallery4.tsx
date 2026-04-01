@@ -2,6 +2,7 @@
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import AutoScroll from "embla-carousel-auto-scroll";
 import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
@@ -52,18 +53,7 @@ const Gallery4 = ({
     };
   }, [carouselApi]);
 
-  // Auto-scroll continuously
-  useEffect(() => {
-    if (!carouselApi) return;
-    const interval = setInterval(() => {
-      if (carouselApi.canScrollNext()) {
-        carouselApi.scrollNext();
-      } else {
-        carouselApi.scrollTo(0);
-      }
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [carouselApi]);
+  const autoScrollPlugin = AutoScroll({ speed: 0.5, stopOnInteraction: false, stopOnMouseEnter: true });
 
   return (
     <section className="py-16 sm:py-24">
@@ -109,7 +99,9 @@ const Gallery4 = ({
       <div className="w-full">
         <Carousel
           setApi={setCarouselApi}
+          plugins={[autoScrollPlugin]}
           opts={{
+            loop: true,
             breakpoints: {
               "(max-width: 768px)": {
                 dragFree: true,
