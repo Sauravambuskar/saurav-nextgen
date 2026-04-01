@@ -53,7 +53,7 @@ const Gallery4 = ({
     };
   }, [carouselApi]);
 
-  const autoScrollPlugin = AutoScroll({ speed: 0.5, stopOnInteraction: false, stopOnMouseEnter: true });
+  const autoScrollPlugin = AutoScroll({ speed: 1, stopOnInteraction: false, stopOnMouseEnter: true });
 
   return (
     <section className="py-16 sm:py-24">
