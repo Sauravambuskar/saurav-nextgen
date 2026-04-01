@@ -52,6 +52,19 @@ const Gallery4 = ({
     };
   }, [carouselApi]);
 
+  // Auto-scroll continuously
+  useEffect(() => {
+    if (!carouselApi) return;
+    const interval = setInterval(() => {
+      if (carouselApi.canScrollNext()) {
+        carouselApi.scrollNext();
+      } else {
+        carouselApi.scrollTo(0);
+      }
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [carouselApi]);
+
   return (
     <section className="py-16 sm:py-24">
       <div className="container mx-auto px-4 sm:px-6">
