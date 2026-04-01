@@ -164,6 +164,13 @@ const caseStudies: Gallery4Item[] = [
     href: "/case-study/mountain-breeze",
     image: "/screenshots/mountainbreeze.png",
   },
+  {
+    id: "advance-smt",
+    title: "Advance SMT – LMS & Training Platform",
+    description: "Comprehensive learning management system for skill development, course management, and professional training delivery.",
+    href: "/case-study/advance-smt",
+    image: "/screenshots/advancesmt.png",
+  },
 ];
 
 const CaseStudies = () => {
