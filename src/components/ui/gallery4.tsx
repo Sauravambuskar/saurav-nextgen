@@ -2,6 +2,7 @@
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
+import AutoScroll from "embla-carousel-auto-scroll";
 import { Link } from "react-router-dom";
 
 import { Button } from "@/components/ui/button";
