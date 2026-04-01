@@ -642,6 +642,33 @@ const caseStudiesData: Record<string, CaseStudyData> = {
       { label: "Guest Satisfaction", value: "4.7/5" },
     ],
   },
+  "advance-smt": {
+    title: "ADVANCE SMT",
+    tag: "EdTech SaaS",
+    url: "https://advancesmt.com/",
+    image: "/screenshots/advancesmt.png",
+    overview:
+      "Advance SMT is a smart LMS platform by Advanced FMS and Security Services, designed to empower learning and skill development for their workforce across corporate offices, hospitals, schools, industries, and more with over 10 years of pan-India presence.",
+    challenge:
+      "The organization needed to train and upskill a large distributed workforce across multiple service verticals. Traditional classroom training was costly, inconsistent, and hard to track. There was no centralized system for course management, progress tracking, or certification.",
+    solution:
+      "Built a comprehensive LMS platform with course catalogs, video-based learning modules, progress dashboards, login/authentication for employees, and an admin dashboard for managing content and tracking learner performance across locations.",
+    techStack: ["WordPress", "LMS Plugin", "PHP", "MySQL", "WhatsApp API", "Responsive Design"],
+    keyFeatures: [
+      "Course catalog with categorized training modules",
+      "Employee login and personalized dashboards",
+      "Video-based learning with progress tracking",
+      "Admin panel for content and user management",
+      "Certificate generation on course completion",
+      "Mobile-responsive design for on-the-go learning",
+    ],
+    results: [
+      { label: "Training Reach", value: "↑ 300%" },
+      { label: "Training Cost", value: "↓ 60%" },
+      { label: "Completion Rate", value: "85%" },
+      { label: "Locations Covered", value: "Pan-India" },
+    ],
+  },
 };
 
 const CaseStudyDetail = () => {
