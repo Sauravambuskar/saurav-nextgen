@@ -99,7 +99,9 @@ const Gallery4 = ({
       <div className="w-full">
         <Carousel
           setApi={setCarouselApi}
+          plugins={[autoScrollPlugin]}
           opts={{
+            loop: true,
             breakpoints: {
               "(max-width: 768px)": {
                 dragFree: true,
