@@ -99,6 +99,8 @@ export default {
         "pulse-glow": "pulse-glow 4s ease-in-out infinite",
         "slide-up": "slide-up 0.6s ease-out forwards",
         "fade-in": "fade-in 0.8s ease-out forwards",
+        "marquee": "marquee var(--duration) infinite linear",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
     },
   },
