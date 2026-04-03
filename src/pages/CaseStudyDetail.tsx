@@ -839,7 +839,7 @@ const CaseStudyDetail = () => {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="p-2 rounded-lg bg-accent/10">
-                <BarChart3 className="text-accent" size={22} />
+                <HiMiniChartBar className="text-accent" size={22} />
               </div>
               <h2 className="text-xl font-bold">Results & Impact</h2>
             </div>
