@@ -5,6 +5,7 @@ import { EtheralShadow } from "@/components/ui/etheral-shadow";
 import { useGSAPSmooth } from "@/hooks/use-gsap";
 
 const About = lazy(() => import("@/components/About"));
+const Services = lazy(() => import("@/components/Services"));
 const Skills = lazy(() => import("@/components/Skills"));
 const TechStats = lazy(() => import("@/components/TechStats"));
 const Projects = lazy(() => import("@/components/Projects"));
