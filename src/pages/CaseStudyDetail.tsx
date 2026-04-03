@@ -781,7 +781,7 @@ const CaseStudyDetail = () => {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="p-2 rounded-lg bg-secondary/10">
-                <Layers className="text-secondary" size={22} />
+                <HiMiniSquares2X2 className="text-secondary" size={22} />
               </div>
               <h2 className="text-xl font-bold">Tech Stack</h2>
             </div>
