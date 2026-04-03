@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, ExternalLink, CheckCircle2, Layers, Target, Zap, BarChart3 } from "lucide-react";
+import { HiMiniArrowLeft, HiMiniArrowTopRightOnSquare, HiMiniCheckCircle, HiMiniSquares2X2, HiMiniXMark, HiMiniBolt, HiMiniChartBar } from "react-icons/hi2";
 import { FaWhatsapp } from "react-icons/fa6";
 import Navbar from "@/components/Navbar";
 
