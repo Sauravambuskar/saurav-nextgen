@@ -1,20 +1,18 @@
 import { motion } from "framer-motion";
-import {
-  HiMiniGlobeAlt,
-  HiMiniDevicePhoneMobile,
-  HiMiniCircleStack,
-  HiMiniDocumentText,
-  HiMiniCpuChip,
-  HiMiniBolt,
-  HiMiniUserGroup,
-  HiMiniLightBulb,
-  HiMiniArrowRight,
-  HiMiniSparkles,
-} from "react-icons/hi2";
-import { FaQuoteLeft } from "react-icons/fa6";
+import { HiMiniArrowRight, HiMiniSparkles } from "react-icons/hi2";
 import { Marquee } from "@/components/ui/marquee";
+import { Link } from "react-router-dom";
+import { servicesData } from "@/lib/services-data";
 
-const services = [
+const services = servicesData.map((s) => ({
+  slug: s.slug,
+  icon: s.icon,
+  title: s.title,
+  description: s.description.slice(0, 120) + "...",
+  image: s.heroImage.replace("w=1200&h=600", "w=400&h=300"),
+}));
+
+const _unused = [
   {
     icon: HiMiniGlobeAlt,
     title: "Website Development",
