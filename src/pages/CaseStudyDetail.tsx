@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, ExternalLink, CheckCircle2, Layers, Target, Zap, BarChart3 } from "lucide-react";
+import { HiMiniArrowLeft, HiMiniArrowTopRightOnSquare, HiMiniCheckCircle, HiMiniSquares2X2, HiMiniXMark, HiMiniBolt, HiMiniChartBar } from "react-icons/hi2";
 import { FaWhatsapp } from "react-icons/fa6";
 import Navbar from "@/components/Navbar";
 
@@ -702,7 +702,7 @@ const CaseStudyDetail = () => {
             to="/#case-studies"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-8"
           >
-            <ArrowLeft size={16} /> Back to Portfolio
+            <HiMiniArrowLeft size={16} /> Back to Portfolio
           </Link>
 
           <motion.div
@@ -745,7 +745,7 @@ const CaseStudyDetail = () => {
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 rounded-lg bg-destructive/10">
-                  <Target className="text-destructive" size={22} />
+                  <HiMiniXMark className="text-destructive" size={22} />
                 </div>
                 <h2 className="text-xl font-bold">The Challenge</h2>
               </div>
@@ -762,7 +762,7 @@ const CaseStudyDetail = () => {
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 rounded-lg bg-primary/10">
-                  <Zap className="text-primary" size={22} />
+                  <HiMiniBolt className="text-primary" size={22} />
                 </div>
                 <h2 className="text-xl font-bold">The Solution</h2>
               </div>
@@ -781,7 +781,7 @@ const CaseStudyDetail = () => {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="p-2 rounded-lg bg-secondary/10">
-                <Layers className="text-secondary" size={22} />
+                <HiMiniSquares2X2 className="text-secondary" size={22} />
               </div>
               <h2 className="text-xl font-bold">Tech Stack</h2>
             </div>
@@ -806,7 +806,7 @@ const CaseStudyDetail = () => {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="p-2 rounded-lg bg-primary/10">
-                <CheckCircle2 className="text-primary" size={22} />
+                <HiMiniCheckCircle className="text-primary" size={22} />
               </div>
               <h2 className="text-xl font-bold">Key Features Delivered</h2>
             </div>
@@ -820,7 +820,7 @@ const CaseStudyDetail = () => {
                   transition={{ delay: i * 0.08 }}
                   className="flex items-start gap-3 p-4 rounded-lg bg-card border border-border"
                 >
-                  <CheckCircle2
+                  <HiMiniCheckCircle
                     size={18}
                     className="text-primary mt-0.5 shrink-0"
                   />
@@ -839,7 +839,7 @@ const CaseStudyDetail = () => {
           >
             <div className="flex items-center gap-3 mb-6">
               <div className="p-2 rounded-lg bg-accent/10">
-                <BarChart3 className="text-accent" size={22} />
+                <HiMiniChartBar className="text-accent" size={22} />
               </div>
               <h2 className="text-xl font-bold">Results & Impact</h2>
             </div>
@@ -872,7 +872,7 @@ const CaseStudyDetail = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
             >
-              <ExternalLink size={16} /> Visit Live Website
+              <HiMiniArrowTopRightOnSquare size={16} /> Visit Live Website
             </a>
           </div>
 

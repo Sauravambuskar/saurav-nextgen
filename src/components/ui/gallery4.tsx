@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { HiMiniArrowLeft, HiMiniArrowRight } from "react-icons/hi2";
 import { useEffect, useState } from "react";
 import AutoScroll from "embla-carousel-auto-scroll";
 import { Link } from "react-router-dom";
@@ -80,7 +80,7 @@ const Gallery4 = ({
               disabled={!canScrollPrev}
               className="disabled:pointer-events-auto rounded-full border-border hover:bg-primary/10 hover:text-primary disabled:opacity-30"
             >
-              <ArrowLeft className="size-5" />
+              <HiMiniArrowLeft className="size-5" />
             </Button>
             <Button
               size="icon"
@@ -91,7 +91,7 @@ const Gallery4 = ({
               disabled={!canScrollNext}
               className="disabled:pointer-events-auto rounded-full border-border hover:bg-primary/10 hover:text-primary disabled:opacity-30"
             >
-              <ArrowRight className="size-5" />
+              <HiMiniArrowRight className="size-5" />
             </Button>
           </div>
         </div>
@@ -137,7 +137,7 @@ const Gallery4 = ({
                   </div>
                   <div className="flex items-center text-xs sm:text-sm font-medium text-primary group-hover:underline">
                     Read Case Study{" "}
-                    <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
+                    <HiMiniArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
                   </div>
                 </Link>
               </CarouselItem>
