@@ -872,7 +872,7 @@ const CaseStudyDetail = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
             >
-              <ExternalLink size={16} /> Visit Live Website
+              <HiMiniArrowTopRightOnSquare size={16} /> Visit Live Website
             </a>
           </div>
 
