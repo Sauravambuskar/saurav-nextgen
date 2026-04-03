@@ -1,85 +1,16 @@
 import { motion } from "framer-motion";
-import {
-  HiMiniGlobeAlt,
-  HiMiniDevicePhoneMobile,
-  HiMiniCircleStack,
-  HiMiniDocumentText,
-  HiMiniCpuChip,
-  HiMiniBolt,
-  HiMiniUserGroup,
-  HiMiniLightBulb,
-  HiMiniArrowRight,
-  HiMiniSparkles,
-} from "react-icons/hi2";
-import { FaQuoteLeft } from "react-icons/fa6";
+import { HiMiniArrowRight, HiMiniSparkles } from "react-icons/hi2";
 import { Marquee } from "@/components/ui/marquee";
+import { Link } from "react-router-dom";
+import { servicesData } from "@/lib/services-data";
 
-const services = [
-  {
-    icon: HiMiniGlobeAlt,
-    title: "Website Development",
-    description:
-      "High-performance, SEO-optimized websites built with modern frameworks. From corporate sites to complex platforms.",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
-  },
-  {
-    icon: HiMiniDevicePhoneMobile,
-    title: "Web App Development",
-    description:
-      "Scalable web applications with real-time features, responsive design, and seamless user experiences.",
-    image:
-      "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop",
-  },
-  {
-    icon: HiMiniCircleStack,
-    title: "CRM & ERP Solutions",
-    description:
-      "Custom CRM and ERP systems that streamline operations, automate workflows, and boost productivity.",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-  },
-  {
-    icon: HiMiniDocumentText,
-    title: "Landing Pages",
-    description:
-      "Conversion-focused landing pages with stunning visuals, A/B testing ready, and blazing fast load times.",
-    image:
-      "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop",
-  },
-  {
-    icon: HiMiniCpuChip,
-    title: "AI Agents & Design",
-    description:
-      "Intelligent AI agents and chatbots that automate customer support, lead generation, and business processes.",
-    image:
-      "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
-  },
-  {
-    icon: HiMiniBolt,
-    title: "Automation Solutions",
-    description:
-      "End-to-end business automation using n8n, Zapier, and custom integrations to eliminate manual tasks.",
-    image:
-      "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&h=300&fit=crop",
-  },
-  {
-    icon: HiMiniUserGroup,
-    title: "HRMS Systems",
-    description:
-      "Complete HR management systems with employee tracking, payroll, attendance, and performance modules.",
-    image:
-      "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=300&fit=crop",
-  },
-  {
-    icon: HiMiniLightBulb,
-    title: "Project Prototyping",
-    description:
-      "Rapid MVP development and prototyping to validate ideas fast, iterate quickly, and launch confidently.",
-    image:
-      "https://images.unsplash.com/photo-1531403009284-440f080d1e12?w=400&h=300&fit=crop",
-  },
-];
+const services = servicesData.map((s) => ({
+  slug: s.slug,
+  icon: s.icon,
+  title: s.title,
+  description: s.description.slice(0, 120) + "...",
+  image: s.heroImage.replace("w=1200&h=600", "w=400&h=300"),
+}));
 
 const smoothTransition = {
   type: "spring" as const,
@@ -89,7 +20,7 @@ const smoothTransition = {
 };
 
 const ServiceCard = ({ service }: { service: typeof services[0] }) => (
-  <div className="glass-card-hover group relative w-[280px] sm:w-[320px] flex-shrink-0 overflow-hidden cursor-pointer">
+  <Link to={`/service/${service.slug}`} className="glass-card-hover group relative w-[280px] sm:w-[320px] flex-shrink-0 overflow-hidden cursor-pointer block">
     <div className="relative h-44 overflow-hidden rounded-t-2xl">
       <img
         src={service.image}
@@ -111,10 +42,10 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => (
         {service.description}
       </p>
       <div className="mt-4 flex items-center gap-1.5 text-primary text-sm font-medium translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
-        Learn more <HiMiniArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+        Explore details <HiMiniArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
       </div>
     </div>
-  </div>
+  </Link>
 );
 
 const Services = () => {
