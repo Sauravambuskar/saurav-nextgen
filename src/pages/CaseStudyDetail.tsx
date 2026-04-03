@@ -745,7 +745,7 @@ const CaseStudyDetail = () => {
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 rounded-lg bg-destructive/10">
-                  <Target className="text-destructive" size={22} />
+                  <HiMiniXMark className="text-destructive" size={22} />
                 </div>
                 <h2 className="text-xl font-bold">The Challenge</h2>
               </div>
