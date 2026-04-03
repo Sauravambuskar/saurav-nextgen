@@ -820,7 +820,7 @@ const CaseStudyDetail = () => {
                   transition={{ delay: i * 0.08 }}
                   className="flex items-start gap-3 p-4 rounded-lg bg-card border border-border"
                 >
-                  <CheckCircle2
+                  <HiMiniCheckCircle
                     size={18}
                     className="text-primary mt-0.5 shrink-0"
                   />
