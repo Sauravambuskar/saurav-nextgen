@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { MenuIcon, SearchIcon } from "lucide-react";
+import { HiMiniBars3, HiMiniMagnifyingGlass } from "react-icons/hi2";
 import { FaGithub, FaLinkedinIn, FaBehance } from "react-icons/fa6";
 import { HiMiniSun, HiMiniMoon } from "react-icons/hi2";
 import { motion, AnimatePresence } from "framer-motion";
@@ -89,7 +89,7 @@ const Navbar = () => {
                 size="sm"
                 className="hidden sm:inline-flex gap-2 text-muted-foreground border-border hover:bg-primary/5 hover:text-foreground h-9 px-3"
               >
-                <SearchIcon className="h-4 w-4" />
+                <HiMiniMagnifyingGlass className="h-4 w-4" />
                 <span className="text-xs">Search...</span>
                 <kbd className="pointer-events-none hidden sm:inline-flex h-5 select-none items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground">
                   ⌘K
@@ -169,7 +169,7 @@ const Navbar = () => {
                 onClick={() => setOpen(!open)}
                 className="lg:hidden text-foreground"
               >
-                <MenuIcon className="h-5 w-5" />
+                <HiMiniBars3 className="h-5 w-5" />
               </Button>
               <SheetContent side="right" className="w-[280px] bg-background border-border p-0">
                 <div className="flex flex-col h-full">

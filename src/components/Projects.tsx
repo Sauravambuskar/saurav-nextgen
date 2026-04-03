@@ -1,26 +1,41 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { ExternalLink, ShoppingCart, Landmark, GraduationCap, Building2, Ship, Stethoscope, Factory, Home, Heart, User, Hotel, Wrench, Package, MapPin } from "lucide-react";
+import {
+  HiMiniArrowTopRightOnSquare,
+  HiMiniShoppingCart,
+  HiMiniBuildingLibrary,
+  HiMiniAcademicCap,
+  HiMiniBuildingOffice2,
+  HiMiniGlobeAlt,
+  HiMiniHeart,
+  HiMiniWrench,
+  HiMiniBuildingStorefront,
+  HiMiniMapPin,
+  HiMiniCube,
+  HiMiniCog6Tooth,
+  HiMiniBeaker,
+  HiMiniTruck,
+} from "react-icons/hi2";
 
 const industryIcons: Record<string, React.ElementType> = {
-  "E-commerce": ShoppingCart,
-  "FinTech": Landmark,
-  "EdTech SaaS": GraduationCap,
-  "Enterprise": Building2,
-  "Import/Export": Ship,
-  "Healthcare": Stethoscope,
-  "Business": Building2,
-  "Services": Wrench,
-  "NGO": Heart,
-  "Hospitality": Hotel,
-  "Engineering": Factory,
-  "Manufacturing": Package,
-  "Real Estate": MapPin,
-  "Signage": Factory,
-  "Technology": Building2,
-  "Wellness": Heart,
-  "Digital Agency": Factory,
-  "Adventure": MapPin,
+  "E-commerce": HiMiniShoppingCart,
+  "FinTech": HiMiniBuildingLibrary,
+  "EdTech SaaS": HiMiniAcademicCap,
+  "Enterprise": HiMiniBuildingOffice2,
+  "Import/Export": HiMiniTruck,
+  "Healthcare": HiMiniBeaker,
+  "Business": HiMiniBuildingOffice2,
+  "Services": HiMiniWrench,
+  "NGO": HiMiniHeart,
+  "Hospitality": HiMiniBuildingStorefront,
+  "Engineering": HiMiniCog6Tooth,
+  "Manufacturing": HiMiniCube,
+  "Real Estate": HiMiniMapPin,
+  "Signage": HiMiniCog6Tooth,
+  "Technology": HiMiniGlobeAlt,
+  "Wellness": HiMiniHeart,
+  "Digital Agency": HiMiniGlobeAlt,
+  "Adventure": HiMiniMapPin,
 };
 
 const featured = [
@@ -56,7 +71,7 @@ const allProjects = [
 type ProjectItem = { title: string; tag: string; url: string; desc: string; thumb: string };
 
 const ProjectCard = ({ project, index }: { project: ProjectItem; index: number }) => {
-  const Icon = industryIcons[project.tag] || Building2;
+  const Icon = industryIcons[project.tag] || HiMiniBuildingOffice2;
 
   return (
     <motion.div
@@ -82,7 +97,7 @@ const ProjectCard = ({ project, index }: { project: ProjectItem; index: number }
           className="absolute inset-0 flex items-center justify-center bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         >
           <span className="btn-primary text-xs sm:text-sm px-4 sm:px-5 py-1.5 sm:py-2 inline-flex items-center gap-2">
-            <ExternalLink size={14} /> View Live
+            <HiMiniArrowTopRightOnSquare size={14} /> View Live
           </span>
         </a>
       </div>
@@ -100,8 +115,8 @@ const ProjectCard = ({ project, index }: { project: ProjectItem; index: number }
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"
           >
-            <ExternalLink size={16} className="sm:hidden" />
-            <ExternalLink size={18} className="hidden sm:block" />
+            <HiMiniArrowTopRightOnSquare size={16} className="sm:hidden" />
+            <HiMiniArrowTopRightOnSquare size={18} className="hidden sm:block" />
           </a>
         </div>
         <h3 className="text-sm sm:text-lg font-bold mb-1 sm:mb-2">{project.title}</h3>
