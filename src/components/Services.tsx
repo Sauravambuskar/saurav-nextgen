@@ -20,7 +20,7 @@ const smoothTransition = {
 };
 
 const ServiceCard = ({ service }: { service: typeof services[0] }) => (
-  <div className="glass-card-hover group relative w-[280px] sm:w-[320px] flex-shrink-0 overflow-hidden cursor-pointer">
+  <Link to={`/service/${service.slug}`} className="glass-card-hover group relative w-[280px] sm:w-[320px] flex-shrink-0 overflow-hidden cursor-pointer block">
     <div className="relative h-44 overflow-hidden rounded-t-2xl">
       <img
         src={service.image}
@@ -42,10 +42,10 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => (
         {service.description}
       </p>
       <div className="mt-4 flex items-center gap-1.5 text-primary text-sm font-medium translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
-        Learn more <HiMiniArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+        Explore details <HiMiniArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
       </div>
     </div>
-  </div>
+  </Link>
 );
 
 const Services = () => {
