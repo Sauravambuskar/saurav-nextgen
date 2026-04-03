@@ -97,7 +97,7 @@ const ProjectCard = ({ project, index }: { project: ProjectItem; index: number }
           className="absolute inset-0 flex items-center justify-center bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         >
           <span className="btn-primary text-xs sm:text-sm px-4 sm:px-5 py-1.5 sm:py-2 inline-flex items-center gap-2">
-            <ExternalLink size={14} /> View Live
+            <HiMiniArrowTopRightOnSquare size={14} /> View Live
           </span>
         </a>
       </div>
