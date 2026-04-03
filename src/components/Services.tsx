@@ -181,37 +181,6 @@ const Services = () => {
           </Marquee>
         </motion.div>
 
-        {/* Testimonial quote */}
-        <motion.div
-          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true }}
-          transition={{ ...smoothTransition, delay: 0.3 }}
-          className="glass-card p-8 sm:p-10 max-w-3xl mx-auto text-center"
-        >
-          <FaQuoteLeft className="w-7 h-7 text-primary/40 mx-auto mb-4" />
-          <p className="text-foreground/90 text-base sm:text-lg italic leading-relaxed mb-6">
-            "The exceptional quality and speed of delivery truly impressed us.
-            From prototyping to production, every solution was engineered with
-            precision and scalability in mind."
-          </p>
-          <div className="flex items-center justify-center gap-3">
-            <img
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=48&h=48&fit=crop&crop=face"
-              alt="Client"
-              className="w-10 h-10 rounded-full object-cover border-2 border-primary/30"
-              loading="lazy"
-            />
-            <div className="text-left">
-              <p className="text-sm font-semibold text-foreground">
-                Satisfied Client
-              </p>
-              <p className="text-xs text-muted-foreground">
-                CTO · Enterprise Solutions
-              </p>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
