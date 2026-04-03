@@ -115,8 +115,8 @@ const ProjectCard = ({ project, index }: { project: ProjectItem; index: number }
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors"
           >
-            <ExternalLink size={16} className="sm:hidden" />
-            <ExternalLink size={18} className="hidden sm:block" />
+            <HiMiniArrowTopRightOnSquare size={16} className="sm:hidden" />
+            <HiMiniArrowTopRightOnSquare size={18} className="hidden sm:block" />
           </a>
         </div>
         <h3 className="text-sm sm:text-lg font-bold mb-1 sm:mb-2">{project.title}</h3>
