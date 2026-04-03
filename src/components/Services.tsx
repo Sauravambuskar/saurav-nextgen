@@ -81,33 +81,69 @@ const services = [
   },
 ];
 
+const smoothTransition = {
+  type: "spring" as const,
+  stiffness: 80,
+  damping: 20,
+  mass: 0.8,
+};
+
+const ServiceCard = ({ service }: { service: typeof services[0] }) => (
+  <div className="glass-card-hover group relative w-[280px] sm:w-[320px] flex-shrink-0 overflow-hidden cursor-pointer">
+    <div className="relative h-44 overflow-hidden rounded-t-2xl">
+      <img
+        src={service.image}
+        alt={service.title}
+        className="w-full h-full object-cover transition-transform duration-[800ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"
+        loading="lazy"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
+      <div className="absolute bottom-3 left-3 p-2.5 rounded-xl bg-primary/20 backdrop-blur-md border border-primary/30 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 group-hover:bg-primary/30">
+        <service.icon className="w-5 h-5 text-primary" strokeWidth={1.8} />
+      </div>
+    </div>
+
+    <div className="p-5">
+      <h3 className="text-lg font-semibold text-foreground mb-2 transition-colors duration-300 group-hover:text-primary">
+        {service.title}
+      </h3>
+      <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+        {service.description}
+      </p>
+      <div className="mt-4 flex items-center gap-1.5 text-primary text-sm font-medium translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
+        Learn more <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+      </div>
+    </div>
+  </div>
+);
+
 const Services = () => {
   return (
     <section id="services" className="section-padding relative overflow-hidden">
-      {/* Background glow */}
       <div className="glow-orb w-[500px] h-[500px] bg-primary/20 -top-40 -right-40 absolute" />
       <div className="glow-orb w-[400px] h-[400px] bg-secondary/15 bottom-20 -left-32 absolute" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Badge */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true }}
+          transition={smoothTransition}
           className="flex justify-center mb-6"
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-medium">
-            <Sparkles className="w-4 h-4" />
+            <Sparkles className="w-4 h-4" strokeWidth={1.8} />
             Our Services
           </span>
         </motion.div>
 
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
+          transition={{ ...smoothTransition, delay: 0.08 }}
           className="text-center mb-4"
         >
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground">
@@ -117,10 +153,10 @@ const Services = () => {
         </motion.div>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+          transition={{ ...smoothTransition, delay: 0.15 }}
           className="text-center text-muted-foreground max-w-2xl mx-auto mb-12 text-base sm:text-lg"
         >
           From concept to deployment — full-stack development services
@@ -132,7 +168,7 @@ const Services = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-16"
         >
           <Marquee
@@ -142,41 +178,10 @@ const Services = () => {
             className="py-4"
           >
             {services.map((service) => (
-              <div
-                key={service.title}
-                className="glass-card-hover group relative w-[280px] sm:w-[320px] flex-shrink-0 overflow-hidden cursor-pointer"
-              >
-                {/* Image */}
-                <div className="relative h-44 overflow-hidden rounded-t-2xl">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-                  <div className="absolute bottom-3 left-3 p-2 rounded-xl bg-primary/20 backdrop-blur-sm border border-primary/30">
-                    <service.icon className="w-5 h-5 text-primary" />
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-5">
-                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
-                    {service.description}
-                  </p>
-                  <div className="mt-4 flex items-center gap-1 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Learn more <ArrowRight className="w-4 h-4" />
-                  </div>
-                </div>
-              </div>
+              <ServiceCard key={service.title} service={service} />
             ))}
           </Marquee>
 
-          {/* Reverse marquee */}
           <Marquee
             pauseOnHover
             reverse
@@ -185,47 +190,20 @@ const Services = () => {
             className="py-4 mt-2"
           >
             {[...services].reverse().map((service) => (
-              <div
-                key={service.title}
-                className="glass-card-hover group relative w-[280px] sm:w-[320px] flex-shrink-0 overflow-hidden cursor-pointer"
-              >
-                <div className="relative h-44 overflow-hidden rounded-t-2xl">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
-                  <div className="absolute bottom-3 left-3 p-2 rounded-xl bg-primary/20 backdrop-blur-sm border border-primary/30">
-                    <service.icon className="w-5 h-5 text-primary" />
-                  </div>
-                </div>
-                <div className="p-5">
-                  <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
-                    {service.description}
-                  </p>
-                  <div className="mt-4 flex items-center gap-1 text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    Learn more <ArrowRight className="w-4 h-4" />
-                  </div>
-                </div>
-              </div>
+              <ServiceCard key={service.title} service={service} />
             ))}
           </Marquee>
         </motion.div>
 
         {/* Testimonial quote */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
+          transition={{ ...smoothTransition, delay: 0.3 }}
           className="glass-card p-8 sm:p-10 max-w-3xl mx-auto text-center"
         >
-          <Quote className="w-8 h-8 text-primary/40 mx-auto mb-4" />
+          <Quote className="w-8 h-8 text-primary/40 mx-auto mb-4" strokeWidth={1.5} />
           <p className="text-foreground/90 text-base sm:text-lg italic leading-relaxed mb-6">
             "The exceptional quality and speed of delivery truly impressed us.
             From prototyping to production, every solution was engineered with
