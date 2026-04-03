@@ -88,14 +88,23 @@
     @apply border-border;
   }
   body, .glass-card, .glass-card-hover, nav, footer, section {
-    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.3s ease;
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
   html {
     scroll-behavior: auto; /* GSAP handles smooth scroll */
+  }
+  /* GPU-accelerated compositing for smooth animations */
+  img, video {
+    content-visibility: auto;
   }
 }
 
