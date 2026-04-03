@@ -702,7 +702,7 @@ const CaseStudyDetail = () => {
             to="/#case-studies"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-8"
           >
-            <ArrowLeft size={16} /> Back to Portfolio
+            <HiMiniArrowLeft size={16} /> Back to Portfolio
           </Link>
 
           <motion.div
