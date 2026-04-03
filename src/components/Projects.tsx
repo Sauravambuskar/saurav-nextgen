@@ -71,7 +71,7 @@ const allProjects = [
 type ProjectItem = { title: string; tag: string; url: string; desc: string; thumb: string };
 
 const ProjectCard = ({ project, index }: { project: ProjectItem; index: number }) => {
-  const Icon = industryIcons[project.tag] || Building2;
+  const Icon = industryIcons[project.tag] || HiMiniBuildingOffice2;
 
   return (
     <motion.div
