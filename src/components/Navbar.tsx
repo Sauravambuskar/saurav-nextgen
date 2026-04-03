@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { MenuIcon, SearchIcon } from "lucide-react";
+import { HiMiniBars3, HiMiniMagnifyingGlass } from "react-icons/hi2";
 import { FaGithub, FaLinkedinIn, FaBehance } from "react-icons/fa6";
 import { HiMiniSun, HiMiniMoon } from "react-icons/hi2";
 import { motion, AnimatePresence } from "framer-motion";
