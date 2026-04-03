@@ -1,22 +1,22 @@
 import { motion } from "framer-motion";
 import {
-  Globe,
-  Smartphone,
-  Database,
-  FileText,
-  Bot,
-  Zap,
-  Users,
-  Lightbulb,
-  ArrowRight,
-  Sparkles,
-  Quote,
-} from "lucide-react";
+  HiMiniGlobeAlt,
+  HiMiniDevicePhoneMobile,
+  HiMiniCircleStack,
+  HiMiniDocumentText,
+  HiMiniCpuChip,
+  HiMiniBolt,
+  HiMiniUserGroup,
+  HiMiniLightBulb,
+  HiMiniArrowRight,
+  HiMiniSparkles,
+} from "react-icons/hi2";
+import { FaQuoteLeft } from "react-icons/fa6";
 import { Marquee } from "@/components/ui/marquee";
 
 const services = [
   {
-    icon: Globe,
+    icon: HiMiniGlobeAlt,
     title: "Website Development",
     description:
       "High-performance, SEO-optimized websites built with modern frameworks. From corporate sites to complex platforms.",
@@ -24,7 +24,7 @@ const services = [
       "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
   },
   {
-    icon: Smartphone,
+    icon: HiMiniDevicePhoneMobile,
     title: "Web App Development",
     description:
       "Scalable web applications with real-time features, responsive design, and seamless user experiences.",
@@ -32,7 +32,7 @@ const services = [
       "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=300&fit=crop",
   },
   {
-    icon: Database,
+    icon: HiMiniCircleStack,
     title: "CRM & ERP Solutions",
     description:
       "Custom CRM and ERP systems that streamline operations, automate workflows, and boost productivity.",
@@ -40,7 +40,7 @@ const services = [
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
   },
   {
-    icon: FileText,
+    icon: HiMiniDocumentText,
     title: "Landing Pages",
     description:
       "Conversion-focused landing pages with stunning visuals, A/B testing ready, and blazing fast load times.",
@@ -48,7 +48,7 @@ const services = [
       "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=400&h=300&fit=crop",
   },
   {
-    icon: Bot,
+    icon: HiMiniCpuChip,
     title: "AI Agents & Design",
     description:
       "Intelligent AI agents and chatbots that automate customer support, lead generation, and business processes.",
@@ -56,7 +56,7 @@ const services = [
       "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=300&fit=crop",
   },
   {
-    icon: Zap,
+    icon: HiMiniBolt,
     title: "Automation Solutions",
     description:
       "End-to-end business automation using n8n, Zapier, and custom integrations to eliminate manual tasks.",
@@ -64,7 +64,7 @@ const services = [
       "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&h=300&fit=crop",
   },
   {
-    icon: Users,
+    icon: HiMiniUserGroup,
     title: "HRMS Systems",
     description:
       "Complete HR management systems with employee tracking, payroll, attendance, and performance modules.",
@@ -72,7 +72,7 @@ const services = [
       "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400&h=300&fit=crop",
   },
   {
-    icon: Lightbulb,
+    icon: HiMiniLightBulb,
     title: "Project Prototyping",
     description:
       "Rapid MVP development and prototyping to validate ideas fast, iterate quickly, and launch confidently.",
@@ -99,7 +99,7 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => (
       />
       <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
       <div className="absolute bottom-3 left-3 p-2.5 rounded-xl bg-primary/20 backdrop-blur-md border border-primary/30 transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110 group-hover:bg-primary/30">
-        <service.icon className="w-5 h-5 text-primary" strokeWidth={1.8} />
+        <service.icon className="w-5 h-5 text-primary" />
       </div>
     </div>
 
@@ -111,7 +111,7 @@ const ServiceCard = ({ service }: { service: typeof services[0] }) => (
         {service.description}
       </p>
       <div className="mt-4 flex items-center gap-1.5 text-primary text-sm font-medium translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
-        Learn more <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+        Learn more <HiMiniArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
       </div>
     </div>
   </div>
@@ -124,7 +124,6 @@ const Services = () => {
       <div className="glow-orb w-[400px] h-[400px] bg-secondary/15 bottom-20 -left-32 absolute" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -133,12 +132,11 @@ const Services = () => {
           className="flex justify-center mb-6"
         >
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-sm font-medium">
-            <Sparkles className="w-4 h-4" strokeWidth={1.8} />
+            <HiMiniSparkles className="w-4 h-4" />
             Our Services
           </span>
         </motion.div>
 
-        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 24, filter: "blur(6px)" }}
           whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
@@ -163,7 +161,7 @@ const Services = () => {
           engineered for performance, scalability, and business growth.
         </motion.p>
 
-        {/* Marquee of service cards */}
+        {/* Single marquee row */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -173,23 +171,11 @@ const Services = () => {
         >
           <Marquee
             pauseOnHover
-            duration="60s"
+            duration="50s"
             gap="1.5rem"
             className="py-4"
           >
             {services.map((service) => (
-              <ServiceCard key={service.title} service={service} />
-            ))}
-          </Marquee>
-
-          <Marquee
-            pauseOnHover
-            reverse
-            duration="65s"
-            gap="1.5rem"
-            className="py-4 mt-2"
-          >
-            {[...services].reverse().map((service) => (
               <ServiceCard key={service.title} service={service} />
             ))}
           </Marquee>
@@ -203,7 +189,7 @@ const Services = () => {
           transition={{ ...smoothTransition, delay: 0.3 }}
           className="glass-card p-8 sm:p-10 max-w-3xl mx-auto text-center"
         >
-          <Quote className="w-8 h-8 text-primary/40 mx-auto mb-4" strokeWidth={1.5} />
+          <FaQuoteLeft className="w-7 h-7 text-primary/40 mx-auto mb-4" />
           <p className="text-foreground/90 text-base sm:text-lg italic leading-relaxed mb-6">
             "The exceptional quality and speed of delivery truly impressed us.
             From prototyping to production, every solution was engineered with
