@@ -169,7 +169,7 @@ const Navbar = () => {
                 onClick={() => setOpen(!open)}
                 className="lg:hidden text-foreground"
               >
-                <MenuIcon className="h-5 w-5" />
+                <HiMiniBars3 className="h-5 w-5" />
               </Button>
               <SheetContent side="right" className="w-[280px] bg-background border-border p-0">
                 <div className="flex flex-col h-full">
