@@ -762,7 +762,7 @@ const CaseStudyDetail = () => {
             >
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 rounded-lg bg-primary/10">
-                  <Zap className="text-primary" size={22} />
+                  <HiMiniBolt className="text-primary" size={22} />
                 </div>
                 <h2 className="text-xl font-bold">The Solution</h2>
               </div>
