@@ -80,7 +80,7 @@ const Gallery4 = ({
               disabled={!canScrollPrev}
               className="disabled:pointer-events-auto rounded-full border-border hover:bg-primary/10 hover:text-primary disabled:opacity-30"
             >
-              <ArrowLeft className="size-5" />
+              <HiMiniArrowLeft className="size-5" />
             </Button>
             <Button
               size="icon"
