@@ -88,14 +88,23 @@
     @apply border-border;
   }
   body, .glass-card, .glass-card-hover, nav, footer, section {
-    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.3s ease;
+    transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
     font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
   html {
     scroll-behavior: auto; /* GSAP handles smooth scroll */
+  }
+  /* GPU-accelerated compositing for smooth animations */
+  img, video {
+    content-visibility: auto;
   }
 }
 
@@ -110,12 +119,16 @@
 
   .glass-card-hover {
     @apply glass-card;
-    transition: transform 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease, background-color 0.4s ease;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
   }
   .glass-card-hover:hover {
-    transform: translateY(-4px);
-    border-color: hsl(var(--primary) / 0.3);
-    box-shadow: 0 0 30px hsl(var(--primary) / 0.1), 0 0 60px hsl(var(--primary) / 0.05);
+    transform: translateY(-6px) scale(1.01);
+    border-color: hsl(var(--primary) / 0.35);
+    box-shadow: 0 8px 40px hsl(var(--primary) / 0.12), 0 0 80px hsl(var(--primary) / 0.06);
   }
 
   .gradient-text {
