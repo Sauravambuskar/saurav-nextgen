@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { HiMiniBars3, HiMiniMagnifyingGlass } from "react-icons/hi2"; 
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { HiMiniBars3, HiMiniMagnifyingGlass } from "react-icons/hi2";
 import { FaGithub, FaLinkedinIn, FaBehance } from "react-icons/fa6";
 import { HiMiniSun, HiMiniMoon } from "react-icons/hi2";
 import { motion, AnimatePresence } from "framer-motion";
@@ -9,19 +11,26 @@ import { cn } from "@/lib/utils";
 import { CommandItem, SearchModal } from "@/components/ui/search-modal";
 import { useTheme } from "@/hooks/use-theme";
 
-const navLinks = [
+type NavLink = { label: string; href: string; route?: boolean };
+
+const navLinks: NavLink[] = [
   { label: "About", href: "#about" },
   { label: "Skills", href: "#skills" },
   { label: "Stats", href: "#experience" },
-  { label: "Projects", href: "#projects" },
+  { label: "Projects", href: "/projects", route: true },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
 
+/** Search entries that navigate to a route rather than scrolling to a section. */
+const searchRoutes: Record<string, string> = {
+  projects: "/projects",
+};
+
 const searchData: CommandItem[] = [
   { id: "about", title: "About Me", description: "Learn about my background and experience", category: "Section" },
   { id: "skills", title: "Skills & Tools", description: "Technologies and tools I work with", category: "Section" },
-  { id: "projects", title: "Projects", description: "23+ production projects across industries", category: "Section" },
+  { id: "projects", title: "All Projects", description: "Browse every production project, filterable by industry", category: "Page" },
   { id: "case-studies", title: "Case Studies", description: "Deep dives into select projects", category: "Section" },
   { id: "devops", title: "DevOps Projects", description: "Infrastructure and CI/CD work", category: "Section" },
   { id: "education", title: "Education", description: "Academic background and certifications", category: "Section" },
@@ -35,12 +44,63 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
+  const pathname = usePathname();
+  const router = useRouter();
+  const isHome = pathname === "/";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Section anchors only exist on the homepage. Anywhere else, route to the
+  // homepage with the hash so the link still lands on the right section
+  // instead of silently doing nothing.
+  const NavItem = ({
+    link,
+    className,
+    onClick,
+  }: {
+    link: NavLink;
+    className?: string;
+    onClick?: () => void;
+  }) => {
+    if (link.route) {
+      return (
+        <Link href={link.href} className={className} onClick={onClick}>
+          {link.label}
+        </Link>
+      );
+    }
+    if (isHome) {
+      // Plain anchor so the Lenis/GSAP smooth-scroll handler intercepts it.
+      return (
+        <a href={link.href} className={className} onClick={onClick}>
+          {link.label}
+        </a>
+      );
+    }
+    return (
+      <Link href={`/${link.href}`} className={className} onClick={onClick}>
+        {link.label}
+      </Link>
+    );
+  };
+
+  const handleSearchSelect = (item: CommandItem) => {
+    const route = searchRoutes[item.id];
+    if (route) {
+      router.push(route);
+      return;
+    }
+    const el = document.getElementById(item.id);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push(`/#${item.id}`);
+    }
+  };
 
   return (
     <motion.header
@@ -58,24 +118,22 @@ const Navbar = () => {
         <nav className="flex items-center justify-between py-3">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <a href="#" className="text-lg font-extrabold tracking-tight">
+            <Link href="/" className="text-lg font-extrabold tracking-tight">
               <span className="gradient-text">Dev</span>
               <span className="text-foreground">Ops</span>
               <span className="text-muted-foreground">.</span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop nav links */}
           <div className="hidden lg:flex items-center">
             <div className="flex items-center gap-1">
               {navLinks.map((link) => (
-                <a
+                <NavItem
                   key={link.href}
-                  href={link.href}
+                  link={link}
                   className="text-sm text-muted-foreground hover:text-foreground px-3 py-2 rounded-lg hover:bg-primary/5 transition-all duration-300"
-                >
-                  {link.label}
-                </a>
+                />
               ))}
             </div>
           </div>
@@ -83,7 +141,7 @@ const Navbar = () => {
           {/* Right side actions */}
           <div className="flex items-center gap-2">
             {/* Search */}
-            <SearchModal data={searchData}>
+            <SearchModal data={searchData} onSelect={handleSearchSelect}>
               <Button
                 variant="outline"
                 size="sm"
@@ -157,9 +215,10 @@ const Navbar = () => {
             </div>
 
             {/* Hire Me - desktop */}
-            <a href="#contact" className="hidden md:inline-flex btn-primary text-sm px-5 py-2">
-              Hire Me
-            </a>
+            <NavItem
+              link={{ label: "Hire Me", href: "#contact" }}
+              className="hidden md:inline-flex btn-primary text-sm px-5 py-2"
+            />
 
             {/* Mobile menu */}
             <Sheet open={open} onOpenChange={setOpen}>
@@ -183,14 +242,12 @@ const Navbar = () => {
 
                   <div className="flex flex-col gap-1 px-4 flex-1">
                     {navLinks.map((link) => (
-                      <a
+                      <NavItem
                         key={link.href}
-                        href={link.href}
+                        link={link}
                         onClick={() => setOpen(false)}
                         className="text-muted-foreground hover:text-foreground hover:bg-primary/5 px-3 py-3 rounded-lg transition-all text-sm"
-                      >
-                        {link.label}
-                      </a>
+                      />
                     ))}
                   </div>
 
@@ -206,13 +263,11 @@ const Navbar = () => {
                         <FaBehance size={20} />
                       </a>
                     </div>
-                    <a
-                      href="#contact"
+                    <NavItem
+                      link={{ label: "Hire Me", href: "#contact" }}
                       onClick={() => setOpen(false)}
                       className="btn-primary text-sm px-5 py-2.5 text-center w-full rounded-lg"
-                    >
-                      Hire Me
-                    </a>
+                    />
                   </SheetFooter>
                 </div>
               </SheetContent>
