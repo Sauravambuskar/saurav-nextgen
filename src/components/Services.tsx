@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { HiMiniArrowRight, HiMiniSparkles } from "react-icons/hi2";
 import { Marquee } from "@/components/ui/marquee";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { servicesData } from "@/lib/services-data";
 
 const services = servicesData.map((s) => ({
@@ -20,7 +20,7 @@ const smoothTransition = {
 };
 
 const ServiceCard = ({ service }: { service: typeof services[0] }) => (
-  <Link to={`/service/${service.slug}`} className="glass-card-hover group relative w-[280px] sm:w-[320px] flex-shrink-0 overflow-hidden cursor-pointer block">
+  <Link href={`/service/${service.slug}`} className="glass-card-hover group relative w-[280px] sm:w-[320px] flex-shrink-0 overflow-hidden cursor-pointer block">
     <div className="relative h-44 overflow-hidden rounded-t-2xl">
       <img
         src={service.image}

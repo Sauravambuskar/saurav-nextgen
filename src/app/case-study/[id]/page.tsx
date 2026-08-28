@@ -1,4 +1,7 @@
-import { useParams, Link } from "react-router-dom";
+"use client";
+
+import { useParams } from "next/navigation";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { HiMiniArrowLeft, HiMiniArrowTopRightOnSquare, HiMiniCheckCircle, HiMiniSquares2X2, HiMiniXMark, HiMiniBolt, HiMiniChartBar } from "react-icons/hi2";
 import { FaWhatsapp } from "react-icons/fa6";
@@ -680,7 +683,7 @@ const CaseStudyDetail = () => {
       <div className="min-h-screen bg-background text-foreground flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-3xl font-bold mb-4">Case Study Not Found</h1>
-          <Link to="/#case-studies" className="text-primary hover:underline">
+          <Link href="/#case-studies" className="text-primary hover:underline">
             ← Back to Portfolio
           </Link>
         </div>
@@ -699,7 +702,7 @@ const CaseStudyDetail = () => {
         {/* Hero */}
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <Link
-            to="/#case-studies"
+            href="/#case-studies"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-8"
           >
             <HiMiniArrowLeft size={16} /> Back to Portfolio

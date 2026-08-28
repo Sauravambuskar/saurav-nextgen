@@ -1,3 +1,5 @@
+"use client";
+
 import { lazy, Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -23,7 +25,7 @@ const SectionFallback = () => (
   </div>
 );
 
-const Index = () => {
+const Home = () => {
   useGSAPSmooth();
 
   return (
@@ -53,4 +55,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Home;

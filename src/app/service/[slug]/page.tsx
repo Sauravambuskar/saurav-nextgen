@@ -1,4 +1,7 @@
-import { useParams, Link } from "react-router-dom";
+"use client";
+
+import { useParams } from "next/navigation";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   HiMiniArrowLeft,
@@ -34,7 +37,7 @@ const ServiceDetail = () => {
         <Navbar />
         <div className="flex flex-col items-center justify-center min-h-[60vh] gap-4">
           <h1 className="text-3xl font-bold">Service Not Found</h1>
-          <Link to="/#services" className="text-primary hover:underline flex items-center gap-2">
+          <Link href="/#services" className="text-primary hover:underline flex items-center gap-2">
             <HiMiniArrowLeft className="w-5 h-5" /> Back to Services
           </Link>
         </div>
@@ -54,7 +57,7 @@ const ServiceDetail = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}>
             <Link
-              to="/#services"
+              href="/#services"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm mb-8"
             >
               <HiMiniArrowLeft className="w-4 h-4" /> Back to Services

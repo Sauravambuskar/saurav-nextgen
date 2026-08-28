@@ -3,7 +3,7 @@
 import { HiMiniArrowLeft, HiMiniArrowRight } from "react-icons/hi2";
 import { useEffect, useState } from "react";
 import AutoScroll from "embla-carousel-auto-scroll";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import {
@@ -116,7 +116,7 @@ const Gallery4 = ({
                 className="pl-[20px] md:max-w-[452px]"
               >
                 <Link
-                  to={item.href}
+                  href={item.href}
                   className="group flex flex-col justify-between"
                 >
                   <div>
