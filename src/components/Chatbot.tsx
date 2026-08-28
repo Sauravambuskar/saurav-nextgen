@@ -10,7 +10,8 @@ const WHATSAPP_MARKER = "[WHATSAPP_CONNECT]";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
-const CHAT_URL = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/chat`;
+// Served by our own Next route handler, which holds the Groq key server-side.
+const CHAT_URL = "/api/chat";
 
 const GREETING_MESSAGES = [
   "👋 Hi! Ask me about Saurav's skills & projects!",
@@ -107,10 +108,7 @@ const Chatbot = () => {
     try {
       const resp = await fetch(CHAT_URL, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY}`,
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: [...messages, userMsg] }),
       });
 
