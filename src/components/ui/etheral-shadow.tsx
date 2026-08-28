@@ -57,11 +57,26 @@ export function EtheralShadow({
   const animationDuration = animation ? mapRange(animation.speed, 1, 100, 1000, 50) : 1;
 
   useEffect(() => {
-    if (feColorMatrixRef.current && animationEnabled) {
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    if (feColorMatrixRef.current && animationEnabled && !prefersReducedMotion) {
       if (hueRotateAnimation.current) {
         hueRotateAnimation.current.stop();
       }
       hueRotateMotionValue.set(0);
+
+      // The hue cycles once every ~30s, so updating the SVG filter on every
+      // animation frame (60/s) is wasted work — animated feTurbulence /
+      // feDisplacementMap filters are among the most expensive things a
+      // browser can repaint, and this layer covers the full viewport behind
+      // every section. Throttling to ~12 updates/s is visually identical
+      // but cuts that recompute cost by ~5x, which noticeably smooths
+      // scrolling since this filter would otherwise repaint every frame.
+      let lastUpdate = 0;
+      const minInterval = 1000 / 12;
+
       hueRotateAnimation.current = animate(hueRotateMotionValue, 360, {
         duration: animationDuration / 25,
         repeat: Infinity,
@@ -70,6 +85,9 @@ export function EtheralShadow({
         ease: 'linear',
         delay: 0,
         onUpdate: (value: number) => {
+          const now = performance.now();
+          if (now - lastUpdate < minInterval) return;
+          lastUpdate = now;
           if (feColorMatrixRef.current) {
             feColorMatrixRef.current.setAttribute('values', String(value));
           }
