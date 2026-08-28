@@ -171,6 +171,48 @@ const caseStudies: Gallery4Item[] = [
     href: "/case-study/advance-smt",
     image: "/screenshots/advancesmt.png",
   },
+  {
+    id: "chwink",
+    title: "Chwink Real Estate – Property Consultancy Since 1987",
+    description: "Corporate real estate platform for a Pune developer trusted by Hyundai, Tata, POSCO and 500+ enterprise clients across residential, commercial and industrial property.",
+    href: "/case-study/chwink",
+    image: "/screenshots/chwink.png",
+  },
+  {
+    id: "aaura-realty",
+    title: "Aaura Realty – Property Broker Platform",
+    description: "Listings-driven broker website for flats, offices, plots, resale and rentals, built to turn Pune property searches into qualified enquiries.",
+    href: "/case-study/aaura-realty",
+    image: "/screenshots/aaurarealty.png",
+  },
+  {
+    id: "lawmind-ai",
+    title: "LawMind AI – AI Legal Practice Management CRM",
+    description: "AI-powered SaaS CRM for advocates at Akola & Washim courts, covering case & hearing management, client tracking, and invoice automation.",
+    href: "/case-study/lawmind-ai",
+    image: "/screenshots/lawmind-crm.png",
+  },
+  {
+    id: "cosmos-real-estate",
+    title: "Cosmos Real Estate – Property Dealer Platform Since 2004",
+    description: "NAR India-certified property dealer platform for buying, selling and renting residential, commercial and industrial property in Pune.",
+    href: "/case-study/cosmos-real-estate",
+    image: "/screenshots/cosmosrealestate.png",
+  },
+  {
+    id: "opsdeck",
+    title: "OpsDeck – Unified DevOps Control Plane",
+    description: "A self-built DevOps toolkit unifying pipelines, incident tracking, runbooks, and everyday utilities (YAML, JWT, cron) into one dashboard.",
+    href: "/case-study/opsdeck",
+    image: "/screenshots/opendesk.png",
+  },
+  {
+    id: "adv-md-sarda",
+    title: "Adv. M.D. Sarda & Associates – Legal Experts Since 2004",
+    description: "Authority-building website for an Akola law firm specializing in Agricultural Law, IPR, Corporate Law, and NI Act litigation.",
+    href: "/case-study/adv-md-sarda",
+    image: "/screenshots/advmdsarda.png",
+  },
 ];
 
 const CaseStudies = () => {

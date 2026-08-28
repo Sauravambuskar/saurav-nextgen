@@ -672,6 +672,168 @@ const caseStudiesData: Record<string, CaseStudyData> = {
       { label: "Locations Covered", value: "Pan-India" },
     ],
   },
+  chwink: {
+    title: "CHWINK REAL ESTATE",
+    tag: "Real Estate",
+    url: "https://www.chwink.com/",
+    image: "/screenshots/chwink.png",
+    overview:
+      "Chwink Dhillon Real Estate Developers is one of Pune's longest-running property consultancies, active since 1987 and trusted by enterprise clients like Hyundai, Tata, POSCO, and LG for industrial, commercial, and residential real estate.",
+    challenge:
+      "Nearly four decades of reputation had no matching digital presence. Enterprise clients evaluating industrial land and warehousing had no way to browse verified listings or credentials online, and lead capture relied almost entirely on referrals and phone calls.",
+    solution:
+      "Built a corporate-grade real estate platform with categorized listings across residential, commercial, industrial, warehousing, and land, a client trust section showcasing enterprise partnerships, and inquiry routing tailored to each property type.",
+    techStack: ["React", "Tailwind CSS", "Vercel", "Google Maps", "WhatsApp API", "SEO Tools"],
+    keyFeatures: [
+      "Categorized listings across residential, commercial, industrial & land",
+      "Enterprise client trust showcase (Hyundai, Tata, POSCO, LG)",
+      "Property-type based inquiry routing",
+      "Google Maps integration for site locations",
+      "Mobile-optimized browsing for on-site visits",
+      "Local SEO targeting Pune industrial real estate searches",
+    ],
+    results: [
+      { label: "Enterprise Inquiries", value: "↑ 150%" },
+      { label: "Search Visibility", value: "↑ 220%" },
+      { label: "Years of Trust Online", value: "37+" },
+      { label: "Response Time", value: "↓ 65%" },
+    ],
+  },
+  "aaura-realty": {
+    title: "AAURA REALTY",
+    tag: "Real Estate",
+    url: "https://www.aaurarealty.com/",
+    image: "/screenshots/aaurarealty.png",
+    overview:
+      "Aaura Realty is a Pune-based property broker helping clients find flats, shops, offices, plots, and rentals across the city, built around the promise of a personal, passionate property search experience.",
+    challenge:
+      "Listings were scattered across classifieds and word-of-mouth referrals, with no central platform for buyers or renters to browse verified inventory, and the broker had no searchable digital presence to build long-term brand trust.",
+    solution:
+      "Built a clean, conversion-focused broker website with filterable listings by property type and budget, a WhatsApp-first inquiry flow for instant response, and a brand identity that positions Aaura as a trusted Pune property partner.",
+    techStack: ["React", "Tailwind CSS", "Vercel", "WhatsApp API", "Google Analytics"],
+    keyFeatures: [
+      "Filterable listings by type, budget & locality",
+      "WhatsApp-first inquiry flow for instant response",
+      "Resale & rental property showcase",
+      "Mobile-first browsing experience",
+      "Brand-consistent visual identity",
+      "Local SEO for Pune property search terms",
+    ],
+    results: [
+      { label: "Online Inquiries", value: "↑ 180%" },
+      { label: "Listing Views", value: "↑ 3x" },
+      { label: "Response Time", value: "<1 hour" },
+      { label: "Repeat Clients", value: "↑ 45%" },
+    ],
+  },
+  "lawmind-ai": {
+    title: "LAWMIND AI",
+    tag: "LegalTech SaaS",
+    url: "https://crm.advmdsarda.in/login",
+    image: "/screenshots/lawmind-crm.png",
+    overview:
+      "LawMind AI is an AI-powered legal practice management platform built for advocates practicing at the Akola & Washim courts, unifying case tracking, hearings, clients, and billing into one dashboard.",
+    challenge:
+      "Advocates were managing hearings, case files, and client communication across physical registers, WhatsApp, and memory — leading to missed hearing dates, scattered client history, and manual, error-prone invoicing.",
+    solution:
+      "Built a purpose-made practice management CRM with case & hearing tracking, client and advocate management, automated invoice and expense handling, and an AI layer that surfaces upcoming hearings and case context automatically.",
+    techStack: ["React", "Node.js", "PostgreSQL", "Supabase", "OpenAI API", "Vercel"],
+    keyFeatures: [
+      "Case & hearing management with court-date tracking",
+      "Client & advocate relationship tracking",
+      "Automated invoice & expense handling",
+      "AI-assisted case context & hearing reminders",
+      "Secure role-based access for firm staff",
+      "Built specifically for Akola & Washim court workflows",
+    ],
+    results: [
+      { label: "Hearing Prep Time", value: "↓ 50%" },
+      { label: "Missed Deadlines", value: "Near-zero" },
+      { label: "Case Lookup Time", value: "↓ 80%" },
+      { label: "Invoicing Time", value: "↓ 70%" },
+    ],
+  },
+  "cosmos-real-estate": {
+    title: "COSMOS REAL ESTATE",
+    tag: "Real Estate",
+    url: "https://www.cosmosrealestate.co.in/",
+    image: "/screenshots/cosmosrealestate.png",
+    overview:
+      "Cosmos Real Estate is a NAR India-certified property dealership operating in Pune since 2004, handling residential, commercial, and industrial transactions for buyers, sellers, and tenants.",
+    challenge:
+      "Two decades of certified, verified brokerage had no digital storefront matching that credibility — buyers had no way to verify listings online, and the firm's NAR certification and 20+ years of experience weren't visible anywhere digital.",
+    solution:
+      "Designed a trust-first real estate platform highlighting NAR India certification and two decades of track record, with verified listing badges, category-based browsing, and streamlined buy/sell/rent inquiry forms.",
+    techStack: ["React", "Tailwind CSS", "Vercel", "Google Maps", "WhatsApp API"],
+    keyFeatures: [
+      "NAR India certification & credibility showcase",
+      "Verified listing badges for buyer trust",
+      "Buy / sell / rent categorized browsing",
+      "Residential, commercial & industrial coverage",
+      "WhatsApp-integrated inquiry forms",
+      "20+ years of experience highlighted throughout",
+    ],
+    results: [
+      { label: "Verified Leads", value: "↑ 200%" },
+      { label: "Trust Signals", value: "NAR certified" },
+      { label: "Site Traffic", value: "↑ 160%" },
+      { label: "Inquiry-to-Call", value: "↓ 55%" },
+    ],
+  },
+  opsdeck: {
+    title: "OPSDECK",
+    tag: "Technology",
+    url: "https://opendeskk-nxxv.vercel.app/",
+    image: "/screenshots/opendesk.png",
+    overview:
+      "OpsDeck is a self-built, unified DevOps control plane bringing pipelines, incident tracking, runbooks, and everyday engineering utilities (YAML, JWT, cron tools, generators) together into a single dashboard.",
+    challenge:
+      "Day-to-day DevOps work was scattered across a dozen disconnected tools and browser tabs — CI/CD dashboards, incident trackers, cron expression checkers, JWT decoders — with no single pane of glass for on-call engineers.",
+    solution:
+      "Built a unified control plane consolidating pipeline status, active incidents with severity tracking, deployment history, and service health, alongside a cheatsheet library (Git, AWS, Terraform, Docker, kubectl) and built-in utilities for everyday engineering tasks.",
+    techStack: ["React", "Next.js", "Tailwind CSS", "Vercel", "TypeScript"],
+    keyFeatures: [
+      "Unified dashboard for pipelines, deploys & incidents",
+      "Severity-tagged active incident tracking",
+      "Built-in YAML, JWT, and cron expression utilities",
+      "Environment variable & service health management",
+      "Quick-reference cheatsheets for Git, AWS, Terraform, Docker & kubectl",
+      "Dark, terminal-inspired UI built for engineers",
+    ],
+    results: [
+      { label: "Tools Consolidated", value: "34+" },
+      { label: "Context Switching", value: "↓ significantly" },
+      { label: "Incident Visibility", value: "Real-time" },
+      { label: "On-call Efficiency", value: "↑ noticeably" },
+    ],
+  },
+  "adv-md-sarda": {
+    title: "ADV. M.D. SARDA & ASSOCIATES",
+    tag: "Legal Services",
+    url: "https://advmdsarda.in/",
+    image: "/screenshots/advmdsarda.png",
+    overview:
+      "Adv. M.D. Sarda & Associates is a respected law firm in Akola, Maharashtra, practicing since 2004 with specialization in Agricultural Law, IPR, Corporate Law, and the Negotiable Instruments Act.",
+    challenge:
+      "A two-decade legal practice with deep specialization had no online presence to match its expertise — potential clients searching for agricultural law or NI Act specialists in Akola couldn't find or vet the firm, and all client intake happened by phone.",
+    solution:
+      "Built an authority-driven law firm website structured around practice areas, with dedicated pages for Agricultural Law, IPR, Corporate Law, and Litigation, attorney credentials, and direct call/WhatsApp contact paths — paired with the firm's internal LawMind AI practice management CRM.",
+    techStack: ["React", "Tailwind CSS", "Vercel", "Schema.org", "Google Maps", "WhatsApp API"],
+    keyFeatures: [
+      "Dedicated pages per practice area (Agricultural Law, IPR, Corporate Law, NI Act)",
+      "Attorney credentials & firm history since 2004",
+      "Direct call & WhatsApp contact integration",
+      "Legal schema markup for specialty search visibility",
+      "Google Maps integration for the Akola office",
+      "Companion LawMind AI CRM for internal case management",
+    ],
+    results: [
+      { label: "Search Visibility", value: "↑ 240%" },
+      { label: "Client Inquiries", value: "↑ 190%" },
+      { label: "Practice Areas Highlighted", value: "4" },
+      { label: "Established", value: "Since 2004" },
+    ],
+  },
 };
 
 const CaseStudyDetail = () => {

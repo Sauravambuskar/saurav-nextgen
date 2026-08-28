@@ -15,6 +15,7 @@ import {
   HiMiniCog6Tooth,
   HiMiniBeaker,
   HiMiniTruck,
+  HiMiniScale,
 } from "react-icons/hi2";
 
 const industryIcons: Record<string, React.ElementType> = {
@@ -36,6 +37,8 @@ const industryIcons: Record<string, React.ElementType> = {
   "Wellness": HiMiniHeart,
   "Digital Agency": HiMiniGlobeAlt,
   "Adventure": HiMiniMapPin,
+  "Legal Services": HiMiniScale,
+  "LegalTech SaaS": HiMiniScale,
 };
 
 const featured = [
@@ -66,6 +69,12 @@ const allProjects = [
   { title: "DR MILIND BAPAT", tag: "Healthcare", url: "https://drmilindbapat.in/", desc: "Urology & andrology specialist practice website.", thumb: "/screenshots/drmilindbapat.png" },
   { title: "MOUNTAIN BREEZE", tag: "Adventure", url: "https://mountainbreeze.farm/", desc: "Villa and adventure experience company platform.", thumb: "/screenshots/mountainbreeze.png" },
   { title: "ADVANCE SMT", tag: "EdTech SaaS", url: "https://advancesmt.com/", desc: "LMS platform for skill development and training management.", thumb: "/screenshots/advancesmt.png" },
+  { title: "CHWINK REAL ESTATE", tag: "Real Estate", url: "https://www.chwink.com/", desc: "Property consultancy website for Pune developers, trusted by Hyundai, Tata & POSCO since 1987.", thumb: "/screenshots/chwink.png" },
+  { title: "AAURA REALTY", tag: "Real Estate", url: "https://www.aaurarealty.com/", desc: "Property broker platform for flats, offices, plots, resale and rentals across Pune.", thumb: "/screenshots/aaurarealty.png" },
+  { title: "LAWMIND AI", tag: "LegalTech SaaS", url: "https://crm.advmdsarda.in/login", desc: "AI-powered legal practice management CRM for advocates at Akola & Washim courts.", thumb: "/screenshots/lawmind-crm.png" },
+  { title: "COSMOS REAL ESTATE", tag: "Real Estate", url: "https://www.cosmosrealestate.co.in/", desc: "NAR-certified property dealer platform for buying, selling & renting in Pune since 2004.", thumb: "/screenshots/cosmosrealestate.png" },
+  { title: "OPSDECK", tag: "Technology", url: "https://opendeskk-nxxv.vercel.app/", desc: "Unified DevOps control plane — pipelines, incidents, runbooks & utilities in one dashboard.", thumb: "/screenshots/opendesk.png" },
+  { title: "ADV. M.D. SARDA & ASSOCIATES", tag: "Legal Services", url: "https://advmdsarda.in/", desc: "Law firm website for Agricultural Law, IPR, Corporate Law & Litigation experts in Akola.", thumb: "/screenshots/advmdsarda.png" },
 ];
 
 type ProjectItem = { title: string; tag: string; url: string; desc: string; thumb: string };
@@ -146,7 +155,7 @@ const Projects = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
             Featured <span className="gradient-text">Projects</span>
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground">24+ production projects across multiple industries</p>
+          <p className="text-sm sm:text-base text-muted-foreground">30+ production projects across multiple industries</p>
         </motion.div>
 
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
