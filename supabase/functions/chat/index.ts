@@ -76,7 +76,10 @@ serve(async (req) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: "llama-3.3-70b-versatile",
+        // Groq retired llama-3.3-70b-versatile — it now 404s with model_not_found.
+        // qwen3.8-27b streams plain content with no reasoning channel, so the whole
+        // max_completion_tokens budget goes to the visible answer.
+        model: "qwen/qwen3.8-27b",
         messages: [
           { role: "system", content: SYSTEM_PROMPT },
           ...messages,
@@ -90,11 +93,26 @@ serve(async (req) => {
     if (!response.ok) {
       const errText = await response.text();
       console.error("Groq API error:", response.status, errText);
+
       if (response.status === 429) {
         return new Response(JSON.stringify({ error: "Rate limited. Please try again in a moment." }), {
           status: 429, headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
+
+      // 401/404 here mean the key or the model is wrong — a config problem, not a
+      // transient outage. Groq retires models periodically, and the previous
+      // generic "AI service error" made that look like an outage for weeks.
+      // Log it loudly so it's obvious in the function logs which one broke.
+      if (response.status === 401 || response.status === 403) {
+        console.error("Groq auth failed — check the GROQ_API_KEY secret.");
+      } else if (response.status === 404) {
+        console.error(
+          "Groq model unavailable — it was likely retired. Check available models at " +
+            "GET https://api.groq.com/openai/v1/models and update the model above."
+        );
+      }
+
       return new Response(JSON.stringify({ error: "AI service error" }), {
         status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" },
       });

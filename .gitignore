@@ -25,3 +25,9 @@ dist-ssr
 *.sln
 *.sw?
 .vercel
+
+# Environment / secrets — never commit these
+.env
+.env.local
+.env.*.local
+supabase/.temp/
