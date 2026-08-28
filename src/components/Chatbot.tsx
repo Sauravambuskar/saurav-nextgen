@@ -2,14 +2,15 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMiniXMark, HiMiniPaperAirplane } from "react-icons/hi2";
 import { FaWhatsapp } from "react-icons/fa6";
-import profileImg from "@/assets/profile.jpg";
+
+const profileImg = "/profile.jpg";
 
 const WHATSAPP_NUMBER = "918830306901";
 const WHATSAPP_MARKER = "[WHATSAPP_CONNECT]";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
-const CHAT_URL = `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/chat`;
+const CHAT_URL = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/functions/v1/chat`;
 
 const GREETING_MESSAGES = [
   "👋 Hi! Ask me about Saurav's skills & projects!",
@@ -108,7 +109,7 @@ const Chatbot = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY}`,
         },
         body: JSON.stringify({ messages: [...messages, userMsg] }),
       });
