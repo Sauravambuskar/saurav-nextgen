@@ -15,8 +15,8 @@ type NavLink = { label: string; href: string; route?: boolean };
 
 const navLinks: NavLink[] = [
   { label: "About", href: "#about" },
+  { label: "Services", href: "/services", route: true },
   { label: "Skills", href: "#skills" },
-  { label: "Stats", href: "#experience" },
   { label: "Projects", href: "/projects", route: true },
   { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
@@ -25,12 +25,14 @@ const navLinks: NavLink[] = [
 /** Search entries that navigate to a route rather than scrolling to a section. */
 const searchRoutes: Record<string, string> = {
   projects: "/projects",
+  services: "/services",
 };
 
 const searchData: CommandItem[] = [
   { id: "about", title: "About Me", description: "Learn about my background and experience", category: "Section" },
   { id: "skills", title: "Skills & Tools", description: "Technologies and tools I work with", category: "Section" },
   { id: "projects", title: "All Projects", description: "Browse every production project, filterable by industry", category: "Page" },
+  { id: "services", title: "All Services", description: "Web, mobile, AI, DevOps and business system services", category: "Page" },
   { id: "case-studies", title: "Case Studies", description: "Deep dives into select projects", category: "Section" },
   { id: "devops", title: "DevOps Projects", description: "Infrastructure and CI/CD work", category: "Section" },
   { id: "education", title: "Education", description: "Academic background and certifications", category: "Section" },

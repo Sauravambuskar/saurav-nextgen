@@ -213,6 +213,48 @@ const caseStudies: Gallery4Item[] = [
     href: "/case-study/adv-md-sarda",
     image: "/screenshots/advmdsarda.png",
   },
+  {
+    id: "the-salesbridge",
+    title: "The Salesbridge – AI-Powered B2B Demand Generation",
+    description: "Conversion-focused platform for a demand generation company, turning enterprise visitors into booked meetings and predictable pipeline.",
+    href: "/case-study/the-salesbridge",
+    image: "/screenshots/thesalesbridge.png",
+  },
+  {
+    id: "silk-threads",
+    title: "Silk Threads – Designer Ethnic Wear E-commerce",
+    description: "Dallas-based Indian ethnic wear storefront with bridal, womenswear and custom menswear collections built for high-value online orders.",
+    href: "/case-study/silk-threads",
+    image: "/screenshots/silkthreads.png",
+  },
+  {
+    id: "labour-card",
+    title: "Labour Card Generator – Digital Worker ID System",
+    description: "Form-driven identification tool that captures worker details and generates standardized, print-ready labour ID cards as PDFs.",
+    href: "/case-study/labour-card",
+    image: "/screenshots/labourcard.png",
+  },
+  {
+    id: "shiv-udyog",
+    title: "Shiv Udyog Sahakar Sena – Entrepreneur Federation",
+    description: "Movement platform for an entrepreneur federation driving cooperatives, skill development, and rural growth across India.",
+    href: "/case-study/shiv-udyog",
+    image: "/screenshots/shivudhyog.png",
+  },
+  {
+    id: "al-rak-aspirations",
+    title: "Al RAK Aspirations – Branded Residence Investment",
+    description: "High-conversion investment platform for branded residences in Ras Al Khaimah, built around returns-led messaging and lead qualification.",
+    href: "/case-study/al-rak-aspirations",
+    image: "/screenshots/alrak-aspirations.png",
+  },
+  {
+    id: "kute-hospital",
+    title: "Kute Hospital – Multi-Specialty Healthcare Platform",
+    description: "Trust-first hospital website with department-wise services, 24×7 emergency access, specialist profiles, and appointment booking.",
+    href: "/case-study/kute-hospital",
+    image: "/screenshots/kutehospital.png",
+  },
 ];
 
 const CaseStudies = () => {

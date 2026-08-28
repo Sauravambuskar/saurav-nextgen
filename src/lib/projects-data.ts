@@ -13,6 +13,8 @@ import {
   HiMiniBeaker,
   HiMiniTruck,
   HiMiniScale,
+  HiMiniMegaphone,
+  HiMiniIdentification,
 } from "react-icons/hi2";
 
 export interface ProjectItem {
@@ -48,6 +50,8 @@ export const industryIcons: Record<string, React.ElementType> = {
   "Adventure": HiMiniMapPin,
   "Legal Services": HiMiniScale,
   "LegalTech SaaS": HiMiniScale,
+  "B2B Marketing": HiMiniMegaphone,
+  "GovTech": HiMiniIdentification,
 };
 
 export const projects: ProjectItem[] = [
@@ -82,6 +86,12 @@ export const projects: ProjectItem[] = [
   { title: "COSMOS REAL ESTATE", tag: "Real Estate", url: "https://www.cosmosrealestate.co.in/", desc: "NAR-certified property dealer platform for buying, selling & renting in Pune since 2004.", thumb: "/screenshots/cosmosrealestate.png", caseStudyId: "cosmos-real-estate" },
   { title: "OPSDECK", tag: "Technology", url: "https://opendeskk-nxxv.vercel.app/", desc: "Unified DevOps control plane — pipelines, incidents, runbooks & utilities in one dashboard.", thumb: "/screenshots/opendesk.png", caseStudyId: "opsdeck" },
   { title: "ADV. M.D. SARDA & ASSOCIATES", tag: "Legal Services", url: "https://advmdsarda.in/", desc: "Law firm website for Agricultural Law, IPR, Corporate Law & Litigation experts in Akola.", thumb: "/screenshots/advmdsarda.png", caseStudyId: "adv-md-sarda" },
+  { title: "THE SALESBRIDGE", tag: "B2B Marketing", url: "https://thesalesbridge.com/", desc: "AI-powered B2B demand generation platform for qualified leads and predictable revenue pipelines.", thumb: "/screenshots/thesalesbridge.png", caseStudyId: "the-salesbridge" },
+  { title: "SILK THREADS", tag: "E-commerce", url: "https://silkthreads.com/", desc: "Designer Indian ethnic wear e-commerce store in Dallas — bridal, womenswear & custom menswear.", thumb: "/screenshots/silkthreads.png", caseStudyId: "silk-threads" },
+  { title: "LABOUR CARD GENERATOR", tag: "GovTech", url: "https://labourcard.vercel.app/", desc: "Digital worker identification system generating printable labour ID cards with photo upload & PDF export.", thumb: "/screenshots/labourcard.png", caseStudyId: "labour-card" },
+  { title: "SHIV UDYOG SAHAKAR SENA", tag: "NGO", url: "https://shivudhyog.vercel.app/", desc: "Federation platform for an entrepreneur community driving cooperatives, skill development & rural growth.", thumb: "/screenshots/shivudhyog.png", caseStudyId: "shiv-udyog" },
+  { title: "AL RAK ASPIRATIONS", tag: "Real Estate", url: "https://al-rak-aspirations.vercel.app/", desc: "Investment landing platform for branded residences in Ras Al Khaimah with returns-focused conversion flow.", thumb: "/screenshots/alrak-aspirations.png", caseStudyId: "al-rak-aspirations" },
+  { title: "KUTE HOSPITAL", tag: "Healthcare", url: "https://www.kutehospital.com/", desc: "Multi-specialty hospital platform with laparoscopy, 24×7 ICU & emergency care and appointment booking.", thumb: "/screenshots/kutehospital.png", caseStudyId: "kute-hospital" },
 ];
 
 export const featuredProjects = projects.filter((p) => p.featured);

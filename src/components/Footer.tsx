@@ -14,12 +14,20 @@ const Footer = () => (
         </div>
 
         <div className="flex flex-col items-center gap-2">
-          <Link
-            href="/projects"
-            className="text-sm text-muted-foreground hover:text-primary transition-colors"
-          >
-            All Projects
-          </Link>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/services"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              All Services
+            </Link>
+            <Link
+              href="/projects"
+              className="text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              All Projects
+            </Link>
+          </div>
           <p className="text-sm text-muted-foreground flex items-center gap-1">
             Made with <HiMiniHeart className="text-primary" size={14} /> by Saurav Ambuskar
           </p>

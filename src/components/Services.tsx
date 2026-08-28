@@ -112,6 +112,15 @@ const Services = () => {
           </Marquee>
         </motion.div>
 
+        <div className="text-center">
+          <Link
+            href="/services"
+            className="btn-primary text-sm sm:text-base px-5 sm:px-8 py-2.5 sm:py-3 inline-flex items-center gap-2"
+          >
+            View All {servicesData.length} Services
+            <HiMiniArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
       </div>
     </section>
   );

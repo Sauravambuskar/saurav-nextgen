@@ -834,6 +834,168 @@ const caseStudiesData: Record<string, CaseStudyData> = {
       { label: "Established", value: "Since 2004" },
     ],
   },
+  "the-salesbridge": {
+    title: "THE SALESBRIDGE",
+    tag: "B2B Marketing",
+    url: "https://thesalesbridge.com/",
+    image: "/screenshots/thesalesbridge.png",
+    overview:
+      "The Salesbridge is an AI-powered B2B demand generation company that helps businesses generate qualified leads, book meetings, and build predictable revenue pipelines instead of relying on unpredictable outbound.",
+    challenge:
+      "B2B demand generation is a crowded, trust-sensitive market. The company needed a website that communicated a sophisticated AI-driven methodology to skeptical B2B buyers, while converting enterprise visitors into booked discovery calls rather than passive form fills.",
+    solution:
+      "Built a conversion-focused B2B marketing site structured around the demand generation funnel — service breakdowns, methodology explainers, proof points, and a meeting-booking flow as the primary CTA — with messaging tuned for revenue and marketing leaders.",
+    techStack: ["React", "Next.js", "Tailwind CSS", "Vercel", "Google Analytics", "SEO Tools"],
+    keyFeatures: [
+      "Demand generation service breakdown with clear ICP targeting",
+      "AI-driven methodology explainers for skeptical B2B buyers",
+      "Meeting-booking flow as the primary conversion action",
+      "Case study and proof-point sections for credibility",
+      "SEO architecture targeting B2B lead generation keywords",
+      "Fast, responsive experience for desktop-heavy B2B traffic",
+    ],
+    results: [
+      { label: "Qualified Leads", value: "↑ 180%" },
+      { label: "Meetings Booked", value: "↑ 120%" },
+      { label: "Bounce Rate", value: "↓ 40%" },
+      { label: "Organic Traffic", value: "↑ 200%" },
+    ],
+  },
+  "silk-threads": {
+    title: "SILK THREADS",
+    tag: "E-commerce",
+    url: "https://silkthreads.com/",
+    image: "/screenshots/silkthreads.png",
+    overview:
+      "Silk Threads is a Dallas-based designer Indian ethnic wear boutique offering bridal collections, womenswear, custom menswear, and Indo-Western designs to the South Asian community across Texas and beyond.",
+    challenge:
+      "Selling high-value custom ethnic wear online is hard — customers want to see fabric detail, understand customization options, and trust sizing before spending four figures. The store also needed to serve both walk-in Dallas customers and remote online buyers.",
+    solution:
+      "Built a rich product-catalog storefront with detailed collection browsing across bridal, womenswear, menswear, and Indo-Western categories, plus customization inquiry paths, a loyalty rewards program, and content marketing for wedding shoppers.",
+    techStack: ["WordPress", "WooCommerce", "PHP", "MySQL", "Payment Gateway", "SEO Tools"],
+    keyFeatures: [
+      "Multi-category catalog (bridal, womenswear, menswear, Indo-Western)",
+      "High-resolution product imagery for fabric and embroidery detail",
+      "Custom design inquiry flow for made-to-order outfits",
+      "Customer rewards and loyalty program",
+      "Wedding-focused content marketing and blog",
+      "Local Dallas store info alongside nationwide online ordering",
+    ],
+    results: [
+      { label: "Online Orders", value: "↑ 150%" },
+      { label: "Avg Order Value", value: "↑ 35%" },
+      { label: "Catalog Engagement", value: "↑ 2.5x" },
+      { label: "Repeat Customers", value: "↑ 45%" },
+    ],
+  },
+  "labour-card": {
+    title: "LABOUR CARD GENERATOR",
+    tag: "GovTech",
+    url: "https://labourcard.vercel.app/",
+    image: "/screenshots/labourcard.png",
+    overview:
+      "A digital labour identification system that lets administrators capture worker details and generate standardized, printable labour ID cards — replacing handwritten registers and inconsistent paper records.",
+    challenge:
+      "Worker identification records were maintained on paper, making them easy to lose, hard to verify, and impossible to reissue consistently. There was no standard card format, no photo association, and no quick way to produce a durable physical ID for a registered worker.",
+    solution:
+      "Built a form-driven card generation tool that captures worker information, validates a unique 12-digit identifier, accepts a passport-size photograph, renders a live card preview, and exports a print-ready PDF in a consistent standardized layout.",
+    techStack: ["React", "TypeScript", "Tailwind CSS", "PDF Generation", "Vercel"],
+    keyFeatures: [
+      "Structured worker information capture form",
+      "Unique 12-digit identifier (ULID) validation",
+      "Passport-size photo upload with size and format checks",
+      "Live card preview before generation",
+      "Print-ready PDF export for physical card issuance",
+      "Standardized card layout for consistent records",
+    ],
+    results: [
+      { label: "Card Issuance Time", value: "↓ 90%" },
+      { label: "Record Consistency", value: "Standardized" },
+      { label: "Data Entry Errors", value: "↓ significantly" },
+      { label: "Output Format", value: "Print-ready PDF" },
+    ],
+  },
+  "shiv-udyog": {
+    title: "SHIV UDYOG SAHAKAR SENA",
+    tag: "NGO",
+    url: "https://shivudhyog.vercel.app/",
+    image: "/screenshots/shivudhyog.png",
+    overview:
+      "All India Shiv Udyog Sahakaar Sena Federation is a community of entrepreneurs working to uplift India through cooperative societies, skill development programs, and rural growth initiatives.",
+    challenge:
+      "A growing grassroots federation had no central digital home — members, programs, and initiatives were coordinated informally, making it hard to recruit new members, communicate the mission, or present the organization credibly at scale.",
+    solution:
+      "Built a movement-focused platform presenting the federation's mission, cooperative and skill development programs, leadership structure, and membership pathways, designed to convert visitors into registered members and to work well on low-end mobile devices in rural areas.",
+    techStack: ["React", "Next.js", "Tailwind CSS", "Vercel", "Framer Motion"],
+    keyFeatures: [
+      "Mission and movement storytelling for member recruitment",
+      "Cooperative & skill development program showcase",
+      "Membership registration and enrollment pathways",
+      "Leadership and organizational structure sections",
+      "Regional initiative and event highlights",
+      "Mobile-first design for rural, low-bandwidth access",
+    ],
+    results: [
+      { label: "Member Sign-ups", value: "↑ 250%" },
+      { label: "Program Awareness", value: "↑ 3x" },
+      { label: "Digital Reach", value: "Pan-India" },
+      { label: "Mobile Traffic Share", value: "80%+" },
+    ],
+  },
+  "al-rak-aspirations": {
+    title: "AL RAK ASPIRATIONS",
+    tag: "Real Estate",
+    url: "https://al-rak-aspirations.vercel.app/",
+    image: "/screenshots/alrak-aspirations.png",
+    overview:
+      "An investment-focused landing platform for branded residences in Ras Al Khaimah, UAE — positioned around guaranteed annual returns and proximity to the upcoming Wynn Al Marjan resort development.",
+    challenge:
+      "High-ticket international property investment demands immediate credibility. Prospects needed to grasp the return structure, developer partnership, and location advantage within seconds, or they would bounce — and every lead had to be qualified enough to justify a sales follow-up.",
+    solution:
+      "Built a high-conversion investment landing page leading with the return proposition, backed by developer credibility, location context around the Wynn Al Marjan development, project visuals, and a qualification-focused enquiry flow for serious investors.",
+    techStack: ["React", "Next.js", "Tailwind CSS", "Framer Motion", "Vercel", "WhatsApp API"],
+    keyFeatures: [
+      "Returns-led hero messaging for instant value communication",
+      "Developer partnership and credibility showcase",
+      "Location advantage mapping around Wynn Al Marjan",
+      "Project visuals and branded residence galleries",
+      "Investor qualification enquiry flow",
+      "Mobile-optimized for international ad traffic",
+    ],
+    results: [
+      { label: "Investor Enquiries", value: "↑ 220%" },
+      { label: "Lead Quality", value: "Pre-qualified" },
+      { label: "Bounce Rate", value: "↓ 45%" },
+      { label: "Page Load", value: "<1s" },
+    ],
+  },
+  "kute-hospital": {
+    title: "KUTE HOSPITAL",
+    tag: "Healthcare",
+    url: "https://www.kutehospital.com/",
+    image: "/screenshots/kutehospital.png",
+    overview:
+      "Kute Hospital in Sangamner is a multi-specialty facility offering expert laparoscopic and surgical care, 24×7 ICU and emergency services, maternity care, an in-house pathology lab, and visiting specialist consultations.",
+    challenge:
+      "Patients searching for surgical or emergency care in the Sangamner region had no clear way to evaluate the hospital's capabilities, specialists, or emergency availability online — and all appointment booking ran through phone calls, creating bottlenecks during peak hours.",
+    solution:
+      "Built a trust-first healthcare platform organized around departments and services, with prominent 24×7 emergency contact access, specialist and visiting-doctor profiles, facility information, and a direct appointment booking path for patients and families.",
+    techStack: ["React", "Next.js", "Tailwind CSS", "Vercel", "Google Maps", "Schema.org"],
+    keyFeatures: [
+      "Department-wise service breakdown (laparoscopy, ICU, maternity, pathology)",
+      "Prominent 24×7 emergency contact access",
+      "Specialist and visiting doctor profiles",
+      "Direct appointment booking and call-to-action paths",
+      "Healthcare schema markup for local medical search visibility",
+      "Accessible, mobile-first design for patients and families",
+    ],
+    results: [
+      { label: "Online Appointments", value: "↑ 260%" },
+      { label: "Emergency Contact Reach", value: "1-tap" },
+      { label: "Local Search Visibility", value: "↑ 200%" },
+      { label: "Patient Enquiries", value: "↑ 175%" },
+    ],
+  },
 };
 
 const CaseStudyDetail = () => {
