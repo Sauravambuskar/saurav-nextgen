@@ -100,12 +100,31 @@
     text-rendering: optimizeLegibility;
   }
   html {
-    scroll-behavior: auto; /* GSAP handles smooth scroll */
+    scroll-behavior: auto; /* Lenis handles smooth scroll */
   }
   /* GPU-accelerated compositing for smooth animations */
   img, video {
     content-visibility: auto;
   }
+}
+
+/* Lenis smooth-scroll: recommended defaults so native scroll-behavior,
+   nested scroll areas, and iframes never fight the smoothed scroll. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 
 @layer components {
